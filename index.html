@@ -327,7 +327,7 @@
 <section id="impressum">
   <div class="wrap">
     <details class="impdetails">
-      <summary data-i>imp_titel</summary>
+      <summary data-i style="display:none">imp_titel</summary>
       <div class="fair" style="margin-top:12px">
         <span data-i>imp_verantw</span><br>
         <span id="imp_name"></span><br>
@@ -342,7 +342,7 @@
 <footer>
   <div class="wrap">
     <span data-i>fuss</span> ·
-    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" data-i>kt_link</a>
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" data-i>kt_link</a> · <a href="#impressum" onclick="impToggle(event)" data-i>imp_link</a>
   </div>
 </footer>
 
@@ -459,6 +459,12 @@ function kontaktPlatzhalter() {
 }
 const altSprache = sprache;
 sprache = function(s) { altSprache(s); kontaktPlatzhalter(); };
+function impToggle(e) {
+  e.preventDefault();
+  const d = document.querySelector(".impdetails");
+  d.open = !d.open;
+  if (d.open) d.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 function kontaktSenden() {
   const txt = document.getElementById("kt_text").value.trim();
   if (!txt) return;
