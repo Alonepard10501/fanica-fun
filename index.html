@@ -11,11 +11,16 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { color:var(--txt); font-family:"Segoe UI",system-ui,sans-serif; line-height:1.55;
     background:
-      radial-gradient(1000px 560px at 88% 10%, rgba(34,211,238,.055), transparent 62%),
-      radial-gradient(900px 560px at 6% 38%, rgba(225,6,0,.06), transparent 62%),
-      radial-gradient(820px 520px at 92% 72%, rgba(245,197,66,.045), transparent 62%),
-      radial-gradient(900px 560px at 10% 96%, rgba(34,211,238,.05), transparent 62%),
-      var(--bg); }
+      radial-gradient(1000px 560px at 88% 10%, rgba(34,211,238,.13), transparent 62%),
+      radial-gradient(900px 560px at 6% 38%, rgba(225,6,0,.14), transparent 62%),
+      radial-gradient(820px 520px at 92% 72%, rgba(245,197,66,.10), transparent 62%),
+      radial-gradient(900px 560px at 10% 96%, rgba(34,211,238,.12), transparent 62%),
+      linear-gradient(180deg, #10151d, #0b0f16); }
+  body::before {   /* feines Karo-Wasserzeichen ueber die GANZE Seite */
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:repeating-conic-gradient(rgba(255,255,255,.5) 0% 25%, transparent 0% 50%) 0 0/120px 120px;
+    opacity:.022; }
+  body > * { position:relative; z-index:1; }
   a { color:var(--cyan); text-decoration:none; }
   .wrap { max-width:1060px; margin:0 auto; padding:0 22px; }
   header { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
@@ -46,6 +51,7 @@
   .kn.rand { border:1px solid var(--cyan); color:var(--cyan); }
   .flagge { height:5px; background:repeating-linear-gradient(90deg,#fff 0 14px,#0d1117 14px 28px); opacity:.25; }
   section { padding:56px 0; border-top:1px solid var(--line); }
+  section:nth-of-type(even) { background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.008) 40%, transparent); }
   h2 { font-size:26px; font-weight:800; text-align:center; margin-bottom:8px; }
   .sub { color:var(--dim); text-align:center; margin-bottom:38px; }
   /* Live-Moment */
@@ -389,7 +395,7 @@ const T = {
   kt_ph_name:"Dein Name (optional)", kt_ph_mail:"Deine E-Mail für die Antwort (optional)", kt_ph_text:"Deine Nachricht …",
   fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
   imp_titel:"Impressum", imp_verantw:"Verantwortlich für diese Seite:",
-  imp_kontakt:"Kontakt: über die Feedback-Funktion in der App.", imp_hinweis:"FaNiCa Fun ist eine private, inoffizielle Fan-App ohne Verbindung zur Formula One Group."
+  imp_kontakt:"Kontakt: fanicafuntipp@gmail.com oder über das Kontaktformular.", imp_hinweis:"FaNiCa Fun ist eine private, inoffizielle Fan-App ohne Verbindung zur Formula One Group."
  },
  en: {
   held_titel:"Your private prediction league. A full season. Every stat.",
@@ -430,7 +436,7 @@ const T = {
   kt_ph_name:"Your name (optional)", kt_ph_mail:"Your e-mail for a reply (optional)", kt_ph_text:"Your message …",
   fuss:"FaNiCa Fun — private prediction league", ds:"Privacy", imp_link:"Legal notice",
   imp_titel:"Legal notice", imp_verantw:"Responsible for this site:",
-  imp_kontakt:"Contact: via the feedback feature inside the app.", imp_hinweis:"FaNiCa Fun is a private, unofficial fan app with no affiliation to the Formula One Group."
+  imp_kontakt:"Contact: fanicafuntipp@gmail.com or via the contact form.", imp_hinweis:"FaNiCa Fun is a private, unofficial fan app with no affiliation to the Formula One Group."
  }
 };
 // data-i-Schluessel einmalig aus dem Textinhalt uebernehmen (Attribut ist im HTML leer)
@@ -464,7 +470,7 @@ function kontaktSenden() {
   fetch("https://script.google.com/macros/s/AKfycbzVO5gaFCZ2ALAhpjNiG6cI7_mdhvMs6gHZcHr3wy7h4n9YLyyUrwbJkMzDhydae_gb/exec", {
     method: "POST", mode: "no-cors",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify({ schluessel: "FF-2026-QN7RK4TZ", an: atob("ZmFsa2NhcnN0ZW5zZW4xMTVAZ21haWwuY29t"),
+    body: JSON.stringify({ schluessel: "FF-2026-QN7RK4TZ", an: atob("ZmFuaWNhZnVudGlwcEBnbWFpbC5jb20="),
                            betreff: "FaNiCa Webseite — Kontakt", text: inhalt })
   }).catch(() => {});
   try { localStorage.setItem("fanica_kontakt", "" + Date.now()); } catch(e) {}
