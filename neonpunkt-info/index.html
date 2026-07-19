@@ -14,23 +14,32 @@
   html { scroll-behavior: smooth; }
   body { background: #000; color: #eee; font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
          -webkit-tap-highlight-color: transparent; }
-  /* Dezente Neon-Punkte im schwarzen Hintergrund (fein verteilt, leises Glimmen) */
+  /* ==== EINSTELLBAR: Neon-Punkte im schwarzen Hintergrund ============
+     --punkt-groesse = Groesse der Punkte (wie Startgroesse in der App: 12px)
+     --punkt-staerke = Sichtbarkeit: 0.0 = aus ... 1.0 = volle Staerke
+     Mehr/weniger Punkte oder andere Farben: Liste in body::before darunter
+     (je Zeile ein Punkt: Position in %, Farbe, Groesse).
+     =================================================================== */
+  :root { --punkt-groesse: 12px; --punkt-staerke: 0.9; }
   body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
     background:
-      radial-gradient(circle at 7% 12%,  rgba(57,255,20,0.55) 0, transparent 2px),
-      radial-gradient(circle at 83% 8%,  rgba(255,16,240,0.45) 0, transparent 2px),
-      radial-gradient(circle at 21% 34%, rgba(0,255,255,0.40) 0, transparent 2px),
-      radial-gradient(circle at 68% 27%, rgba(255,211,0,0.40) 0, transparent 2px),
-      radial-gradient(circle at 91% 46%, rgba(57,255,20,0.40) 0, transparent 2px),
-      radial-gradient(circle at 12% 58%, rgba(255,16,240,0.35) 0, transparent 2px),
-      radial-gradient(circle at 45% 71%, rgba(0,191,255,0.40) 0, transparent 2px),
-      radial-gradient(circle at 78% 66%, rgba(173,255,47,0.35) 0, transparent 2px),
-      radial-gradient(circle at 30% 88%, rgba(0,255,255,0.40) 0, transparent 2px),
-      radial-gradient(circle at 63% 93%, rgba(255,159,0,0.35) 0, transparent 2px),
-      radial-gradient(circle at 94% 82%, rgba(188,19,254,0.40) 0, transparent 2px),
-      radial-gradient(circle at 51% 18%, rgba(255,255,255,0.22) 0, transparent 1px);
+      radial-gradient(circle at 7% 12%,  rgba(57,255,20,0.80) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 83% 8%,  rgba(255,16,240,0.65) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 21% 34%, rgba(0,255,255,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 68% 27%, rgba(255,211,0,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 91% 46%, rgba(57,255,20,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 12% 58%, rgba(255,16,240,0.55) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 45% 71%, rgba(0,191,255,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 78% 66%, rgba(173,255,47,0.55) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 30% 88%, rgba(0,255,255,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 63% 93%, rgba(255,159,0,0.55) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 94% 82%, rgba(188,19,254,0.60) 0, transparent var(--punkt-groesse)),
+      radial-gradient(circle at 51% 18%, rgba(255,255,255,0.35) 0, transparent 6px);
     animation: glimmen 7s ease-in-out infinite alternate; }
-  @keyframes glimmen { from { opacity: 0.55; } to { opacity: 1; } }
+  @keyframes glimmen {
+    from { opacity: calc(var(--punkt-staerke) * 0.6); }
+    to   { opacity: var(--punkt-staerke); }
+  }
   a { color: #39FF14; }
   section { max-width: 1000px; margin: 0 auto; padding: 56px 20px; }
   h2 { color: #39FF14; font-size: 1.7em; margin-bottom: 26px; text-align: center;
