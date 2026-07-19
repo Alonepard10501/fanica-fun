@@ -9,15 +9,17 @@
   :root { --bg:#0d1117; --panel:#151b23; --line:#232c37; --txt:#e8edf3; --dim:#93a0ae;
           --cyan:#22d3ee; --rot:#e10600; --gold:#f5c542; }
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { overflow-x:clip; }
   body { color:var(--txt); font-family:"Segoe UI",system-ui,sans-serif; line-height:1.55;
     background:
-      radial-gradient(1000px 560px at 88% 10%, rgba(34,211,238,.13), transparent 62%),
-      radial-gradient(900px 560px at 6% 38%, rgba(225,6,0,.14), transparent 62%),
-      radial-gradient(820px 520px at 92% 72%, rgba(245,197,66,.10), transparent 62%),
-      radial-gradient(900px 560px at 10% 96%, rgba(34,211,238,.12), transparent 62%),
-      radial-gradient(950px 600px at 55% 58%, rgba(225,6,0,.11), transparent 62%),
-      radial-gradient(850px 540px at 82% 88%, rgba(34,211,238,.13), transparent 62%),
-      linear-gradient(180deg, #10151d, #0b0f16); }
+      radial-gradient(1000px 560px at 88% 8%, rgba(34,211,238,.16), transparent 62%),
+      radial-gradient(900px 560px at 6% 30%, rgba(225,6,0,.16), transparent 62%),
+      radial-gradient(900px 620px at 90% 50%, rgba(245,197,66,.12), transparent 62%),
+      radial-gradient(1100px 700px at 8% 68%, rgba(34,211,238,.18), transparent 62%),
+      radial-gradient(1000px 660px at 58% 84%, rgba(225,6,0,.16), transparent 62%),
+      radial-gradient(900px 560px at 92% 98%, rgba(34,211,238,.17), transparent 62%),
+      linear-gradient(180deg, #111827 0%, #131b2b 28%, #181627 52%, #12222e 78%, #0e141d 100%);
+    overflow-x:clip; }
   body::before {   /* feines Karo-Wasserzeichen ueber die GANZE Seite */
     content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
     background:repeating-conic-gradient(rgba(255,255,255,.5) 0% 25%, transparent 0% 50%) 0 0/120px 120px;
@@ -54,6 +56,15 @@
   .flagge { height:5px; background:repeating-linear-gradient(90deg,#fff 0 14px,#0d1117 14px 28px); opacity:.25; }
   section { padding:56px 0; border-top:1px solid var(--line); }
   section:nth-of-type(even) { background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.008) 40%, transparent); }
+  section:nth-of-type(5) { background:
+      radial-gradient(760px 420px at 12% 12%, rgba(225,6,0,.14), transparent 62%),
+      radial-gradient(760px 420px at 88% 88%, rgba(34,211,238,.14), transparent 62%); }
+  section:nth-of-type(6) { background:
+      radial-gradient(900px 420px at 50% 115%, rgba(245,197,66,.11), transparent 65%),
+      linear-gradient(180deg, rgba(255,255,255,.025), transparent 45%); }
+  section#kontakt { background:
+      radial-gradient(760px 400px at 50% -12%, rgba(225,6,0,.13), transparent 65%),
+      radial-gradient(700px 380px at 88% 105%, rgba(34,211,238,.12), transparent 65%); }
   h2 { font-size:26px; font-weight:800; text-align:center; margin-bottom:8px; }
   .sub { color:var(--dim); text-align:center; margin-bottom:38px; }
   /* Live-Moment */
@@ -139,6 +150,9 @@
     font:inherit; font-weight:700; cursor:pointer; }
   .kform button:disabled { opacity:.5; cursor:default; }
   .kok { color:#4ade80; font-size:14px; margin-top:8px; }
+  .ktknopf { background:var(--rot); color:#fff; border:0; border-radius:10px; padding:14px 34px;
+    font-weight:700; font-size:15px; cursor:pointer; box-shadow:0 8px 24px rgba(225,6,0,.3); }
+  .ktknopf:hover { filter:brightness(1.12); }
   .impdetails summary { list-style:none; cursor:pointer; display:inline-block; padding:11px 22px;
     border:1px solid var(--line); border-radius:10px; color:var(--dim); font-weight:700; font-size:14px;
     background:linear-gradient(180deg,#171e28,#12181f); transition:color .2s, border-color .2s; }
@@ -148,6 +162,20 @@
   .impdetails { text-align:center; }
   .impdetails .fair { text-align:left; }
   footer { padding:30px 0 50px; color:var(--dim); font-size:13px; text-align:center; }
+  @media (max-width:640px){
+    .wrap { padding:0 16px; }
+    section { padding:42px 0; }
+    h2 { font-size:22px; }
+    .held { padding:40px 0 30px; }
+    .held p.unter { font-size:15px; }
+    .kn { width:100%; max-width:320px; text-align:center; padding:13px 20px; font-size:14px; }
+    .band { gap:20px; } .band .z { font-size:30px; }
+    .panel { padding:16px; } .karte { padding:18px; } .fair { padding:18px; }
+    .wtab { font-size:13px; } .wtab td { padding:7px 4px; }
+    .pod { max-width:96px; }
+    .cd { font-size:28px; }
+    footer { padding:24px 0 40px; }
+  }
 </style>
 </head>
 <body>
@@ -330,7 +358,10 @@
   <div class="wrap" style="max-width:640px">
     <h2 data-i>kt_titel</h2>
     <p class="sub" data-i>kt_sub</p>
-    <div class="panel kform" style="background:radial-gradient(130% 80% at 50% -10%, rgba(225,6,0,.08), transparent 55%), linear-gradient(180deg,#18202b,#12181f)">
+    <div style="text-align:center; margin-bottom:18px">
+      <button id="kt_auf" class="ktknopf" onclick="ktToggle()" data-i>kt_auf</button>
+    </div>
+    <div id="kt_bereich" class="panel kform" style="display:none; background:radial-gradient(130% 80% at 50% -10%, rgba(225,6,0,.08), transparent 55%), linear-gradient(180deg,#18202b,#12181f)">
       <input id="kt_name" maxlength="60">
       <input id="kt_mail" maxlength="80">
       <textarea id="kt_text" maxlength="1000"></textarea>
@@ -358,7 +389,7 @@
 <footer>
   <div class="wrap">
     <span data-i>fuss</span> ·
-    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" data-i>kt_link</a> · <a href="#impressum" onclick="impToggle(event)" data-i>imp_link</a>
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" onclick="ktToggle(event)" data-i>kt_link</a> · <a href="#impressum" onclick="impToggle(event)" data-i>imp_link</a>
   </div>
 </footer>
 
@@ -407,7 +438,7 @@ const T = {
   s3:"Tippen, vergleichen, feiern — die Saison läuft, die App rechnet alles automatisch.",
   fair:"<b>Fair Play.</b> FaNiCa Fun ist ein privates Spiel unter Freunden: Zugang nur per Code, kein Geldeinsatz, keine Gewinne — nur Punkte, Pokale und Ehre. Ab 18 Jahren. Auch ohne Geldeinsatz gilt: Glücksspiel kann süchtig machen — Hilfe unter www.check-dein-spiel.de. <b>Inoffizielle Fan-App</b> — keine Verbindung zur Formula One Group; Ergebnisse stammen aus öffentlichen Datenquellen.",
   kt_titel:"Kontakt", kt_sub:"Schreib uns direkt — die Nachricht wird sicher weitergeleitet.",
-  kt_knopf:"Nachricht senden", kt_ok:"✅ Nachricht gesendet — danke!", kt_link:"Kontakt",
+  kt_auf:"✉️ Kontakt aufnehmen", kt_knopf:"Nachricht senden", kt_ok:"✅ Nachricht gesendet — danke!", kt_link:"Kontakt",
   kt_ph_name:"Dein Name (optional)", kt_ph_mail:"Deine E-Mail für die Antwort (optional)", kt_ph_text:"Deine Nachricht …",
   fuss:"FanicaFun.de — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
   imp_titel:"Impressum", imp_verantw:"Verantwortlich für diese Seite:",
@@ -448,7 +479,7 @@ const T = {
   s3:"Predict, compare, celebrate — the season runs, the app scores everything automatically.",
   fair:"<b>Fair play.</b> FaNiCa Fun is a private game among friends: access by code only, no money, no prizes — just points, trophies and glory. Ages 18+. Even without money: gambling can be addictive — please play responsibly. <b>Unofficial fan app</b> — not associated with the Formula One Group; results come from public data sources.",
   kt_titel:"Contact", kt_sub:"Write to us directly — your message is forwarded securely.",
-  kt_knopf:"Send message", kt_ok:"✅ Message sent — thank you!", kt_link:"Contact",
+  kt_auf:"✉️ Get in touch", kt_knopf:"Send message", kt_ok:"✅ Message sent — thank you!", kt_link:"Contact",
   kt_ph_name:"Your name (optional)", kt_ph_mail:"Your e-mail for a reply (optional)", kt_ph_text:"Your message …",
   fuss:"FanicaFun.de — private prediction league", ds:"Privacy", imp_link:"Legal notice",
   imp_titel:"Legal notice", imp_verantw:"Responsible for this site:",
@@ -475,6 +506,12 @@ function kontaktPlatzhalter() {
 }
 const altSprache = sprache;
 sprache = function(s) { altSprache(s); kontaktPlatzhalter(); };
+function ktToggle(e) {
+  if (e) e.preventDefault();
+  document.getElementById("kt_bereich").style.display = "block";
+  document.getElementById("kt_auf").parentElement.style.display = "none";
+  document.getElementById("kontakt").scrollIntoView({ behavior:"smooth" });
+}
 function impToggle(e) {
   e.preventDefault();
   const d = document.querySelector(".impdetails");
