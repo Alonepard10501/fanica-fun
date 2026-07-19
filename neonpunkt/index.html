@@ -22,10 +22,12 @@
                 height: 72px; padding: 0 44px; font-size: 29px; cursor: pointer; }
   #startKnopf:active { filter: brightness(1.25); }
   #feld { position: fixed; inset: 0; display: none; }
+  /* Punkt-Leinwand liegt UEBER der Klick-/Zeitanzeige (Punkt immer oben, immer klickbar) */
+  #leinwand { position: relative; z-index: 2; }
   #zaehler { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 0; right: 0;
              text-align: center; color: rgba(255,255,255,0.8); pointer-events: none; }
-  #zaehler .k { font-size: 18px; }
-  #zaehler .z { font-size: 16px; }
+  #zaehler .k { font-size: 14px; }
+  #zaehler .z { font-size: 12px; }
 </style>
 </head>
 <body>
