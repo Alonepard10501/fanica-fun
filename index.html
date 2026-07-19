@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FaNiCa Fun — Eure private Tipprunde</title>
+<meta name="description" content="FaNiCa Fun: die private Tipprunden-App für Freundesgruppen. Eine ganze Saison, jede Statistik — auf Android und im Browser.">
+<style>
+  :root { --bg:#0d1117; --panel:#151b23; --line:#232c37; --txt:#e8edf3; --dim:#93a0ae;
+          --cyan:#22d3ee; --rot:#e10600; --gold:#f5c542; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:"Segoe UI",system-ui,sans-serif; line-height:1.55; }
+  a { color:var(--cyan); text-decoration:none; }
+  .wrap { max-width:1060px; margin:0 auto; padding:0 22px; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+  .marke { font-size:22px; font-weight:800; font-style:italic; }
+  .marke .r { color:var(--rot); } .marke .w { color:#fff; }
+  .sprachen button { background:none; border:1px solid var(--line); color:var(--dim); padding:5px 12px;
+    border-radius:14px; cursor:pointer; font-weight:700; font-size:12px; margin-left:6px; }
+  .sprachen button.an { border-color:var(--cyan); color:var(--cyan); }
+  .held { text-align:center; padding:58px 0 40px; }
+  .held h1 { font-size:clamp(28px,5vw,46px); font-weight:800; letter-spacing:-.5px; max-width:840px; margin:0 auto 14px; }
+  .held p.unter { color:var(--dim); font-size:17px; max-width:620px; margin:0 auto 30px; }
+  .knoepfe { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .kn { display:inline-block; padding:14px 26px; border-radius:10px; font-weight:700; font-size:15px; }
+  .kn.voll { background:var(--rot); color:#fff; }
+  .kn.rand { border:1px solid var(--cyan); color:var(--cyan); }
+  .flagge { height:5px; background:repeating-linear-gradient(90deg,#fff 0 14px,#0d1117 14px 28px); opacity:.25; }
+  section { padding:56px 0; border-top:1px solid var(--line); }
+  h2 { font-size:26px; font-weight:800; text-align:center; margin-bottom:8px; }
+  .sub { color:var(--dim); text-align:center; margin-bottom:38px; }
+  /* Live-Moment */
+  .moment { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
+  @media (max-width:820px){ .moment { grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; }
+  .panel h3 { font-size:14px; color:var(--dim); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; text-align:center; }
+  .cd { font-size:34px; font-weight:800; color:var(--cyan); text-align:center; font-variant-numeric:tabular-nums; }
+  .cdl { text-align:center; color:var(--dim); font-size:13px; margin-bottom:6px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:6px 18px; font-size:14px; margin-top:14px; }
+  .grid2 b { color:var(--cyan); font-weight:700; }
+  .zeile { display:flex; justify-content:space-between; align-items:center; padding:7px 10px; border-radius:8px; font-size:15px; }
+  .zeile + .zeile { margin-top:5px; }
+  .zeile.hoch { background:rgba(34,211,238,.09); border:1px solid rgba(34,211,238,.35); }
+  .auf { color:var(--cyan); font-weight:800; } .ab { color:var(--rot); font-weight:800; }
+  .pt { font-weight:800; font-variant-numeric:tabular-nums; }
+  .tag { color:var(--gold); font-size:13px; }
+  /* Karten */
+  .karten { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; }
+  .karte { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .karte h3 { font-size:17px; margin-bottom:8px; }
+  .karte p { color:var(--dim); font-size:14.5px; }
+  .karte .bsp { margin-top:10px; font-size:13.5px; color:var(--txt); border-left:3px solid var(--cyan); padding-left:10px; }
+  /* Zahlen-Band */
+  .band { display:flex; flex-wrap:wrap; justify-content:center; gap:34px; text-align:center; }
+  .band .z { font-size:38px; font-weight:800; color:var(--cyan); font-variant-numeric:tabular-nums; }
+  .band .z.rot { color:var(--rot); } .band .z.gold { color:var(--gold); }
+  .band .l { color:var(--dim); font-size:13px; }
+  /* Schritte */
+  .schritte { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; counter-reset:s; }
+  .schritt { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .schritt::before { counter-increment:s; content:counter(s); display:block; width:34px; height:34px; line-height:34px;
+    text-align:center; border-radius:50%; background:var(--rot); color:#fff; font-weight:800; margin-bottom:12px; }
+  .fair { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px; color:var(--dim); font-size:14px; }
+  .fair b { color:var(--txt); }
+  footer { padding:30px 0 50px; color:var(--dim); font-size:13px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="marke"><span class="r">FaNiCa</span> <span class="w">Fun</span></div>
+    <div class="sprachen">
+      <button id="bde" class="an" onclick="sprache('de')">DE</button>
+      <button id="ben" onclick="sprache('en')">EN</button>
+    </div>
+  </header>
+
+  <div class="held">
+    <h1 data-i>held_titel</h1>
+    <p class="unter" data-i>held_unter</p>
+    <div class="knoepfe">
+      <a class="kn voll" href="https://play.google.com/apps/testing/com.fanica.fun" data-i>kn_android</a>
+      <a class="kn rand" href="https://alonepard10501.github.io/fanica-fun/spiel/" data-i>kn_browser</a>
+    </div>
+  </div>
+</div>
+<div class="flagge"></div>
+
+<section>
+  <div class="wrap">
+    <h2 data-i>m_titel</h2>
+    <p class="sub" data-i>m_sub</p>
+    <div class="moment">
+      <div class="panel">
+        <h3 data-i>m_samstag</h3>
+        <div class="cdl" data-i>m_cdl</div>
+        <div class="cd" id="cd">02:41:37</div>
+        <div class="grid2">
+          <div><b>P1</b> Verstappen</div><div><b>P1</b> Verstappen</div>
+          <div><b>P2</b> Norris</div><div><b>P2</b> Leclerc</div>
+          <div><b>P3</b> Leclerc</div><div><b>P3</b> Norris <span class="tag" data-i>m_strafe</span></div>
+          <div><b>P4</b> Russell</div><div><b>P4</b> Russell</div>
+          <div><b>P5</b> Piastri</div><div><b>P5</b> Piastri</div>
+        </div>
+        <div class="grid2" style="margin-top:8px;color:var(--dim);font-size:12px">
+          <div data-i>m_quali</div><div data-i>m_grid</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 data-i>m_sonntag</h3>
+        <div class="zeile"><span>1 · Marco</span><span class="pt">64</span></div>
+        <div class="zeile hoch"><span>2 · Lena <span class="tag">👑 <span data-i>m_tagessieg</span> +8</span></span><span><span class="auf">▲2</span> <span class="pt">61</span></span></div>
+        <div class="zeile"><span>3 · Svea</span><span><span class="ab">▼1</span> <span class="pt">60</span></span></div>
+        <div class="zeile"><span>4 · Jonas</span><span><span class="ab">▼1</span> <span class="pt">58</span></span></div>
+        <div class="zeile"><span>5 · Henrik</span><span class="pt">54</span></div>
+        <div class="cdl" style="margin-top:12px" data-i>m_auto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-i>k_titel</h2>
+    <p class="sub" data-i>k_sub</p>
+    <div class="karten">
+      <div class="karte"><h3>🏁 <span data-i>k1</span></h3><p data-i>k1t</p></div>
+      <div class="karte"><h3>🚦 <span data-i>k2</span></h3><p data-i>k2t</p></div>
+      <div class="karte"><h3>⚡ <span data-i>k3</span></h3><p data-i>k3t</p></div>
+      <div class="karte"><h3>🏆 <span data-i>k4</span></h3><p data-i>k4t</p></div>
+      <div class="karte"><h3>📈 <span data-i>k5</span></h3><p data-i>k5t</p><p class="bsp" data-i>k5b</p></div>
+      <div class="karte"><h3>💬 <span data-i>k6</span></h3><p data-i>k6t</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="band">
+      <div><div class="z" data-z="22">0</div><div class="l" data-i>b1</div></div>
+      <div><div class="z" data-z="10">0</div><div class="l" data-i>b2</div></div>
+      <div><div class="z" data-z="1847">0</div><div class="l" data-i>b3</div></div>
+      <div><div class="z gold" data-z="14">0</div><div class="l" data-i>b4</div></div>
+      <div><div class="z" data-z="3">0</div><div class="l" data-i>b5</div></div>
+      <div><div class="z rot" data-z="1">0</div><div class="l" data-i>b6</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-i>s_titel</h2>
+    <p class="sub" data-i>s_sub</p>
+    <div class="schritte">
+      <div class="schritt"><p data-i>s1</p></div>
+      <div class="schritt"><p data-i>s2</p></div>
+      <div class="schritt"><p data-i>s3</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="fair" data-i>fair</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-i>fuss</span> · <a href="mailto:falkcarstensen@web.de">falkcarstensen@web.de</a> ·
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a>
+  </div>
+</footer>
+
+<script>
+const T = {
+ de: {
+  held_titel:"Eure private Tipprunde. Eine ganze Saison. Jede Statistik.",
+  held_unter:"FaNiCa Fun ist die Tipprunden-App für Freundesgruppen: Top-5 tippen, live vergleichen, Trophäen sammeln — privat, ohne Geldeinsatz, auf Android und im Browser.",
+  kn_android:"Kostenlos testen (Android)", kn_browser:"Im Browser spielen",
+  m_titel:"Ein Rennwochenende in FaNiCa Fun", m_sub:"Beispiel-Runde mit erfundenen Spielern — genau so fühlt es sich an.",
+  m_samstag:"Samstag — Tippschluss läuft", m_cdl:"Tippschluss in",
+  m_quali:"Qualifying", m_grid:"Offizielle Startaufstellung", m_strafe:"(+5s Strafe)",
+  m_sonntag:"Sonntag — Sekunden nach der Zielflagge", m_tagessieg:"Tagessieg",
+  m_auto:"Ergebnis, Zielabstände, Punkte und Platzierungen — alles automatisch, direkt nach dem Rennen.",
+  k_titel:"Was die App kann", k_sub:"Gebaut für eine komplette Saison mit deinen Freunden.",
+  k1:"Tippen mit System", k1t:"Top-5-Tipp je Rennen, freies Üben bis Freitag, automatischer Tippschluss 8 Stunden vor dem Start — mit Erinnerung aufs Handy.",
+  k2:"Samstag im Griff", k2t:"Qualifying-Ergebnis und offizielle Startaufstellung (inklusive Strafen) erscheinen automatisch nebeneinander — auf Wunsch mit einem Tipp übernehmbar.",
+  k3:"Sofort gewertet", k3t:"Rennergebnis mit Zielabständen direkt nach der Zielflagge. Punkte, Treppchen und Platzierungen berechnen sich von selbst — bei Punktgleichheit zählt die faire Regel: gleicher Platz.",
+  k4:"Trophäen-Schrank", k4t:"💎 Diamant für das perfekte Wochenende, 👑 Tagessieg für den Tagesbesten, 🏅 Podest — und der ★ Gold-Tipp für die Position, die sonst keiner hatte.",
+  k5:"Saison & Ewigkeit", k5t:"Saisonverlauf- und Rangverlauf-Diagramme, Strecken-Rekorde, Trefferquoten und die Ewige Bestenliste über alle Jahre.",
+  k5b:"Beispiel: Marco führt die Ewige Liste mit 312 Punkten aus 5 Saisons an — Svea hält den Spa-Rekord mit 8 Punkten.",
+  k6:"Runde & Chat", k6t:"Privat per Einladungs-Code. Runden-Chat mit Antworten und angepinnten Ansagen — plus Benachrichtigungen für Tippschluss, Punkte und Nachrichten.",
+  b1:"Rennen pro Saison", b2:"Freunde pro Gruppe", b3:"Tipps in einer Saison", b4:"Tagessiege", b5:"Diamanten", b6:"Champion",
+  s_titel:"In drei Schritten dabei", s_sub:"Android-App und Browser spielen in derselben Runde — live verbunden.",
+  s1:"Profil erstellen — einmal registrieren mit E-Mail und Passwort, überall spielen.",
+  s2:"Gruppe eröffnen oder per Einladungs-Code der Freunde beitreten.",
+  s3:"Tippen, vergleichen, feiern — die Saison läuft, die App rechnet alles automatisch.",
+  fair:"<b>Fair Play.</b> FaNiCa Fun ist ein privates Spiel unter Freunden: Zugang nur per Code, kein Geldeinsatz, keine Gewinne — nur Punkte, Pokale und Ehre. Ab 18 Jahren. Auch ohne Geldeinsatz gilt: Glücksspiel kann süchtig machen — Hilfe unter www.check-dein-spiel.de. <b>Inoffizielle Fan-App</b> — keine Verbindung zur Formula One Group; Ergebnisse stammen aus öffentlichen Datenquellen.",
+  fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz"
+ },
+ en: {
+  held_titel:"Your private prediction league. A full season. Every stat.",
+  held_unter:"FaNiCa Fun is the prediction-game app for groups of friends: pick the top 5, compare live, collect trophies — private, no money involved, on Android and in the browser.",
+  kn_android:"Try it free (Android)", kn_browser:"Play in the browser",
+  m_titel:"A race weekend in FaNiCa Fun", m_sub:"Example round with fictional players — this is exactly what it feels like.",
+  m_samstag:"Saturday — deadline running", m_cdl:"Deadline in",
+  m_quali:"Qualifying", m_grid:"Official starting grid", m_strafe:"(+5s penalty)",
+  m_sonntag:"Sunday — seconds after the flag", m_tagessieg:"day win",
+  m_auto:"Result, gaps, points and standings — all automatic, right after the race.",
+  k_titel:"What the app does", k_sub:"Built for a full season with your friends.",
+  k1:"Predictions with structure", k1t:"Top-5 pick per race, free practice until Friday, automatic deadline 8 hours before the start — with a reminder on your phone.",
+  k2:"Saturday covered", k2t:"Qualifying result and the official starting grid (including penalties) appear automatically side by side — take them over with one tap if you like.",
+  k3:"Scored instantly", k3t:"Race result with finishing gaps right after the flag. Points, podium and standings calculate themselves — equal points share the same position, fair and simple.",
+  k4:"Trophy cabinet", k4t:"💎 Diamond for the perfect weekend, 👑 day win for the day's best, 🏅 podium — and the ★ gold pick for the position nobody else had.",
+  k5:"Season & eternity", k5t:"Season and rank charts, track records, hit rates and the all-time leaderboard across every year.",
+  k5b:"Example: Marco leads the all-time list with 312 points from 5 seasons — Svea holds the Spa record with 8 points.",
+  k6:"Group & chat", k6t:"Private via invitation code. Group chat with replies and pinned announcements — plus notifications for deadlines, points and messages.",
+  b1:"races per season", b2:"friends per group", b3:"picks in one season", b4:"day wins", b5:"diamonds", b6:"champion",
+  s_titel:"Three steps to join", s_sub:"Android app and browser play in the same round — connected live.",
+  s1:"Create a profile — register once with e-mail and password, play everywhere.",
+  s2:"Open a group or join your friends with an invitation code.",
+  s3:"Predict, compare, celebrate — the season runs, the app scores everything automatically.",
+  fair:"<b>Fair play.</b> FaNiCa Fun is a private game among friends: access by code only, no money, no prizes — just points, trophies and glory. Ages 18+. Even without money: gambling can be addictive — please play responsibly. <b>Unofficial fan app</b> — not associated with the Formula One Group; results come from public data sources.",
+  fuss:"FaNiCa Fun — private prediction league", ds:"Privacy"
+ }
+};
+// data-i-Schluessel einmalig aus dem Textinhalt uebernehmen (Attribut ist im HTML leer)
+document.querySelectorAll("[data-i]").forEach(el => { if (!el.getAttribute("data-i")) el.setAttribute("data-i", el.textContent.trim()); });
+let spr = "de"; try { spr = localStorage.getItem("fanica_sprache") || "de"; } catch(e) {}
+function sprache(s) {
+  spr = s; try { localStorage.setItem("fanica_sprache", s); } catch(e) {}
+  document.documentElement.lang = s;
+  document.getElementById("bde").classList.toggle("an", s === "de");
+  document.getElementById("ben").classList.toggle("an", s === "en");
+  document.querySelectorAll("[data-i]").forEach(el => {
+    const k = el.getAttribute("data-i");
+    if (T[s][k] !== undefined) el.innerHTML = T[s][k];
+  });
+}
+sprache(spr);
+// Countdown lebendig
+let cds = 2*3600 + 41*60 + 37;
+setInterval(() => { cds = Math.max(0, cds - 1);
+  const h = String(Math.floor(cds/3600)).padStart(2,"0"), m = String(Math.floor(cds%3600/60)).padStart(2,"0"), x = String(cds%60).padStart(2,"0");
+  document.getElementById("cd").textContent = h + ":" + m + ":" + x; }, 1000);
+// Zahlen hochzaehlen beim Scrollen
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting || e.target.dataset.done) return;
+  e.target.dataset.done = 1;
+  const ziel = +e.target.dataset.z, t0 = performance.now();
+  const tick = t => { const p = Math.min(1, (t - t0) / 1200);
+    e.target.textContent = Math.round(ziel * (1 - Math.pow(1 - p, 3))).toLocaleString("de-DE");
+    if (p < 1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}), { threshold: .4 });
+document.querySelectorAll("[data-z]").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
