@@ -13,13 +13,24 @@
   a { color:var(--cyan); text-decoration:none; }
   .wrap { max-width:1060px; margin:0 auto; padding:0 22px; }
   header { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
-  .marke { font-size:22px; font-weight:800; font-style:italic; }
+  .marke { font-size:22px; font-weight:800; font-style:italic;
+           text-shadow:0 0 18px rgba(225,6,0,.35), 0 0 34px rgba(34,211,238,.12); }
   .marke .r { color:var(--rot); } .marke .w { color:#fff; }
   .sprachen button { background:none; border:1px solid var(--line); color:var(--dim); padding:5px 12px;
     border-radius:14px; cursor:pointer; font-weight:700; font-size:12px; margin-left:6px; }
   .sprachen button.an { border-color:var(--cyan); color:var(--cyan); }
-  .held { text-align:center; padding:58px 0 40px; }
-  .held h1 { font-size:clamp(28px,5vw,46px); font-weight:800; letter-spacing:-.5px; max-width:840px; margin:0 auto 14px; }
+  .held { text-align:center; padding:58px 0 40px; position:relative; }
+  .held::before {   /* Zielflagge im Hintergrund — kariert wie in der App, weich ausgeblendet */
+    content:""; position:absolute; inset:-90px -40px 0 -40px; pointer-events:none;
+    background:
+      repeating-conic-gradient(rgba(255,255,255,.85) 0% 25%, transparent 0% 50%) 0 0/64px 64px;
+    opacity:.045; transform:perspective(600px) rotateX(38deg) scale(1.25);
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%);
+    mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%);
+  }
+  .held > * { position:relative; }
+  .held h1 { font-size:clamp(28px,5vw,46px); font-weight:800; letter-spacing:-.5px; max-width:840px; margin:0 auto 14px;
+             text-shadow:0 2px 26px rgba(13,17,23,.9), 0 0 40px rgba(34,211,238,.08); }
   .held p.unter { color:var(--dim); font-size:17px; max-width:620px; margin:0 auto 30px; }
   .knoepfe { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
   .kn { display:inline-block; padding:14px 26px; border-radius:10px; font-weight:700; font-size:15px; }
@@ -91,6 +102,13 @@
   .tro .ic { font-size:32px; }
   .tro .zz { font-size:30px; font-weight:800; color:var(--gold); font-variant-numeric:tabular-nums; }
   .tro .tx { color:var(--dim); font-size:12.5px; margin-top:2px; }
+  .kform input, .kform textarea { width:100%; background:#0d1117; border:1px solid var(--line); border-radius:8px;
+    color:var(--txt); padding:11px 12px; font:inherit; margin-bottom:10px; }
+  .kform textarea { min-height:110px; resize:vertical; }
+  .kform button { background:var(--rot); color:#fff; border:none; border-radius:8px; padding:12px 26px;
+    font:inherit; font-weight:700; cursor:pointer; }
+  .kform button:disabled { opacity:.5; cursor:default; }
+  .kok { color:#4ade80; font-size:14px; margin-top:8px; }
   footer { padding:30px 0 50px; color:var(--dim); font-size:13px; text-align:center; }
 </style>
 </head>
@@ -257,6 +275,20 @@
   </div>
 </section>
 
+<section id="kontakt">
+  <div class="wrap" style="max-width:640px">
+    <h2 data-i>kt_titel</h2>
+    <p class="sub" data-i>kt_sub</p>
+    <div class="panel kform">
+      <input id="kt_name" maxlength="60">
+      <input id="kt_mail" maxlength="80">
+      <textarea id="kt_text" maxlength="1000"></textarea>
+      <button id="kt_send" onclick="kontaktSenden()" data-i>kt_knopf</button>
+      <div class="kok" id="kt_ok" style="display:none" data-i>kt_ok</div>
+    </div>
+  </div>
+</section>
+
 <section id="impressum">
   <div class="wrap">
     <div class="fair">
@@ -274,7 +306,7 @@
 <footer>
   <div class="wrap">
     <span data-i>fuss</span> ·
-    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#impressum" data-i>imp_link</a>
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" data-i>kt_link</a> · <a href="#impressum" data-i>imp_link</a>
   </div>
 </footer>
 
@@ -323,6 +355,9 @@ const T = {
   s2:"Gruppe eröffnen oder per Einladungs-Code der Freunde beitreten.",
   s3:"Tippen, vergleichen, feiern — die Saison läuft, die App rechnet alles automatisch.",
   fair:"<b>Fair Play.</b> FaNiCa Fun ist ein privates Spiel unter Freunden: Zugang nur per Code, kein Geldeinsatz, keine Gewinne — nur Punkte, Pokale und Ehre. Ab 18 Jahren. Auch ohne Geldeinsatz gilt: Glücksspiel kann süchtig machen — Hilfe unter www.check-dein-spiel.de. <b>Inoffizielle Fan-App</b> — keine Verbindung zur Formula One Group; Ergebnisse stammen aus öffentlichen Datenquellen.",
+  kt_titel:"Kontakt", kt_sub:"Schreib uns direkt — die Nachricht wird sicher weitergeleitet.",
+  kt_knopf:"Nachricht senden", kt_ok:"✅ Nachricht gesendet — danke!", kt_link:"Kontakt",
+  kt_ph_name:"Dein Name (optional)", kt_ph_mail:"Deine E-Mail für die Antwort (optional)", kt_ph_text:"Deine Nachricht …",
   fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
   imp_titel:"Impressum", imp_verantw:"Verantwortlich für diese Seite:",
   imp_kontakt:"Kontakt: über die Feedback-Funktion in der App.", imp_hinweis:"FaNiCa Fun ist eine private, inoffizielle Fan-App ohne Verbindung zur Formula One Group."
@@ -361,6 +396,9 @@ const T = {
   s2:"Open a group or join your friends with an invitation code.",
   s3:"Predict, compare, celebrate — the season runs, the app scores everything automatically.",
   fair:"<b>Fair play.</b> FaNiCa Fun is a private game among friends: access by code only, no money, no prizes — just points, trophies and glory. Ages 18+. Even without money: gambling can be addictive — please play responsibly. <b>Unofficial fan app</b> — not associated with the Formula One Group; results come from public data sources.",
+  kt_titel:"Contact", kt_sub:"Write to us directly — your message is forwarded securely.",
+  kt_knopf:"Send message", kt_ok:"✅ Message sent — thank you!", kt_link:"Contact",
+  kt_ph_name:"Your name (optional)", kt_ph_mail:"Your e-mail for a reply (optional)", kt_ph_text:"Your message …",
   fuss:"FaNiCa Fun — private prediction league", ds:"Privacy", imp_link:"Legal notice",
   imp_titel:"Legal notice", imp_verantw:"Responsible for this site:",
   imp_kontakt:"Contact: via the feedback feature inside the app.", imp_hinweis:"FaNiCa Fun is a private, unofficial fan app with no affiliation to the Formula One Group."
@@ -378,6 +416,33 @@ function sprache(s) {
     const k = el.getAttribute("data-i");
     if (T[s][k] !== undefined) el.innerHTML = T[s][k];
   });
+}
+function kontaktPlatzhalter() {
+  document.getElementById("kt_name").placeholder = T[spr].kt_ph_name;
+  document.getElementById("kt_mail").placeholder = T[spr].kt_ph_mail;
+  document.getElementById("kt_text").placeholder = T[spr].kt_ph_text;
+}
+const altSprache = sprache;
+sprache = function(s) { altSprache(s); kontaktPlatzhalter(); };
+function kontaktSenden() {
+  const txt = document.getElementById("kt_text").value.trim();
+  if (!txt) return;
+  let letzte = 0; try { letzte = +localStorage.getItem("fanica_kontakt") || 0; } catch(e) {}
+  if (Date.now() - letzte < 60000) return;              // hoechstens 1 Nachricht pro Minute
+  const name = document.getElementById("kt_name").value.trim();
+  const mail = document.getElementById("kt_mail").value.trim();
+  const inhalt = "Von: " + (name || "-") + " <" + (mail || "-") + ">\n\n" + txt;
+  fetch("https://script.google.com/macros/s/AKfycbzVO5gaFCZ2ALAhpjNiG6cI7_mdhvMs6gHZcHr3wy7h4n9YLyyUrwbJkMzDhydae_gb/exec", {
+    method: "POST", mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({ schluessel: "FF-2026-QN7RK4TZ", an: atob("ZmFsa2NhcnN0ZW5zZW4xMTVAZ21haWwuY29t"),
+                           betreff: "FaNiCa Webseite — Kontakt", text: inhalt })
+  }).catch(() => {});
+  try { localStorage.setItem("fanica_kontakt", "" + Date.now()); } catch(e) {}
+  document.getElementById("kt_text").value = "";
+  document.getElementById("kt_ok").style.display = "block";
+  const b = document.getElementById("kt_send"); b.disabled = true;
+  setTimeout(() => { b.disabled = false; document.getElementById("kt_ok").style.display = "none"; }, 60000);
 }
 sprache(spr);
 document.getElementById("imp_name").textContent = IMPRESSUM.name;
