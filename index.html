@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FaNiCa Fun — Eure private Tipprunde</title>
+<title>FanicaFun.de — Eure private Tipprunde</title>
 <meta name="description" content="FaNiCa Fun: die private Tipprunden-App für Freundesgruppen. Eine ganze Saison, jede Statistik — auf Android und im Browser.">
 <style>
   :root { --bg:#0d1117; --panel:#151b23; --line:#232c37; --txt:#e8edf3; --dim:#93a0ae;
@@ -15,6 +15,8 @@
       radial-gradient(900px 560px at 6% 38%, rgba(225,6,0,.14), transparent 62%),
       radial-gradient(820px 520px at 92% 72%, rgba(245,197,66,.10), transparent 62%),
       radial-gradient(900px 560px at 10% 96%, rgba(34,211,238,.12), transparent 62%),
+      radial-gradient(950px 600px at 55% 58%, rgba(225,6,0,.11), transparent 62%),
+      radial-gradient(850px 540px at 82% 88%, rgba(34,211,238,.13), transparent 62%),
       linear-gradient(180deg, #10151d, #0b0f16); }
   body::before {   /* feines Karo-Wasserzeichen ueber die GANZE Seite */
     content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
@@ -57,7 +59,7 @@
   /* Live-Moment */
   .moment { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
   @media (max-width:820px){ .moment { grid-template-columns:1fr; } }
-  .panel { background:linear-gradient(180deg,#18202b,#12181f); border:1px solid var(--line);
+  .panel { background:radial-gradient(130% 80% at 50% -10%, rgba(34,211,238,.07), transparent 55%), linear-gradient(180deg,#18202b,#12181f); border:1px solid var(--line);
     border-top-color:rgba(255,255,255,.09); border-radius:14px; padding:20px;
     box-shadow:0 14px 34px rgba(0,0,0,.35); transition:transform .25s ease; }
   .panel:hover { transform:translateY(-3px); }
@@ -78,11 +80,15 @@
     border-top-color:rgba(255,255,255,.08); border-radius:14px; padding:22px;
     box-shadow:0 12px 28px rgba(0,0,0,.3); transition:transform .25s ease, border-color .25s ease; }
   .karte:hover { transform:translateY(-3px); border-color:rgba(34,211,238,.35); }
+  .karten .karte:nth-child(3n+1) { border-top:2px solid rgba(34,211,238,.55); }
+  .karten .karte:nth-child(3n+2) { border-top:2px solid rgba(225,6,0,.55); }
+  .karten .karte:nth-child(3n+3) { border-top:2px solid rgba(245,197,66,.55); }
+  .schritte .schritt { border-top:2px solid rgba(225,6,0,.45); }
   .karte h3 { font-size:17px; margin-bottom:8px; }
   .karte p { color:var(--dim); font-size:14.5px; }
   .karte .bsp { margin-top:10px; font-size:13.5px; color:var(--txt); border-left:3px solid var(--cyan); padding-left:10px; }
   /* Zahlen-Band */
-  .bandsek { background:linear-gradient(90deg, rgba(225,6,0,.07), rgba(13,17,23,0) 30% 70%, rgba(34,211,238,.07));
+  .bandsek { background:linear-gradient(90deg, rgba(225,6,0,.14), rgba(13,17,23,0) 32% 68%, rgba(34,211,238,.14));
     border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .band { display:flex; flex-wrap:wrap; justify-content:center; gap:34px; text-align:center; }
   .band .z { font-size:38px; font-weight:800; color:var(--cyan); font-variant-numeric:tabular-nums; }
@@ -122,7 +128,7 @@
   .legende { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-size:12.5px; color:var(--dim); margin-top:10px; }
   .legende b { font-weight:700; }
   .trogrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
-  .tro { background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center; }
+  .tro { background:radial-gradient(120% 100% at 50% 0%, rgba(245,197,66,.10), transparent 60%), rgba(255,255,255,.02); border:1px solid rgba(245,197,66,.25); border-radius:12px; padding:16px; text-align:center; }
   .tro .ic { font-size:32px; }
   .tro .zz { font-size:30px; font-weight:800; color:var(--gold); font-variant-numeric:tabular-nums; }
   .tro .tx { color:var(--dim); font-size:12.5px; margin-top:2px; }
@@ -234,9 +240,19 @@
       <div class="panel">
         <h3 data-i>sh_chart</h3>
         <svg class="chart-svg" id="chart" viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fl1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#22d3ee" stop-opacity=".28"/>
+              <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
           <g stroke="#232c37" stroke-width="1">
             <line x1="28" y1="10" x2="28" y2="150"/><line x1="28" y1="150" x2="312" y2="150"/>
+            <line x1="28" y1="106" x2="312" y2="106" stroke-dasharray="3 5" opacity=".6"/>
+            <line x1="28" y1="62" x2="312" y2="62" stroke-dasharray="3 5" opacity=".6"/>
+            <line x1="28" y1="22" x2="312" y2="22" stroke-dasharray="3 5" opacity=".6"/>
           </g>
+          <polygon fill="url(#fl1)" points="28,150 54,138 80,130 106,118 132,112 158,98 184,90 210,74 236,62 262,46 288,34 312,22 312,150"/>
           <g fill="#93a0ae" font-size="8">
             <text x="6" y="153">0</text><text x="2" y="92">32</text><text x="2" y="26">64</text>
             <text x="30" y="162">R1</text><text x="160" y="162">R11</text><text x="292" y="162">R22</text>
@@ -314,7 +330,7 @@
   <div class="wrap" style="max-width:640px">
     <h2 data-i>kt_titel</h2>
     <p class="sub" data-i>kt_sub</p>
-    <div class="panel kform">
+    <div class="panel kform" style="background:radial-gradient(130% 80% at 50% -10%, rgba(225,6,0,.08), transparent 55%), linear-gradient(180deg,#18202b,#12181f)">
       <input id="kt_name" maxlength="60">
       <input id="kt_mail" maxlength="80">
       <textarea id="kt_text" maxlength="1000"></textarea>
@@ -393,7 +409,7 @@ const T = {
   kt_titel:"Kontakt", kt_sub:"Schreib uns direkt — die Nachricht wird sicher weitergeleitet.",
   kt_knopf:"Nachricht senden", kt_ok:"✅ Nachricht gesendet — danke!", kt_link:"Kontakt",
   kt_ph_name:"Dein Name (optional)", kt_ph_mail:"Deine E-Mail für die Antwort (optional)", kt_ph_text:"Deine Nachricht …",
-  fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
+  fuss:"FanicaFun.de — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
   imp_titel:"Impressum", imp_verantw:"Verantwortlich für diese Seite:",
   imp_kontakt:"Kontakt: fanicafuntipp@gmail.com oder über das Kontaktformular.", imp_hinweis:"FaNiCa Fun ist eine private, inoffizielle Fan-App ohne Verbindung zur Formula One Group."
  },
@@ -434,7 +450,7 @@ const T = {
   kt_titel:"Contact", kt_sub:"Write to us directly — your message is forwarded securely.",
   kt_knopf:"Send message", kt_ok:"✅ Message sent — thank you!", kt_link:"Contact",
   kt_ph_name:"Your name (optional)", kt_ph_mail:"Your e-mail for a reply (optional)", kt_ph_text:"Your message …",
-  fuss:"FaNiCa Fun — private prediction league", ds:"Privacy", imp_link:"Legal notice",
+  fuss:"FanicaFun.de — private prediction league", ds:"Privacy", imp_link:"Legal notice",
   imp_titel:"Legal notice", imp_verantw:"Responsible for this site:",
   imp_kontakt:"Contact: fanicafuntipp@gmail.com or via the contact form.", imp_hinweis:"FaNiCa Fun is a private, unofficial fan app with no affiliation to the Formula One Group."
  }
