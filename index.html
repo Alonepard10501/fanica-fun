@@ -24,11 +24,13 @@
     content:""; position:absolute; inset:-90px -40px 0 -40px; pointer-events:none;
     background:
       repeating-conic-gradient(rgba(255,255,255,.85) 0% 25%, transparent 0% 50%) 0 0/64px 64px;
-    opacity:.045; transform:perspective(600px) rotateX(38deg) scale(1.25);
+    opacity:.10; transform:perspective(600px) rotateX(38deg) scale(1.25);
     -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%);
     mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%);
   }
   .held > * { position:relative; }
+  .heldlogo { width:min(320px,70vw); height:auto; border-radius:14px; margin-bottom:26px;
+    box-shadow:0 0 44px rgba(225,6,0,.35), 0 0 90px rgba(225,6,0,.14), 0 10px 30px rgba(0,0,0,.6); }
   .held h1 { font-size:clamp(28px,5vw,46px); font-weight:800; letter-spacing:-.5px; max-width:840px; margin:0 auto 14px;
              text-shadow:0 2px 26px rgba(13,17,23,.9), 0 0 40px rgba(34,211,238,.08); }
   .held p.unter { color:var(--dim); font-size:17px; max-width:620px; margin:0 auto 30px; }
@@ -115,7 +117,7 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="marke"><span class="r">FaNiCa</span> <span class="w">Fun</span></div>
+    <div class="marke"><img src="logo.png" alt="" style="height:26px;vertical-align:middle;border-radius:4px;margin-right:9px">​<span class="r">FaNiCa</span> <span class="w">Fun</span></div>
     <div class="sprachen">
       <button id="bde" class="an" onclick="sprache('de')">DE</button>
       <button id="ben" onclick="sprache('en')">EN</button>
@@ -123,6 +125,7 @@
   </header>
 
   <div class="held">
+    <img src="logo.png" alt="FaNiCa Fun" class="heldlogo">
     <h1 data-i>held_titel</h1>
     <p class="unter" data-i>held_unter</p>
     <div class="knoepfe">
