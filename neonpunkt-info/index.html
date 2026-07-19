@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeonPunkt — 48 Stunden. Ein Punkt.</title>
+<meta name="description" content="Das vielleicht minimalistischste Spiel der Welt: Ein Neon-Punkt wächst 48 Stunden lang unaufhaltsam. Aufhalten kannst du ihn nie — nur hinauszögern.">
+<meta property="og:title" content="NeonPunkt — 48 Stunden. Ein Punkt.">
+<meta property="og:description" content="Ein leuchtender Punkt wächst 48 Stunden, bis er alles ausfüllt. Tipp ihn an — er beginnt klein von vorn, in der nächsten Neonfarbe. Keine Werbung, keine Daten.">
+<meta property="og:image" content="bilder/symbol.png">
+<link rel="icon" type="image/png" href="bilder/symbol.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #000; color: #eee; font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+         -webkit-tap-highlight-color: transparent; }
+  /* Dezente Neon-Punkte im schwarzen Hintergrund (fein verteilt, leises Glimmen) */
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(circle at 7% 12%,  rgba(57,255,20,0.55) 0, transparent 2px),
+      radial-gradient(circle at 83% 8%,  rgba(255,16,240,0.45) 0, transparent 2px),
+      radial-gradient(circle at 21% 34%, rgba(0,255,255,0.40) 0, transparent 2px),
+      radial-gradient(circle at 68% 27%, rgba(255,211,0,0.40) 0, transparent 2px),
+      radial-gradient(circle at 91% 46%, rgba(57,255,20,0.40) 0, transparent 2px),
+      radial-gradient(circle at 12% 58%, rgba(255,16,240,0.35) 0, transparent 2px),
+      radial-gradient(circle at 45% 71%, rgba(0,191,255,0.40) 0, transparent 2px),
+      radial-gradient(circle at 78% 66%, rgba(173,255,47,0.35) 0, transparent 2px),
+      radial-gradient(circle at 30% 88%, rgba(0,255,255,0.40) 0, transparent 2px),
+      radial-gradient(circle at 63% 93%, rgba(255,159,0,0.35) 0, transparent 2px),
+      radial-gradient(circle at 94% 82%, rgba(188,19,254,0.40) 0, transparent 2px),
+      radial-gradient(circle at 51% 18%, rgba(255,255,255,0.22) 0, transparent 1px);
+    animation: glimmen 7s ease-in-out infinite alternate; }
+  @keyframes glimmen { from { opacity: 0.55; } to { opacity: 1; } }
+  a { color: #39FF14; }
+  section { max-width: 1000px; margin: 0 auto; padding: 56px 20px; }
+  h2 { color: #39FF14; font-size: 1.7em; margin-bottom: 26px; text-align: center;
+       text-shadow: 0 0 18px rgba(57,255,20,0.45); }
+
+  /* ---------- Hero ---------- */
+  #hero { position: relative; min-height: 92vh; display: flex; flex-direction: column;
+          align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  #punkt { position: absolute; border-radius: 50%; left: 50%; top: 50%;
+           transform: translate(-50%, -50%); cursor: pointer; z-index: 1; }
+  #heroText { position: relative; z-index: 2; pointer-events: none; width: 100%; padding: 0 16px; }
+  #heroText .knoepfe { pointer-events: auto; }
+  #hero h1 { font-size: clamp(2.2em, 7vw, 3.6em); letter-spacing: 2px;
+             text-shadow: 0 0 24px rgba(57,255,20,0.6); }
+  #hero h1 span { color: #39FF14; }
+  #hero p.claim { font-size: clamp(1.05em, 3.5vw, 1.4em); color: #ccc; margin: 14px 0 34px; }
+  .knoepfe { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .knopf { display: inline-block; padding: 15px 30px; border-radius: 32px; font-size: 1.05em;
+           font-weight: 600; text-decoration: none; }
+  .knopf.gruen { background: #39FF14; color: #000; box-shadow: 0 0 26px rgba(57,255,20,0.55); }
+  .knopf.rand { border: 2px solid #39FF14; color: #39FF14; }
+  #tippHinweis { margin-top: 26px; color: rgba(255,255,255,0.45); font-size: 0.85em; }
+
+  /* ---------- Geschenk-Banner ---------- */
+  #geschenk { background: linear-gradient(90deg, rgba(57,255,20,0.14), rgba(0,255,255,0.14));
+              border-top: 1px solid rgba(57,255,20,0.5); border-bottom: 1px solid rgba(57,255,20,0.5);
+              text-align: center; padding: 26px 20px; }
+  #geschenk strong { color: #39FF14; }
+  #geschenk .gross { font-size: 1.25em; display: block; margin-bottom: 8px; }
+
+  /* ---------- Schritte ---------- */
+  .schritte { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .schritt { background: #0b0b0b; border: 1px solid #1c1c1c; border-radius: 18px; padding: 26px;
+             text-align: center; }
+  .schritt .nr { display: inline-block; width: 44px; height: 44px; line-height: 44px; margin-bottom: 14px;
+                 border-radius: 50%; background: #39FF14; color: #000; font-weight: 700; font-size: 1.2em; }
+  .schritt h3 { margin-bottom: 10px; font-size: 1.05em; }
+  .schritt p { color: #aaa; font-size: 0.95em; line-height: 1.5; }
+
+  /* ---------- Features ---------- */
+  .kacheln { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .kachel { background: #0b0b0b; border: 1px solid #1c1c1c; border-radius: 18px; padding: 22px; }
+  .kachel h3 { font-size: 1em; margin-bottom: 8px; }
+  .kachel p { color: #aaa; font-size: 0.92em; line-height: 1.5; }
+  .kachel:nth-child(1) h3 { color: #39FF14; } .kachel:nth-child(2) h3 { color: #FF10F0; }
+  .kachel:nth-child(3) h3 { color: #00FFFF; } .kachel:nth-child(4) h3 { color: #FFFF00; }
+  .kachel:nth-child(5) h3 { color: #FF9F00; } .kachel:nth-child(6) h3 { color: #BC13FE; }
+
+  /* ---------- Screenshots ---------- */
+  .schirme { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+  .schirme img { width: min(240px, 70vw); border-radius: 22px; border: 3px solid #1e1e1e;
+                 box-shadow: 0 0 30px rgba(57,255,20,0.18); }
+
+  /* ---------- Zahlen ---------- */
+  .zahlen { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; text-align: center; }
+  .zahl b { display: block; font-size: 2.6em; color: #39FF14; text-shadow: 0 0 16px rgba(57,255,20,0.5); }
+  .zahl span { color: #999; font-size: 0.95em; }
+
+  /* ---------- FAQ ---------- */
+  details { background: #0b0b0b; border: 1px solid #1c1c1c; border-radius: 14px;
+            margin-bottom: 10px; padding: 16px 20px; }
+  summary { cursor: pointer; font-weight: 600; color: #eee; }
+  details p { margin-top: 12px; color: #aaa; line-height: 1.55; }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid #161616; text-align: center; padding: 34px 20px 44px;
+           color: #777; font-size: 0.9em; line-height: 1.8; }
+  footer img { height: 40px; opacity: 0.5; display: block; margin: 14px auto 0; }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO: der wachsende Punkt zum Anfassen ============ -->
+<div id="hero">
+  <div id="punkt" title="Tipp mich an!"></div>
+  <div id="heroText">
+    <h1>Neon<span>Punkt</span></h1>
+    <p class="claim">48 Stunden. Ein Punkt.<br>Aufhalten kannst du ihn nie.</p>
+    <div class="knoepfe">
+      <a class="knopf gruen" href="https://play.google.com/store/apps/details?id=de.fanica.neonpunkt">Bei Google Play laden</a>
+      <a class="knopf rand" href="../neonpunkt/">Im Browser spielen</a>
+    </div>
+    <p id="tippHinweis">Der Punkt hier wächst wirklich — tipp ihn an.</p>
+  </div>
+</div>
+
+<!-- ============ Geschenk-Banner ============ -->
+<div id="geschenk">
+  <span class="gross">🎁 <strong>Bis zum 1. Oktober 2026: Premium GRATIS</strong></span>
+  Für alle, die die App bis dahin holen oder schon spielen — und zwar <strong>für immer</strong>.<br>
+  Danach gelten für neue Spieler die normalen Premium-Bedingungen: 1,99&nbsp;€ einmalig, kein Abo.
+</div>
+
+<!-- ============ So funktioniert's ============ -->
+<section>
+  <h2>So funktioniert's</h2>
+  <div class="schritte">
+    <div class="schritt"><span class="nr">1</span>
+      <h3>Start drücken</h3>
+      <p>Ein kleiner Neon-Punkt erscheint irgendwo auf deinem schwarzen Bildschirm. Ab jetzt wächst er. Immer.</p>
+    </div>
+    <div class="schritt"><span class="nr">2</span>
+      <h3>Punkt antippen</h3>
+      <p>Er beginnt klein von vorn — in der nächsten von 16 Neonfarben, an neuer Stelle. Deine Klicks und deine Zeit zählen oben mit.</p>
+    </div>
+    <div class="schritt"><span class="nr">3</span>
+      <h3>48 Stunden durchhalten?</h3>
+      <p>Lässt du ihn 48 Stunden in Ruhe, füllt er den ganzen Bildschirm. Ein letzter Tipp — und alles beginnt von vorn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Zahlen ============ -->
+<section>
+  <div class="zahlen">
+    <div class="zahl"><b>48&nbsp;h</b><span>bis der Punkt alles füllt</span></div>
+    <div class="zahl"><b>16</b><span>Neonfarben</span></div>
+    <div class="zahl"><b>1</b><span>Punkt. Mehr nicht.</span></div>
+    <div class="zahl"><b>0</b><span>Werbung &amp; Datenerhebung</span></div>
+  </div>
+</section>
+
+<!-- ============ Features ============ -->
+<section>
+  <h2>Was drinsteckt</h2>
+  <div class="kacheln">
+    <div class="kachel"><h3>16 Neonfarben</h3>
+      <p>Grün, Pink, Cyan, Gelb, Orange, Lila, Rot, Blau … jeder Tipp wechselt zur nächsten Farbe.</p></div>
+    <div class="kachel"><h3>Bestenliste &amp; Schnellste Sitzungen</h3>
+      <p>Tipp auf „Klicks": Top 5 Spiele nach Klicks, Top 5 schnellste Sitzungen (Klicks pro Zeit) und dein Klick-Durchschnitt. Alles bleibt nur auf deinem Gerät.</p></div>
+    <div class="kachel"><h3>Homescreen-Widget</h3>
+      <p>Der Punkt wächst direkt auf deinem Startbildschirm weiter — und bleibt dort antippbar.</p></div>
+    <div class="kachel"><h3>Läuft immer weiter</h3>
+      <p>App zu? Handy aus? Egal. Der Punkt wächst nach der Uhr — beim nächsten Öffnen ist er exakt so groß, wie er sein muss.</p></div>
+    <div class="kachel"><h3>Nichts nervt</h3>
+      <p>Keine Werbung, keine Berechtigungen, kein Internet, kein Konto, keine Datenerhebung. Die App kann fast nichts — genau das ist der Punkt.</p></div>
+    <div class="kachel"><h3>Premium ohne Abo</h3>
+      <p>Einmal zahlen, für immer spielen. Und bis zum 1.10.2026 gibt's Premium sogar geschenkt.</p></div>
+  </div>
+</section>
+
+<!-- ============ Screenshots ============ -->
+<section>
+  <h2>So sieht's aus</h2>
+  <div class="schirme">
+    <img src="bilder/screen1.png" alt="Startbildschirm mit Start-Knopf">
+    <img src="bilder/screen2.png" alt="Wachsender pinker Neon-Punkt mit Klickzähler">
+    <img src="bilder/screen3.png" alt="Bildschirmfüllender gelber Punkt nach 48 Stunden">
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Fragen &amp; Antworten</h2>
+  <details><summary>Was passiert nach 48 Stunden?</summary>
+    <p>Der Punkt füllt den kompletten Bildschirm und berührt alle Ränder. Ein letzter Tipp beendet das Spiel, das Ergebnis wandert in deine Bestenliste — und es geht von vorn los.</p></details>
+  <details><summary>Sieht jemand meine Bestenliste?</summary>
+    <p>Nein. Alles bleibt ausschließlich auf deinem Gerät. Es gibt keinen Server, kein Konto und keine Datenübertragung — jeder Spieler hat nur seine eigene Liste.</p></details>
+  <details><summary>Wächst der Punkt auch, wenn das Handy aus ist?</summary>
+    <p>Ja. Die Größe wird aus der echten Uhrzeit berechnet. Ob die App offen ist oder nicht, spielt keine Rolle — die 48 Stunden laufen immer.</p></details>
+  <details><summary>Was kostet Premium?</summary>
+    <p>Bis zum 1. Oktober 2026: nichts — wer bis dahin dabei ist, bekommt Premium für immer geschenkt. Danach kostet die Vollversion für neue Spieler einmalig 1,99&nbsp;€. Kein Abo.</p></details>
+  <details><summary>Gibt es die App auch ohne Android?</summary>
+    <p>Ja — <a href="../neonpunkt/">NeonPunkt läuft direkt im Browser</a>, auf jedem Gerät. Gleiche Regeln, gleicher Punkt.</p></details>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <a class="knopf gruen" href="https://play.google.com/store/apps/details?id=de.fanica.neonpunkt">NeonPunkt bei Google Play</a><br><br>
+  <a href="../neonpunkt-datenschutz.html">Datenschutzerklärung</a><br>
+  Impressum: FaNiCa Fun · Falk Carstensen · 25813 Husum ·
+  <a href="mailto:falkcarstensen@web.de">falkcarstensen@web.de</a><br>
+  © 2026 FaNiCa Fun
+  <img src="bilder/fanica.png" alt="FaNiCa Fun Logo">
+</footer>
+
+<script>
+// Der Hero-Punkt: waechst wie im Spiel (Zeitraffer, ~2 Minuten bis voll),
+// Tipp = naechste Neonfarbe + wieder klein. Nur Show — gespeichert wird nichts.
+var FARBEN = ["#39FF14","#FF10F0","#00FFFF","#FFFF00","#FF9F00","#BC13FE","#FF3131","#1F51FF",
+              "#ADFF2F","#00FF7F","#7DF9FF","#FF6EC7","#FFD300","#00BFFF","#6F00FF","#FF4D6D"];
+var punkt = document.getElementById("punkt");
+var farbe = 0, start = Date.now(), DEMO_S = 120;
+function malen() {
+  var f = Math.min((Date.now() - start) / 1000 / DEMO_S, 1);
+  var maxD = Math.min(innerWidth, innerHeight) * 0.85;
+  var d = 24 + (maxD - 24) * f;
+  var c = FARBEN[farbe];
+  punkt.style.width = d + "px";
+  punkt.style.height = d + "px";
+  punkt.style.background = c;
+  punkt.style.boxShadow = "0 0 " + (d * 0.5 + 20) + "px " + c;
+  requestAnimationFrame(malen);
+}
+punkt.addEventListener("click", function () {
+  farbe = (farbe + 1) % FARBEN.length;
+  start = Date.now();
+});
+malen();
+</script>
+</body>
+</html>
