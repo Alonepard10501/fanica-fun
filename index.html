@@ -72,7 +72,8 @@
   .wtab { width:100%; border-collapse:collapse; font-size:14px; margin-top:6px; }
   .wtab td { padding:8px 6px; border-bottom:1px solid var(--line); }
   .wtab .rg { color:var(--dim); font-weight:800; width:26px; }
-  .wtab .fp { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:8px; vertical-align:middle; }
+  .av { width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+        font-weight:800; font-size:13px; color:#0d1117; margin-right:9px; vertical-align:middle; }
   .wtab .tro { color:var(--gold); font-size:12px; }
   .wtab .pt { text-align:right; font-weight:800; }
   .wtab tr.mark td { background:rgba(34,211,238,.07); }
@@ -136,11 +137,11 @@
       </div>
       <div class="panel">
         <h3 data-i>m_sonntag</h3>
-        <div class="zeile"><span>1 · Marco</span><span class="pt">64</span></div>
-        <div class="zeile hoch"><span>2 · Lena <span class="tag">👑 <span data-i>m_tagessieg</span> +8</span></span><span><span class="auf">▲2</span> <span class="pt">61</span></span></div>
-        <div class="zeile"><span>3 · Svea</span><span><span class="ab">▼1</span> <span class="pt">60</span></span></div>
-        <div class="zeile"><span>4 · Jonas</span><span><span class="ab">▼1</span> <span class="pt">58</span></span></div>
-        <div class="zeile"><span>5 · Henrik</span><span class="pt">54</span></div>
+        <div class="zeile"><span><span class="av" style="background:#22d3ee">M</span>Marco</span><span class="pt">64</span></div>
+        <div class="zeile hoch"><span><span class="av" style="background:#f5c542">L</span>Lena <span class="tag">👑 <span data-i>m_tagessieg</span> +8</span></span><span><span class="auf">▲2</span> <span class="pt">61</span></span></div>
+        <div class="zeile"><span><span class="av" style="background:#7dd3fc">S</span>Svea</span><span><span class="ab">▼1</span> <span class="pt">60</span></span></div>
+        <div class="zeile"><span><span class="av" style="background:#fca5a5">J</span>Jonas</span><span><span class="ab">▼1</span> <span class="pt">58</span></span></div>
+        <div class="zeile"><span><span class="av" style="background:#86efac">H</span>Henrik</span><span class="pt">54</span></div>
         <div class="cdl" style="margin-top:12px" data-i>m_auto</div>
       </div>
     </div>
@@ -167,12 +168,12 @@
       <div class="panel">
         <h3 data-i>sh_wertung</h3>
         <table class="wtab">
-          <tr><td class="rg">1</td><td><span class="fp" style="background:#22d3ee"></span>Marco <span class="tro">👑4 💎1</span></td><td class="pt">64</td><td></td></tr>
-          <tr class="mark"><td class="rg">2</td><td><span class="fp" style="background:#f5c542"></span>Lena <span class="tro">👑3 ★6</span></td><td class="pt">61</td><td><span class="auf">▲2</span></td></tr>
-          <tr class="mark"><td class="rg">2</td><td><span class="fp" style="background:#7dd3fc"></span>Svea <span class="tro">👑2 💎1</span></td><td class="pt">61</td><td><span class="ab">▼1</span></td></tr>
-          <tr><td class="rg">4</td><td><span class="fp" style="background:#fca5a5"></span>Jonas <span class="tro">👑2</span></td><td class="pt">58</td><td><span class="ab">▼1</span></td></tr>
-          <tr><td class="rg">5</td><td><span class="fp" style="background:#86efac"></span>Henrik <span class="tro">★4</span></td><td class="pt">54</td><td></td></tr>
-          <tr><td class="rg">6</td><td><span class="fp" style="background:#c4b5fd"></span>Paula <span class="tro">👑1</span></td><td class="pt">49</td><td></td></tr>
+          <tr><td class="rg">1</td><td><span class="av" style="background:#22d3ee">M</span>Marco <span class="tro">👑4 💎1</span></td><td class="pt">64</td><td></td></tr>
+          <tr class="mark"><td class="rg">2</td><td><span class="av" style="background:#f5c542">L</span>Lena <span class="tro">👑3 ★6</span></td><td class="pt">61</td><td><span class="auf">▲2</span></td></tr>
+          <tr class="mark"><td class="rg">2</td><td><span class="av" style="background:#7dd3fc">S</span>Svea <span class="tro">👑2 💎1</span></td><td class="pt">61</td><td><span class="ab">▼1</span></td></tr>
+          <tr><td class="rg">4</td><td><span class="av" style="background:#fca5a5">J</span>Jonas <span class="tro">👑2</span></td><td class="pt">58</td><td><span class="ab">▼1</span></td></tr>
+          <tr><td class="rg">5</td><td><span class="av" style="background:#86efac">H</span>Henrik <span class="tro">★4</span></td><td class="pt">54</td><td></td></tr>
+          <tr><td class="rg">6</td><td><span class="av" style="background:#c4b5fd">P</span>Paula <span class="tro">👑1</span></td><td class="pt">49</td><td></td></tr>
         </table>
         <div class="cdl" style="margin-top:10px" data-i>sh_wert_u</div>
       </div>
@@ -256,14 +257,37 @@
   </div>
 </section>
 
+<section id="impressum">
+  <div class="wrap">
+    <div class="fair">
+      <b data-i>imp_titel</b><br><br>
+      <span data-i>imp_verantw</span><br>
+      <span id="imp_name"></span><br>
+      <span id="imp_strasse"></span><br>
+      <span id="imp_ort"></span><br>
+      <span data-i>imp_kontakt</span><br><br>
+      <span data-i>imp_hinweis</span>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <span data-i>fuss</span> · <a href="mailto:falkcarstensen@web.de">falkcarstensen@web.de</a> ·
-    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a>
+    <span data-i>fuss</span> ·
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#impressum" data-i>imp_link</a>
   </div>
 </footer>
 
 <script>
+// ============================================================
+//  IMPRESSUM — HIER ÄNDERN (Falk): einfach die Texte zwischen
+//  den Anführungszeichen anpassen, speichern, veröffentlichen.
+// ============================================================
+const IMPRESSUM = {
+  name:    "Falk Carstensen",
+  strasse: "Straße Hausnummer",        // <- eintragen
+  ort:     "PLZ Ort"                   // <- eintragen
+};
 const T = {
  de: {
   held_titel:"Eure private Tipprunde. Eine ganze Saison. Jede Statistik.",
@@ -299,7 +323,9 @@ const T = {
   s2:"Gruppe eröffnen oder per Einladungs-Code der Freunde beitreten.",
   s3:"Tippen, vergleichen, feiern — die Saison läuft, die App rechnet alles automatisch.",
   fair:"<b>Fair Play.</b> FaNiCa Fun ist ein privates Spiel unter Freunden: Zugang nur per Code, kein Geldeinsatz, keine Gewinne — nur Punkte, Pokale und Ehre. Ab 18 Jahren. Auch ohne Geldeinsatz gilt: Glücksspiel kann süchtig machen — Hilfe unter www.check-dein-spiel.de. <b>Inoffizielle Fan-App</b> — keine Verbindung zur Formula One Group; Ergebnisse stammen aus öffentlichen Datenquellen.",
-  fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz"
+  fuss:"FaNiCa Fun — private Tipprunde", ds:"Datenschutz", imp_link:"Impressum",
+  imp_titel:"Impressum", imp_verantw:"Verantwortlich für diese Seite:",
+  imp_kontakt:"Kontakt: über die Feedback-Funktion in der App.", imp_hinweis:"FaNiCa Fun ist eine private, inoffizielle Fan-App ohne Verbindung zur Formula One Group."
  },
  en: {
   held_titel:"Your private prediction league. A full season. Every stat.",
@@ -335,7 +361,9 @@ const T = {
   s2:"Open a group or join your friends with an invitation code.",
   s3:"Predict, compare, celebrate — the season runs, the app scores everything automatically.",
   fair:"<b>Fair play.</b> FaNiCa Fun is a private game among friends: access by code only, no money, no prizes — just points, trophies and glory. Ages 18+. Even without money: gambling can be addictive — please play responsibly. <b>Unofficial fan app</b> — not associated with the Formula One Group; results come from public data sources.",
-  fuss:"FaNiCa Fun — private prediction league", ds:"Privacy"
+  fuss:"FaNiCa Fun — private prediction league", ds:"Privacy", imp_link:"Legal notice",
+  imp_titel:"Legal notice", imp_verantw:"Responsible for this site:",
+  imp_kontakt:"Contact: via the feedback feature inside the app.", imp_hinweis:"FaNiCa Fun is a private, unofficial fan app with no affiliation to the Formula One Group."
  }
 };
 // data-i-Schluessel einmalig aus dem Textinhalt uebernehmen (Attribut ist im HTML leer)
@@ -352,6 +380,10 @@ function sprache(s) {
   });
 }
 sprache(spr);
+document.getElementById("imp_name").textContent = IMPRESSUM.name;
+document.getElementById("imp_strasse").textContent = IMPRESSUM.strasse;
+document.getElementById("imp_ort").textContent = IMPRESSUM.ort;
+
 // Countdown lebendig
 let cds = 2*3600 + 41*60 + 37;
 setInterval(() => { cds = Math.max(0, cds - 1);
