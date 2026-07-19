@@ -62,6 +62,34 @@
     text-align:center; border-radius:50%; background:var(--rot); color:#fff; font-weight:800; margin-bottom:12px; }
   .fair { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px; color:var(--dim); font-size:14px; }
   .fair b { color:var(--txt); }
+  /* Show-Sektion: Treppchen, Wertung, Chart, Trophaeen */
+  .podium { display:flex; align-items:flex-end; justify-content:center; gap:14px; margin-top:10px; }
+  .pod { flex:1; max-width:120px; text-align:center; }
+  .pod .med { font-size:36px; line-height:1; margin-bottom:4px; }
+  .pod .nm { font-weight:700; font-size:14px; margin-bottom:6px; }
+  .pod .sockel { border-radius:8px 8px 4px 4px; display:flex; align-items:flex-start; justify-content:center;
+                 padding-top:8px; font-weight:800; color:#fff; font-variant-numeric:tabular-nums; }
+  .wtab { width:100%; border-collapse:collapse; font-size:14px; margin-top:6px; }
+  .wtab td { padding:8px 6px; border-bottom:1px solid var(--line); }
+  .wtab .rg { color:var(--dim); font-weight:800; width:26px; }
+  .wtab .fp { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:8px; vertical-align:middle; }
+  .wtab .tro { color:var(--gold); font-size:12px; }
+  .wtab .pt { text-align:right; font-weight:800; }
+  .wtab tr.mark td { background:rgba(34,211,238,.07); }
+  .chart-svg { width:100%; height:auto; display:block; margin-top:8px; }
+  .chart-svg polyline { fill:none; stroke-width:2.5; stroke-linecap:round;
+    stroke-dasharray:600; stroke-dashoffset:600; }
+  .chart-svg.an polyline { animation:zeichnen 2.2s ease forwards; }
+  .chart-svg polyline:nth-child(3) { animation-delay:.15s } .chart-svg polyline:nth-child(4) { animation-delay:.3s }
+  .chart-svg polyline:nth-child(5) { animation-delay:.45s }
+  @keyframes zeichnen { to { stroke-dashoffset:0; } }
+  .legende { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-size:12.5px; color:var(--dim); margin-top:10px; }
+  .legende b { font-weight:700; }
+  .trogrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+  .tro { background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center; }
+  .tro .ic { font-size:32px; }
+  .tro .zz { font-size:30px; font-weight:800; color:var(--gold); font-variant-numeric:tabular-nums; }
+  .tro .tx { color:var(--dim); font-size:12.5px; margin-top:2px; }
   footer { padding:30px 0 50px; color:var(--dim); font-size:13px; text-align:center; }
 </style>
 </head>
@@ -114,6 +142,69 @@
         <div class="zeile"><span>4 · Jonas</span><span><span class="ab">▼1</span> <span class="pt">58</span></span></div>
         <div class="zeile"><span>5 · Henrik</span><span class="pt">54</span></div>
         <div class="cdl" style="margin-top:12px" data-i>m_auto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-i>sh_titel</h2>
+    <p class="sub" data-i>sh_sub</p>
+    <div class="moment">
+      <div class="panel">
+        <h3 data-i>sh_trepp</h3>
+        <div class="podium">
+          <div class="pod"><div class="med">🥈</div><div class="nm" style="color:#7dd3fc">Svea</div>
+            <div class="sockel" style="height:68px;background:linear-gradient(#155e75,#0b3644)">60&nbsp;<span data-i>sh_pkt</span></div></div>
+          <div class="pod"><div class="med">👑</div><div class="nm" style="color:var(--gold)">Lena</div>
+            <div class="sockel" style="height:96px;background:linear-gradient(#a16207,#5c3a06)">61&nbsp;<span data-i>sh_pkt</span></div></div>
+          <div class="pod"><div class="med">🥉</div><div class="nm" style="color:#fca5a5">Jonas</div>
+            <div class="sockel" style="height:50px;background:linear-gradient(#7f1d1d,#450f0f)">58&nbsp;<span data-i>sh_pkt</span></div></div>
+        </div>
+        <div class="cdl" style="margin-top:12px" data-i>sh_trepp_u</div>
+      </div>
+      <div class="panel">
+        <h3 data-i>sh_wertung</h3>
+        <table class="wtab">
+          <tr><td class="rg">1</td><td><span class="fp" style="background:#22d3ee"></span>Marco <span class="tro">👑4 💎1</span></td><td class="pt">64</td><td></td></tr>
+          <tr class="mark"><td class="rg">2</td><td><span class="fp" style="background:#f5c542"></span>Lena <span class="tro">👑3 ★6</span></td><td class="pt">61</td><td><span class="auf">▲2</span></td></tr>
+          <tr class="mark"><td class="rg">2</td><td><span class="fp" style="background:#7dd3fc"></span>Svea <span class="tro">👑2 💎1</span></td><td class="pt">61</td><td><span class="ab">▼1</span></td></tr>
+          <tr><td class="rg">4</td><td><span class="fp" style="background:#fca5a5"></span>Jonas <span class="tro">👑2</span></td><td class="pt">58</td><td><span class="ab">▼1</span></td></tr>
+          <tr><td class="rg">5</td><td><span class="fp" style="background:#86efac"></span>Henrik <span class="tro">★4</span></td><td class="pt">54</td><td></td></tr>
+          <tr><td class="rg">6</td><td><span class="fp" style="background:#c4b5fd"></span>Paula <span class="tro">👑1</span></td><td class="pt">49</td><td></td></tr>
+        </table>
+        <div class="cdl" style="margin-top:10px" data-i>sh_wert_u</div>
+      </div>
+    </div>
+    <div class="moment" style="margin-top:22px">
+      <div class="panel">
+        <h3 data-i>sh_chart</h3>
+        <svg class="chart-svg" id="chart" viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#232c37" stroke-width="1">
+            <line x1="28" y1="10" x2="28" y2="150"/><line x1="28" y1="150" x2="312" y2="150"/>
+          </g>
+          <g fill="#93a0ae" font-size="8">
+            <text x="6" y="153">0</text><text x="2" y="92">32</text><text x="2" y="26">64</text>
+            <text x="30" y="162">R1</text><text x="160" y="162">R11</text><text x="292" y="162">R22</text>
+          </g>
+          <polyline stroke="#22d3ee" points="28,150 54,138 80,130 106,118 132,112 158,98 184,90 210,74 236,62 262,46 288,34 312,22"/>
+          <polyline stroke="#f5c542" points="28,150 54,142 80,128 106,124 132,108 158,104 184,86 210,80 236,68 262,56 288,38 312,27"/>
+          <polyline stroke="#7dd3fc" points="28,150 54,136 80,132 106,116 132,114 158,100 184,96 210,82 236,74 262,54 288,42 312,27"/>
+          <polyline stroke="#fca5a5" points="28,150 54,144 80,136 106,128 132,118 158,112 184,102 210,92 236,80 262,66 288,50 312,32"/>
+        </svg>
+        <div class="legende"><span><b style="color:#22d3ee">—</b> Marco</span><span><b style="color:#f5c542">—</b> Lena</span><span><b style="color:#7dd3fc">—</b> Svea</span><span><b style="color:#fca5a5">—</b> Jonas</span></div>
+        <div class="cdl" style="margin-top:8px" data-i>sh_chart_u</div>
+      </div>
+      <div class="panel">
+        <h3 data-i>sh_trophy</h3>
+        <div class="trogrid">
+          <div class="tro"><div class="ic">💎</div><div class="zz" data-z="3">0</div><div class="tx" data-i>sh_t1</div></div>
+          <div class="tro"><div class="ic">👑</div><div class="zz" data-z="14">0</div><div class="tx" data-i>sh_t2</div></div>
+          <div class="tro"><div class="ic">🏅</div><div class="zz" data-z="9">0</div><div class="tx" data-i>sh_t3</div></div>
+          <div class="tro"><div class="ic">★</div><div class="zz" data-z="21">0</div><div class="tx" data-i>sh_t4</div></div>
+        </div>
+        <div class="cdl" style="margin-top:12px" data-i>sh_trophy_u</div>
       </div>
     </div>
   </div>
@@ -191,6 +282,17 @@ const T = {
   k5:"Saison & Ewigkeit", k5t:"Saisonverlauf- und Rangverlauf-Diagramme, Strecken-Rekorde, Trefferquoten und die Ewige Bestenliste über alle Jahre.",
   k5b:"Beispiel: Marco führt die Ewige Liste mit 312 Punkten aus 5 Saisons an — Svea hält den Spa-Rekord mit 8 Punkten.",
   k6:"Runde & Chat", k6t:"Privat per Einladungs-Code. Runden-Chat mit Antworten und angepinnten Ansagen — plus Benachrichtigungen für Tippschluss, Punkte und Nachrichten.",
+  sh_titel:"Die Saison im Blick", sh_sub:"Nachgebaute App-Ansichten mit erfundenen Spielern — so sieht FaNiCa Fun wirklich aus.",
+  sh_trepp:"Treppchen — nach jedem Rennen", sh_pkt:"Pkt",
+  sh_trepp_u:"Große Medaillen, Sockel in den Spielerfarben — der Tagessieger trägt die Krone.",
+  sh_wertung:"Gesamtwertung — live gerechnet",
+  sh_wert_u:"Faire Regel: gleiche Punkte = gleicher Platz. Die Trophäen entscheiden nur die Reihenfolge.",
+  sh_chart:"Saisonverlauf — 22 Rennen, jede Aufholjagd sichtbar",
+  sh_chart_u:"Antippen öffnet in der App die Großansicht mit Werte-Tabelle und Rangverlauf.",
+  sh_trophy:"Der Trophäen-Schrank",
+  sh_t1:"Diamanten — das perfekte Wochenende", sh_t2:"Tagessiege — Tagesbester eines Rennens",
+  sh_t3:"Podestplätze am Saisonende", sh_t4:"Gold-Tipps — die Position, die sonst keiner hatte",
+  sh_trophy_u:"Jede Trophäe zählt in der Ewigen Bestenliste über alle Jahre weiter.",
   b1:"Rennen pro Saison", b2:"Freunde pro Gruppe", b3:"Tipps in einer Saison", b4:"Tagessiege", b5:"Diamanten", b6:"Champion",
   s_titel:"In drei Schritten dabei", s_sub:"Android-App und Browser spielen in derselben Runde — live verbunden.",
   s1:"Profil erstellen — einmal registrieren mit E-Mail und Passwort, überall spielen.",
@@ -216,6 +318,17 @@ const T = {
   k5:"Season & eternity", k5t:"Season and rank charts, track records, hit rates and the all-time leaderboard across every year.",
   k5b:"Example: Marco leads the all-time list with 312 points from 5 seasons — Svea holds the Spa record with 8 points.",
   k6:"Group & chat", k6t:"Private via invitation code. Group chat with replies and pinned announcements — plus notifications for deadlines, points and messages.",
+  sh_titel:"The season at a glance", sh_sub:"Recreated app views with fictional players — this is what FaNiCa Fun really looks like.",
+  sh_trepp:"Podium — after every race", sh_pkt:"pts",
+  sh_trepp_u:"Big medals, pedestals in each player's colour — the day's winner wears the crown.",
+  sh_wertung:"Standings — scored live",
+  sh_wert_u:"Fair rule: equal points share the same position. Trophies only decide the order.",
+  sh_chart:"Season chart — 22 races, every comeback visible",
+  sh_chart_u:"Tapping it in the app opens the full view with value table and rank history.",
+  sh_trophy:"The trophy cabinet",
+  sh_t1:"Diamonds — the perfect weekend", sh_t2:"Day wins — best of the day",
+  sh_t3:"Podium finishes at season's end", sh_t4:"Gold picks — the position nobody else had",
+  sh_trophy_u:"Every trophy keeps counting in the all-time leaderboard.",
   b1:"races per season", b2:"friends per group", b3:"picks in one season", b4:"day wins", b5:"diamonds", b6:"champion",
   s_titel:"Three steps to join", s_sub:"Android app and browser play in the same round — connected live.",
   s1:"Create a profile — register once with e-mail and password, play everywhere.",
@@ -255,6 +368,9 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   requestAnimationFrame(tick);
 }), { threshold: .4 });
 document.querySelectorAll("[data-z]").forEach(el => io.observe(el));
+const ioc = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add("an"); }), { threshold:.3 });
+const ch = document.getElementById("chart"); if (ch) ioc.observe(ch);
+setTimeout(() => { if (ch) ch.classList.add("an"); }, 1500);   // Sicherheitsnetz: Linien erscheinen immer
 </script>
 </body>
 </html>
