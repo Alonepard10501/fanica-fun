@@ -48,6 +48,10 @@
   /* ---------- Hero ---------- */
   #hero { position: relative; min-height: 92vh; display: flex; flex-direction: column;
           align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  /* FaNiCa-Fun-Logo ganz oben: verschmilzt mit dem Schwarz (wie in der App,
+     nur deutlich heller). Helligkeit hier ueber opacity einstellen. */
+  #kopfLogo { position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+              width: min(360px, 70vw); opacity: 0.38; pointer-events: none; z-index: 0; }
   #punkt { position: absolute; border-radius: 50%; left: 50%; top: 50%;
            transform: translate(-50%, -50%); cursor: pointer; z-index: 1; }
   #heroText { position: relative; z-index: 2; pointer-events: none; width: 100%; padding: 0 16px; }
@@ -108,12 +112,19 @@
   footer { border-top: 1px solid #161616; text-align: center; padding: 34px 20px 44px;
            color: #777; font-size: 0.9em; line-height: 1.8; }
   footer img { height: 40px; opacity: 0.5; display: block; margin: 14px auto 0; }
+  /* Impressum erst nach Klick sichtbar */
+  #impressum { display: inline-block; background: none; border: none; padding: 0; margin: 0; }
+  #impressum summary { color: #39FF14; text-decoration: underline; font-weight: normal;
+                       list-style: none; cursor: pointer; }
+  #impressum summary::-webkit-details-marker { display: none; }
+  #impressum p { color: #777; margin-top: 6px; }
 </style>
 </head>
 <body>
 
 <!-- ============ HERO: der wachsende Punkt zum Anfassen ============ -->
 <div id="hero">
+  <img id="kopfLogo" src="bilder/fanica.png" alt="">
   <div id="punkt" title="Tipp mich an!"></div>
   <div id="heroText">
     <h1>Neon<span>Punkt</span></h1>
@@ -208,10 +219,13 @@
 
 <!-- ============ Footer ============ -->
 <footer>
-  <a class="knopf gruen" href="https://play.google.com/store/apps/details?id=de.fanica.neonpunkt">NeonPunkt bei Google Play</a><br><br>
-  <a href="../neonpunkt-datenschutz.html">Datenschutzerklärung</a><br>
-  <!-- IMPRESSUM: Anschrift hier in dieser Zeile aendern, danach Website-Online.cmd doppelklicken -->
-  Impressum: FaNiCa Fun · Falk Carstensen · 25813 Husum<br>
+  <a class="knopf gruen" href="https://play.google.com/store/apps/details?id=de.fanica.neonpunkt">NeonPunkt bei Google Play</a>
+  <a class="knopf rand" id="kontaktKnopf" href="#">✉ Kontakt</a><br><br>
+  <a href="../neonpunkt-datenschutz.html">Datenschutzerklärung</a> ·
+  <details id="impressum"><summary>Impressum</summary>
+    <!-- IMPRESSUM: Anschrift hier aendern, danach Website-Online.cmd doppelklicken -->
+    <p>FaNiCa Fun · Falk Carstensen · 25813 Husum</p>
+  </details><br>
   © 2026 FaNiCa Fun
   <img src="bilder/fanica.png" alt="FaNiCa Fun Logo">
 </footer>
@@ -239,6 +253,17 @@ punkt.addEventListener("click", function () {
   start = Date.now();
 });
 malen();
+
+// KONTAKT-Knopf: oeffnet das Mailprogramm des Besuchers — die Adresse wird
+// NIRGENDS angezeigt und erst beim Klick zusammengesetzt.
+// HIER die Ziel-Adresse aendern (Teil 1 = vor dem @, Teil 2 = danach),
+// z. B. auf die Google-Konto-Mail: MAIL_TEIL1 = "meinname", MAIL_TEIL2 = "gmail.com"
+var MAIL_TEIL1 = "falkcarstensen";
+var MAIL_TEIL2 = "web.de";
+document.getElementById("kontaktKnopf").addEventListener("click", function (e) {
+  e.preventDefault();
+  location.href = "mailto:" + MAIL_TEIL1 + "@" + MAIL_TEIL2 + "?subject=NeonPunkt%20Kontakt";
+});
 </script>
 </body>
 </html>
