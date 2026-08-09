@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FaNiCa Fun — Einladung zur F1-Tipprunde</title>
+  <meta name="robots" content="noindex">
+  <!-- =================================================================
+       ✉ EINLADUNGS-SEITE (Punkt 4 vom 05.08.2026, gebaut 09.08.2026)
+       Ziel der E-Mail-/WhatsApp-Einladungslinks aus der App:
+         einladung.html?code=JOIN-…&org=organisator@mail
+       · „In der App öffnen" ruft fanicafun://einladung?code=…&org=…
+         (Custom-Scheme; öffnet die App, wenn sie installiert ist).
+       · Ohne App: Code zum Abtippen + Store-Hinweise.
+       🔴 Diese Datei gehört ins GitHub-Pages-Repo der Entwickler-Website
+       (alonepard10501.github.io/fanica-fun) — Falk lädt sie selbst hoch.
+       ================================================================= -->
+  <style>
+    :root {
+      --bg: #0a0101; --panel: rgba(0,0,0,.72); --kante: #9e5158;
+      --txt: #e8f0ff; --dim: #9fb0c8; --cyan: #22d3ee; --magenta: #a855f7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg); color: var(--txt);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; padding: 20px;
+    }
+    .karte {
+      background: var(--panel); border: 1px solid var(--kante);
+      border-radius: 14px; padding: 28px 22px; max-width: 420px;
+      width: 100%; text-align: center;
+    }
+    h1 { font-size: 20px; color: var(--cyan); margin-bottom: 6px; }
+    p { font-size: 14px; color: var(--dim); line-height: 1.5; margin: 10px 0; }
+    .code {
+      font-family: ui-monospace, Consolas, monospace; font-size: 18px;
+      color: var(--magenta); background: rgba(168,85,247,.12);
+      border: 1px dashed var(--magenta); border-radius: 10px;
+      padding: 10px 14px; margin: 14px 0; letter-spacing: 1px;
+      word-break: break-all; user-select: all;
+    }
+    .knopf {
+      display: block; background: var(--cyan); color: #04121f;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      border-radius: 10px; padding: 13px 16px; margin: 16px 0 8px;
+    }
+    .neben { font-size: 12px; }
+    .neben a { color: var(--cyan); }
+    .stores { margin-top: 14px; font-size: 12px; color: var(--dim); }
+    .stores a { color: var(--cyan); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="karte">
+    <h1>🏁 FaNiCa Fun</h1>
+    <p id="anrede">Du bist zu einer F1-Tipprunde eingeladen!</p>
+
+    <div class="code" id="code">Kein Code im Link</div>
+
+    <a class="knopf" id="oeffnen" href="#">📱 In der App öffnen</a>
+    <p class="neben">Der Knopf verbindet dich direkt mit der Gruppe —
+      App öffnen, fertig. Nichts passiert? Dann ist die App noch nicht
+      installiert.</p>
+
+    <div class="stores">
+      Noch keine App? FaNiCa Fun gibt es bei
+      <a href="https://play.google.com/store/apps/details?id=com.fanica.fun">Google Play</a>
+      und im
+      <a href="https://apps.apple.com/app/id6795424070">App&nbsp;Store</a>.<br>
+      Danach in der App ein Profil anlegen und unter
+      „Profil&nbsp;→&nbsp;Meine Gruppen&nbsp;→&nbsp;Einer Gruppe beitreten"
+      den Code eingeben.
+    </div>
+  </div>
+
+  <script>
+    // Code + Organisator aus dem Link lesen und in den App-Link stecken.
+    var p = new URLSearchParams(location.search);
+    var code = (p.get('code') || '').toUpperCase();
+    var org = (p.get('org') || '').toLowerCase();
+    if (code) {
+      document.getElementById('code').textContent = code;
+      document.getElementById('oeffnen').href =
+        'fanicafun://einladung?code=' + encodeURIComponent(code) +
+        '&org=' + encodeURIComponent(org);
+    } else {
+      document.getElementById('oeffnen').style.display = 'none';
+    }
+    if (org) {
+      document.getElementById('anrede').textContent =
+        'Du bist zur F1-Tipprunde von ' + org + ' eingeladen!';
+    }
+  </script>
+</body>
+</html>
