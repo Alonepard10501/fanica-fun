@@ -193,9 +193,12 @@
     <h1 data-i>held_titel</h1>
     <p class="unter" data-i>held_unter</p>
     <div class="knoepfe">
-      <a class="kn voll" href="https://play.google.com/apps/testing/com.fanica.fun" data-i>kn_android</a>
+      <!-- Beide Store-Seiten am 12.08.2026 per Abruf geprüft: erreichbar. -->
+      <a class="kn voll" href="https://play.google.com/store/apps/details?id=com.fanica.fun" data-i>kn_android</a>
+      <a class="kn voll" href="https://apps.apple.com/de/app/fanica-fun/id6795424070" data-i>kn_apple</a>
       <a class="kn rand" href="https://alonepard10501.github.io/fanica-fun/spiel/" data-i>kn_browser</a>
     </div>
+    <p class="unter" style="font-size:.85em;margin-top:14px" data-i>preis_zeile</p>
   </div>
 </div>
 <div class="flagge"></div>
@@ -389,7 +392,7 @@
 <footer>
   <div class="wrap">
     <span data-i>fuss</span> ·
-    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" onclick="ktToggle(event)" data-i>kt_link</a> · <a href="#impressum" onclick="impToggle(event)" data-i>imp_link</a> · <a href="https://alonepard10501.github.io/fanica/" rel="noopener" data-i>studio_link</a>
+    <a href="https://alonepard10501.github.io/fanica-fun/datenschutz.html" data-i>ds</a> · <a href="#kontakt" onclick="ktToggle(event)" data-i>kt_link</a> · <a href="#impressum" onclick="impToggle(event)" data-i>imp_link</a> · <a href="https://alonepard10501.github.io/fanica/" rel="noopener" data-i>studio_link</a> · <a href="https://alonepard10501.github.io/fanica-fun/neonpunkt-info/" rel="noopener">NeonPunkt ↗</a> · <a href="https://alonepard10501.github.io/instinct-scoring-web/" rel="noopener">Instinct Scoring ↗</a>
   </div>
 </footer>
 
@@ -405,8 +408,9 @@ const IMPRESSUM = {
 const T = {
  de: {
   held_titel:"Eure private Tipprunde. Eine ganze Saison. Jede Statistik.",
-  held_unter:"FaNiCa Fun ist die Tipprunden-App für Freundesgruppen: Top-5 tippen, live vergleichen, Trophäen sammeln — privat, ohne Geldeinsatz, auf Android und im Browser.",
-  kn_android:"Kostenlos testen (Android)", kn_browser:"Im Browser spielen",
+  held_unter:"FaNiCa Fun ist die Tipprunden-App für Freundesgruppen: Top-5 tippen, live vergleichen, Trophäen sammeln — privat, ohne Geldeinsatz, auf Android, iPhone und im Browser.",
+  kn_android:"Bei Google Play laden", kn_apple:"Im App Store laden", kn_browser:"Im Browser spielen",
+  preis_zeile:"Tippen ist dauerhaft kostenlos. Premium öffnet die ganze Saison, alle früheren Jahre und die Karriere-Statistik: 0,99 € je 4 Wochen oder 9,99 € im Jahr bei Google Play, 1,99 € bzw. 14,99 € im App Store — die ersten 7 Tage kostenlos.",
   m_titel:"Ein Rennwochenende mit FaNiCa Fun", m_sub:"Nervenkitzel - so fühlt es sich an.",
   m_samstag:"Samstag — Tippschluss läuft", m_cdl:"Tippschluss in",
   m_quali:"Qualifying", m_grid:"Offizielle Startaufstellung", m_strafe:"(+5s Strafe)",
@@ -447,8 +451,9 @@ const T = {
  },
  en: {
   held_titel:"Your private prediction league. A full season. Every stat.",
-  held_unter:"FaNiCa Fun is the prediction-game app for groups of friends: pick the top 5, compare live, collect trophies — private, no money involved, on Android and in the browser.",
-  kn_android:"Try it free (Android)", kn_browser:"Play in the browser",
+  held_unter:"FaNiCa Fun is the prediction-game app for groups of friends: pick the top 5, compare live, collect trophies — private, no money involved, on Android, iPhone and in the browser.",
+  kn_android:"Get it on Google Play", kn_apple:"Download on the App Store", kn_browser:"Play in the browser",
+  preis_zeile:"Predicting is free, permanently. Premium opens the full season, every earlier year and the career statistics: €0.99 per 4 weeks or €9.99 per year on Google Play, €1.99 / €14.99 on the App Store — the first 7 days are free.",
   m_titel:"A race weekend in FaNiCa Fun", m_sub:"Example round with fictional players — this is exactly what it feels like.",
   m_samstag:"Saturday — deadline running", m_cdl:"Deadline in",
   m_quali:"Qualifying", m_grid:"Official starting grid", m_strafe:"(+5s penalty)",
