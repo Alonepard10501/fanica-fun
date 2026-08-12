@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FanicaFun.de — Eure private Tipprunde</title>
-<meta name="description" content="FaNiCa Fun: die private Tipprunden-App für Freundesgruppen. Eine ganze Saison, jede Statistik — auf Android und im Browser.">
+<meta name="description" content="FaNiCa Fun: die private Tipprunden-App für Freundesgruppen. Eine ganze Saison, jede Statistik — auf Android und iPhone.">
 <style>
   :root { --bg:#0d1117; --panel:#151b23; --line:#232c37; --txt:#e8edf3; --dim:#93a0ae;
           --cyan:#22d3ee; --rot:#e10600; --gold:#f5c542; }
@@ -193,10 +193,11 @@
     <h1 data-i>held_titel</h1>
     <p class="unter" data-i>held_unter</p>
     <div class="knoepfe">
-      <!-- Beide Store-Seiten am 12.08.2026 per Abruf geprüft: erreichbar. -->
+      <!-- Beide Store-Seiten am 12.08.2026 per Abruf geprüft: erreichbar.
+           KEIN „Im Browser spielen" mehr: /spiel/ war die alte Qt-Fassung
+           von vor dem Flutter-Neubau (Falk 12.08.2026: „muss raus"). -->
       <a class="kn voll" href="https://play.google.com/store/apps/details?id=com.fanica.fun" data-i>kn_android</a>
       <a class="kn voll" href="https://apps.apple.com/de/app/fanica-fun/id6795424070" data-i>kn_apple</a>
-      <a class="kn rand" href="https://alonepard10501.github.io/fanica-fun/spiel/" data-i>kn_browser</a>
     </div>
     <p class="unter" style="font-size:.85em;margin-top:14px" data-i>preis_zeile</p>
   </div>
@@ -408,8 +409,8 @@ const IMPRESSUM = {
 const T = {
  de: {
   held_titel:"Eure private Tipprunde. Eine ganze Saison. Jede Statistik.",
-  held_unter:"FaNiCa Fun ist die Tipprunden-App für Freundesgruppen: Top-5 tippen, live vergleichen, Trophäen sammeln — privat, ohne Geldeinsatz, auf Android, iPhone und im Browser.",
-  kn_android:"Bei Google Play laden", kn_apple:"Im App Store laden", kn_browser:"Im Browser spielen",
+  held_unter:"FaNiCa Fun ist die Tipprunden-App für Freundesgruppen: Top-5 tippen, live vergleichen, Trophäen sammeln — privat, ohne Geldeinsatz, auf Android und iPhone.",
+  kn_android:"Bei Google Play laden", kn_apple:"Im App Store laden",
   preis_zeile:"Tippen ist dauerhaft kostenlos. Premium öffnet die ganze Saison, alle früheren Jahre und die Karriere-Statistik: 0,99 € je 4 Wochen oder 9,99 € im Jahr bei Google Play, 1,99 € bzw. 14,99 € im App Store — die ersten 7 Tage kostenlos.",
   m_titel:"Ein Rennwochenende mit FaNiCa Fun", m_sub:"Nervenkitzel - so fühlt es sich an.",
   m_samstag:"Samstag — Tippschluss läuft", m_cdl:"Tippschluss in",
@@ -436,7 +437,7 @@ const T = {
   sh_t3:"Podestplätze am Saisonende", sh_t4:"Gold-Tipps — die Position, die sonst keiner hatte",
   sh_trophy_u:"Jede Trophäe zählt in der Ewigen Bestenliste über alle Jahre weiter.",
   b1:"Rennen pro Saison", b2:"Freunde pro Gruppe", b3:"Tipps in einer Saison", b4:"Tagessiege", b5:"Diamanten", b6:"Champion",
-  s_titel:"In drei Schritten dabei", s_sub:"Android-App und Browser spielen in derselben Runde — live verbunden.",
+  s_titel:"In drei Schritten dabei", s_sub:"Android und iPhone spielen in derselben Runde — live verbunden.",
   s1:"Profil erstellen — einmal registrieren mit E-Mail und Passwort, überall spielen.",
   s2:"Gruppe eröffnen oder per Einladungs-Code der Freunde beitreten.",
   s3:"Tippen, vergleichen, feiern — die Saison läuft, die App rechnet alles automatisch.",
@@ -451,8 +452,8 @@ const T = {
  },
  en: {
   held_titel:"Your private prediction league. A full season. Every stat.",
-  held_unter:"FaNiCa Fun is the prediction-game app for groups of friends: pick the top 5, compare live, collect trophies — private, no money involved, on Android, iPhone and in the browser.",
-  kn_android:"Get it on Google Play", kn_apple:"Download on the App Store", kn_browser:"Play in the browser",
+  held_unter:"FaNiCa Fun is the prediction-game app for groups of friends: pick the top 5, compare live, collect trophies — private, no money involved, on Android and iPhone.",
+  kn_android:"Get it on Google Play", kn_apple:"Download on the App Store",
   preis_zeile:"Predicting is free, permanently. Premium opens the full season, every earlier year and the career statistics: €0.99 per 4 weeks or €9.99 per year on Google Play, €1.99 / €14.99 on the App Store — the first 7 days are free.",
   m_titel:"A race weekend in FaNiCa Fun", m_sub:"Example round with fictional players — this is exactly what it feels like.",
   m_samstag:"Saturday — deadline running", m_cdl:"Deadline in",
@@ -479,7 +480,7 @@ const T = {
   sh_t3:"Podium finishes at season's end", sh_t4:"Gold picks — the position nobody else had",
   sh_trophy_u:"Every trophy keeps counting in the all-time leaderboard.",
   b1:"races per season", b2:"friends per group", b3:"picks in one season", b4:"day wins", b5:"diamonds", b6:"champion",
-  s_titel:"Three steps to join", s_sub:"Android app and browser play in the same round — connected live.",
+  s_titel:"Three steps to join", s_sub:"Android and iPhone play in the same round — connected live.",
   s1:"Create a profile — register once with e-mail and password, play everywhere.",
   s2:"Open a group or join your friends with an invitation code.",
   s3:"Predict, compare, celebrate — the season runs, the app scores everything automatically.",
