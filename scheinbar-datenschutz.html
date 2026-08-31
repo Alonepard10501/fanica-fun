@@ -47,7 +47,9 @@ Scheine zu verwalten und selbst erfasste Ziehungen nachzurechnen.
 <b>ausschließlich lokal auf Ihrem Gerät</b> in einer Datenbank gespeichert:</p>
 <ul>
 <li><b>Spielscheine</b> — Spielart (BINGO!, Lotto 6aus49, Eurojackpot), Ihre Tippfelder, Superzahl und Teilnahmezeitraum</li>
-<li><b>Ziehungen</b> — die von Ihnen erfassten oder nachgeladenen Ziehungszahlen je Spiel und Datum</li>
+<li><b>Ziehungen</b> — die von Ihnen erfassten und die geladenen Ziehungszahlen
+    je Spiel und Datum; geladene Ziehungen werden auf dem Gerät gespeichert und
+    bleiben dort</li>
 <li><b>Profil</b> — E-Mail-Adresse und Prüfwert des Passworts des lokalen Profils</li>
 <li><b>Merkposten</b> — das zuletzt gewählte Spiel, das Ende der einmaligen
     7-Tage-Probe und ob Sie angemeldet bleiben möchten</li>
@@ -56,8 +58,9 @@ Scheine zu verwalten und selbst erfasste Ziehungen nachzurechnen.
 übertragen</b>. Gewinne werden nicht gespeichert, sondern aus Schein und
 Ziehung berechnet.</p>
 <p>Über <i>Einstellungen → Daten sichern</i> können Sie Scheine, Tippfelder und
-Ziehungen selbst als Datei ablegen. Wohin diese Datei geht — und ob Sie sie
-etwa in einen Cloud-Speicher legen — entscheiden allein Sie; die App
+Ziehungen selbst als Datei ablegen und über <i>Sicherung einspielen</i> wieder
+einlesen — dabei wird nur ergänzt, was fehlt. Wohin diese Datei geht — und ob
+Sie sie etwa in einen Cloud-Speicher legen — entscheiden allein Sie; die App
 überträgt sie nirgendwohin.</p>
 
 <h2>3. Spielschein fotografieren (Texterkennung)</h2>
@@ -84,13 +87,16 @@ Fällen:</p>
 vollständig über Google Play bzw. den App Store. Wir erhalten weder Ihre
 Zahlungsdaten noch Ihren Namen — die App fragt beim Store nur ab, ob ein
 gültiges Abo vorliegt.</li>
-<li><b>Ziehungs-Nachladung</b>: Die App lädt eine gepflegte Ziehungsliste von
+<li><b>Ziehungen laden</b>: Die App lädt eine gepflegte Ziehungsliste von
 GitHub
-(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>)
-und ergänzt damit fehlende Tage. Das geschieht <b>beim Start der App
-automatisch</b> und lässt sich in den Einstellungen unter
-<i>Ziehungsliste aktualisieren</i> wiederholen. Dabei erhält GitHub technisch
-bedingt Ihre IP-Adresse. Es werden nur Daten geladen, nie welche gesendet.</li>
+(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>).
+Beim ersten Start sind das die Ziehungen der letzten sechs Monate, danach
+ergänzt jeder Start nur noch die neu hinzugekommenen Tage; bereits
+vorhandene Ziehungen bleiben unberührt. Die geladenen Ziehungen werden auf
+Ihrem Gerät gespeichert. Das geschieht <b>beim Start der App automatisch</b>
+und lässt sich in den Einstellungen unter <i>Ziehungsliste aktualisieren</i>
+wiederholen. Dabei erhält GitHub technisch bedingt Ihre IP-Adresse. Es werden
+nur Daten geladen, nie welche gesendet.</li>
 <li><b>Update-Prüfung (Testphase)</b>: Außerhalb der Stores prüft die App
 auf Ihren Tipp hin im Profilbereich bei derselben GitHub-Adresse, ob eine
 neuere Fassung vorliegt, und lädt diese auf Wunsch herunter.</li>
@@ -179,7 +185,8 @@ you record yourself.
 device</b> in a local database:</p>
 <ul>
 <li><b>Tickets</b> — game type (BINGO!, Lotto 6aus49, Eurojackpot), your number fields, bonus number and participation period</li>
-<li><b>Draws</b> — the draw numbers you record or download, per game and date</li>
+<li><b>Draws</b> — the draw numbers you record and the ones that are downloaded,
+    per game and date; downloaded draws are stored on your device and stay there</li>
 <li><b>Profile</b> — email address and a check value of the password of the local profile</li>
 <li><b>Reminders</b> — the game you last selected, the end of the one-time
     7-day trial and whether you want to stay signed in</li>
@@ -187,9 +194,10 @@ device</b> in a local database:</p>
 <p>This data is <b>never transmitted to us or to third parties</b>. Wins
 are not stored; they are calculated from ticket and draw.</p>
 <p>Under <i>Settings → Back up data</i> you can save tickets, number fields
-and draws as a file yourself. Where that file goes — and whether you put it
-into cloud storage — is entirely your decision; the app transmits it
-nowhere.</p>
+and draws as a file yourself, and read them back in under <i>Restore
+backup</i> — which only adds what is missing. Where that file goes — and
+whether you put it into cloud storage — is entirely your decision; the app
+transmits it nowhere.</p>
 
 <h2>3. Photographing a ticket (text recognition)</h2>
 <p>If you photograph a ticket, the text is recognised <b>exclusively on
@@ -215,11 +223,13 @@ details nor your name — the app only asks the store whether a valid
 subscription exists.</li>
 <li><b>Downloading draws</b>: the app loads a maintained list of draws from
 GitHub
-(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>)
-and uses it to fill in missing days. This happens <b>automatically when the
-app starts</b> and can be repeated in the settings under <i>Refresh draw
-list</i>. GitHub technically receives your IP address in the process. Data is
-only downloaded, never sent.</li>
+(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>).
+On first start these are the draws of the past six months; after that each
+start only adds the newly published days, leaving existing draws untouched.
+The downloaded draws are stored on your device. This happens
+<b>automatically when the app starts</b> and can be repeated in the settings
+under <i>Refresh draw list</i>. GitHub technically receives your IP address in
+the process. Data is only downloaded, never sent.</li>
 <li><b>Update check (testing phase)</b>: outside the stores the app checks
 the same GitHub address, when you tap it in the profile area, for a newer
 version and downloads it on request.</li>
