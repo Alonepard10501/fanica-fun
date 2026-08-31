@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — ScheinBar</title>
+<style>
+body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}
+h1,h2{color:#0e7c8a}
+.kasten{background:#eef8fa;border-left:4px solid #0e7c8a;padding:.8em 1em;margin:1.5em 0}
+.sprachwahl{margin:0 0 1.5em;padding:.6em 0;border-bottom:1px solid #ddd}
+.sprachwahl a{color:#0e7c8a;text-decoration:none;font-weight:bold;margin-right:1em}
+.sprachwahl a:hover{text-decoration:underline}
+.fassung{display:none}
+body.de .fassung.de,body.en .fassung.en{display:block}
+</style></head>
+<body class="de">
+
+<div class="sprachwahl">
+  <a href="#" onclick="document.body.className='de';return false">Deutsch</a>
+  <a href="#" onclick="document.body.className='en';return false">English</a>
+</div>
+
+<div class="fassung de" lang="de">
+<h1>Datenschutzerklärung — ScheinBar</h1>
+<p>Stand: 31.08.2026</p>
+
+<h2>1. Verantwortlicher</h2>
+<p>Falk Carstensen · E-Mail: fanicafuntipp@gmail.com · oder über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a> auf der FaNiCa-Webseite</p>
+
+<div class="kasten">
+<b>Kurz gesagt:</b> ScheinBar erhebt keine personenbezogenen Daten. Ihre
+Spielscheine, Ziehungen und Auswertungen bleiben auf Ihrem Gerät. Es gibt
+keinen Server von uns, kein Konto im Internet, keine Werbung und keine
+Analyse-Dienste. Auch die Texterkennung des Spielscheins läuft
+ausschließlich auf Ihrem Gerät. Ins Netz geht die App nur für das Abo im
+Store, das Nachladen der Ziehungen und die Update-Prüfung — Einzelheiten
+unter Punkt 5.
+</div>
+
+<div class="kasten">
+<b>ScheinBar ist kein Glücksspiel.</b> Die App nimmt keine Tipps entgegen,
+verkauft und vermittelt keine Spielscheine, führt keine Auslosung durch
+und zahlt nichts aus. Sie hilft ausschließlich dabei, bereits gespielte
+Scheine zu verwalten und selbst erfasste Ziehungen nachzurechnen.
+</div>
+
+<h2>2. Welche Daten verarbeitet werden</h2>
+<p>Sämtliche Daten, die Sie in ScheinBar eingeben, werden
+<b>ausschließlich lokal auf Ihrem Gerät</b> in einer Datenbank gespeichert:</p>
+<ul>
+<li><b>Spielscheine</b> — Spielart (BINGO!, Lotto 6aus49, Eurojackpot), Ihre Tippfelder, Superzahl und Teilnahmezeitraum</li>
+<li><b>Ziehungen</b> — die von Ihnen erfassten oder nachgeladenen Ziehungszahlen je Spiel und Datum</li>
+<li><b>Profil</b> — E-Mail-Adresse und Prüfwert des Passworts des lokalen Profils</li>
+<li><b>Merkposten</b> — das zuletzt gewählte Spiel, das Ende der einmaligen
+    7-Tage-Probe und ob Sie angemeldet bleiben möchten</li>
+</ul>
+<p>Diese Daten werden <b>zu keinem Zeitpunkt an uns oder an Dritte
+übertragen</b>. Gewinne werden bei jedem Aufruf neu berechnet und nicht
+gespeichert.</p>
+<p>Über <i>Einstellungen → Daten sichern</i> können Sie Scheine, Tippfelder und
+Ziehungen selbst als Datei ablegen. Wohin diese Datei geht — und ob Sie sie
+etwa in einen Cloud-Speicher legen — entscheiden allein Sie; die App
+überträgt sie nirgendwohin.</p>
+
+<h2>3. Spielschein fotografieren (Texterkennung)</h2>
+<p>Wenn Sie einen Spielschein fotografieren, wird der Text
+<b>ausschließlich auf Ihrem Gerät</b> erkannt (Google ML Kit,
+On-Device-Texterkennung — ohne Internetverbindung). Das Foto wird von der
+App nur für diesen einen Lesevorgang verwendet, nicht dauerhaft
+gespeichert und nirgendwohin übertragen. Gespeichert werden allein die
+Zahlen, die Sie in der Korrektur-Ansicht bestätigen. Die manuelle Eingabe
+ist ein gleichwertiger Weg — die App ist ohne Kamera vollständig nutzbar.</p>
+
+<h2>4. Excel-Einfuhr</h2>
+<p>Die Einfuhr eines Ziehungs-Startbestands aus einer Excel-Datei
+(<i>Einstellungen → Bingo-Startbestand importieren</i>) arbeitet rein lokal:
+Die von Ihnen gewählte Datei wird auf dem Gerät gelesen und dort gespeichert
+— nichts davon wird übertragen.</p>
+
+<h2>5. Verbindungen ins Internet</h2>
+<p>Der Kern der App — Erfassen, Gewinnprüfung, Statistik, Einfuhr — läuft
+vollständig ohne Internet. Eine Verbindung entsteht nur in diesen drei
+Fällen:</p>
+<ul>
+<li><b>Abo-Kauf und Wiederherstellen</b>: Der Kaufvorgang läuft
+vollständig über Google Play bzw. den App Store. Wir erhalten weder Ihre
+Zahlungsdaten noch Ihren Namen — die App fragt beim Store nur ab, ob ein
+gültiges Abo vorliegt.</li>
+<li><b>Ziehungs-Nachladung</b>: Die App lädt eine gepflegte Ziehungsliste von
+GitHub
+(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>)
+und ergänzt damit fehlende Tage. Das geschieht <b>beim Start der App
+automatisch</b> und lässt sich in den Einstellungen unter
+<i>Ziehungsliste aktualisieren</i> wiederholen. Dabei erhält GitHub technisch
+bedingt Ihre IP-Adresse. Es werden nur Daten geladen, nie welche gesendet.</li>
+<li><b>Update-Prüfung (Testphase)</b>: Außerhalb der Stores prüft die App
+auf Ihren Tipp hin im Profilbereich bei derselben GitHub-Adresse, ob eine
+neuere Fassung vorliegt, und lädt diese auf Wunsch herunter.</li>
+</ul>
+<p>Schlägt eine dieser Verbindungen fehl, arbeitet die App unverändert
+weiter. Wir binden <b>keine Werbe-, Analyse- oder Absturzmelde-Dienste</b> ein
+und haben keine Schnittstellen zu sozialen Netzwerken. Mit der Texterkennung
+(ML Kit) und der Abrechnung kommen jedoch Bausteine von Google mit; über diese
+kann Google technische Daten über die Nutzung seiner eigenen Bausteine
+erhalten. Darauf haben wir keinen Einfluss und wir erhalten davon nichts.</p>
+
+<h2>6. Ihr Passwort</h2>
+<p>Ihr Passwort wird <b>niemals im Klartext gespeichert</b>, sondern
+ausschließlich als nicht umkehrbarer SHA-256-Prüfwert, in den zusätzlich Ihre
+E-Mail-Adresse eingeht. Die Anmeldung trennt die Daten verschiedener Profile
+auf demselben Gerät. Sie ist <b>kein</b> Schutz gegen jemanden, der Ihr
+entsperrtes Gerät in der Hand hält, und auch kein Ersatz für die
+Verschlüsselung Ihres Geräts — dafür ist die Bildschirmsperre Ihres Geräts
+zuständig.</p>
+
+<h2>7. Berechtigungen</h2>
+<p>ScheinBar fordert <b>keine</b> Standort-, Kontakt- oder
+Mikrofon-Berechtigung an und auch keine eigene Kamera-Berechtigung: Fotos
+macht die Kamera-App Ihres Geräts, Bilder wählen Sie über die Fotoauswahl
+des Systems; die App sieht nur das eine gewählte Bild.</p>
+<p>Die App verlangt folgende Berechtigungen: <b>Internetzugriff</b> und
+<b>Netzwerkstatus</b> (für die oben genannten drei Verbindungen; sie werden
+zusätzlich von den Google-Bausteinen mitgebracht), die
+<b>Abrechnung über den Store</b> für das
+Abo und — nur in der Testphase außerhalb der Stores — das <b>Installieren
+einer heruntergeladenen Fassung</b>.</p>
+
+<h2>8. Daten löschen</h2>
+<p>Einzelne Scheine und Ziehungen löschen Sie in der App;
+<i>Einstellungen → Alle Daten löschen</i> entfernt alle Scheine und Ziehungen
+auf einmal. Ihr Profil samt Passwort-Prüfwert bleibt dabei bestehen.
+<b>Restlos</b> entfernt wird alles, wenn Sie die App deinstallieren oder in
+den Geräte-Einstellungen unter „Apps" ihren Speicher leeren. Da wir keine
+Daten erhalten, gibt es bei uns nichts zu löschen.</p>
+
+<h2>9. Kinder</h2>
+<p>Die App richtet sich nicht an Kinder und erhebt wissentlich keine Daten
+von Kindern.</p>
+
+<h2>10. Ihre Rechte</h2>
+<p>Da keine personenbezogenen Daten an uns übertragen werden, laufen die
+Rechte auf Auskunft, Berichtigung, Löschung und Datenübertragbarkeit (Art.
+15–20 DSGVO) bei uns ins Leere — wir haben schlicht keine Daten über Sie.
+Ihre Daten liegen allein in Ihrer Hand, auf Ihrem Gerät.</p>
+
+<h2>11. Verwendete Software</h2>
+<p>Die App nutzt freie Softwarebausteine, unter anderem Flutter und ML Kit
+von Google. Die Material-Symbole stammen von Google und stehen unter der
+Lizenz CC BY 4.0.</p>
+
+<h2>12. Änderungen</h2>
+<p>Ändert sich der Funktionsumfang der App, wird diese Erklärung
+angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
+</div>
+
+<div class="fassung en" lang="en">
+<h1>Privacy Policy — ScheinBar</h1>
+<p>Last updated: 31 August 2026</p>
+
+<h2>1. Controller</h2>
+<p>Falk Carstensen · Email: fanicafuntipp@gmail.com · or via the <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">contact form</a> on the FaNiCa website</p>
+
+<div class="kasten">
+<b>In short:</b> ScheinBar collects no personal data. Your tickets, draws
+and statistics stay on your device. There is no server of ours, no online
+account, no advertising and no analytics. Text recognition of your ticket
+also runs exclusively on your device. The app only goes online for the store
+subscription, downloading draws and the update check — details under
+point 5.
+</div>
+
+<div class="kasten">
+<b>ScheinBar is not gambling.</b> The app does not accept bets, does not
+sell or broker tickets, holds no draws and pays nothing out. It only helps
+you manage tickets you have already played and check them against draws
+you record yourself.
+</div>
+
+<h2>2. What data is processed</h2>
+<p>Everything you enter in ScheinBar is stored <b>exclusively on your
+device</b> in a local database:</p>
+<ul>
+<li><b>Tickets</b> — game type (BINGO!, Lotto 6aus49, Eurojackpot), your number fields, bonus number and participation period</li>
+<li><b>Draws</b> — the draw numbers you record or download, per game and date</li>
+<li><b>Profile</b> — email address and a check value of the password of the local profile</li>
+<li><b>Reminders</b> — the game you last selected, the end of the one-time
+    7-day trial and whether you want to stay signed in</li>
+</ul>
+<p>This data is <b>never transmitted to us or to third parties</b>. Wins
+are recalculated on every view and are not stored.</p>
+<p>Under <i>Settings → Back up data</i> you can save tickets, number fields
+and draws as a file yourself. Where that file goes — and whether you put it
+into cloud storage — is entirely your decision; the app transmits it
+nowhere.</p>
+
+<h2>3. Photographing a ticket (text recognition)</h2>
+<p>If you photograph a ticket, the text is recognised <b>exclusively on
+your device</b> (Google ML Kit, on-device text recognition — without an
+internet connection). The app uses the photo for that single reading only,
+does not store it permanently and never transmits it anywhere. Only the
+numbers you confirm in the correction view are saved. Manual entry is an
+equally valid path — the app is fully usable without a camera.</p>
+
+<h2>4. Excel import</h2>
+<p>Importing a starting set of draws from an Excel file
+(<i>Settings → Import BINGO! starter data</i>) is equally local: the file you
+choose is read and stored on the device — nothing is transmitted.</p>
+
+<h2>5. Internet connections</h2>
+<p>The core of the app — recording, win checking, statistics, import —
+works entirely without internet. A connection is only made in these three
+cases:</p>
+<ul>
+<li><b>Subscription purchase and restore</b>: the purchase runs entirely
+through Google Play or the App Store. We receive neither your payment
+details nor your name — the app only asks the store whether a valid
+subscription exists.</li>
+<li><b>Downloading draws</b>: the app loads a maintained list of draws from
+GitHub
+(<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>)
+and uses it to fill in missing days. This happens <b>automatically when the
+app starts</b> and can be repeated in the settings under <i>Refresh draw
+list</i>. GitHub technically receives your IP address in the process. Data is
+only downloaded, never sent.</li>
+<li><b>Update check (testing phase)</b>: outside the stores the app checks
+the same GitHub address, when you tap it in the profile area, for a newer
+version and downloads it on request.</li>
+</ul>
+<p>If one of these connections fails, the app continues to work unchanged.
+We include <b>no advertising, analytics or crash-reporting services</b> and
+have no social network interfaces. However, text recognition (ML Kit) and
+billing bring components by Google with them; through those, Google may
+receive technical data about the use of its own components. We have no
+influence over that and receive nothing from it.</p>
+
+<h2>6. Your password</h2>
+<p>Your password is <b>never stored in plain text</b>, only as a
+non-reversible SHA-256 check value that also incorporates your email address.
+Signing in separates the data of different profiles on the same device. It is
+<b>not</b> protection against someone holding your unlocked device, nor a
+substitute for device encryption — that is what your device's screen lock is
+for.</p>
+
+<h2>7. Permissions</h2>
+<p>ScheinBar requests <b>no</b> location, contacts or microphone
+permission, and no camera permission of its own: photos are taken by your
+device's camera app, and images are chosen via the system photo picker;
+the app only ever sees the single image you select.</p>
+<p>The app declares these permissions: <b>internet access</b> and
+<b>network state</b> (for the three connections named above; they are also
+brought in by the Google components), <b>billing through the store</b> for the
+subscription and — only during the testing phase outside the stores —
+<b>installing a downloaded version</b>.</p>
+
+<h2>8. Deleting data</h2>
+<p>You delete individual tickets and draws in the app;
+<i>Settings → Delete all data</i> removes all tickets and draws at once. Your
+profile and its password check value remain. <b>Everything</b> is removed
+when you uninstall the app or clear its storage in your device's settings
+under "Apps". As we never receive any data, there is nothing for us to
+delete.</p>
+
+<h2>9. Children</h2>
+<p>The app is not directed at children and does not knowingly collect data
+from children.</p>
+
+<h2>10. Your rights</h2>
+<p>As no personal data is transmitted to us, the rights to access,
+rectification, erasure and data portability (Art. 15–20 GDPR) have no
+subject matter on our side — we simply hold no data about you. Your data
+is yours alone, on your device.</p>
+
+<h2>11. Software used</h2>
+<p>The app uses free software components, among others Flutter and ML Kit
+by Google. The Material symbols come from Google and are licensed under
+CC BY 4.0.</p>
+
+<h2>12. Changes</h2>
+<p>If the scope of the app changes, this policy will be updated. The date
+above states the currently valid version.</p>
+</div>
+
+<script>
+// Sprache aus der Browser-Einstellung vorwaehlen — die Knoepfe oben
+// ueberschreiben das jederzeit.
+if ((navigator.language || 'de').slice(0, 2) === 'en') {
+  document.body.className = 'en';
+}
+</script>
+</body></html>
