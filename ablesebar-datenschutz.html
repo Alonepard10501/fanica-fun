@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — AbleseBar</title>
+<style>
+body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}
+h1,h2{color:#2E7FC2}
+.kasten{background:#eef4fa;border-left:4px solid #2E7FC2;padding:.8em 1em;margin:1.5em 0}
+.sprachwahl{margin:0 0 1.5em;padding:.6em 0;border-bottom:1px solid #ddd}
+.sprachwahl a{color:#2E7FC2;text-decoration:none;font-weight:bold;margin-right:1em}
+.sprachwahl a:hover{text-decoration:underline}
+.fassung{display:none}
+body.de .fassung.de,body.en .fassung.en{display:block}
+</style></head>
+<body class="de">
+
+<div class="sprachwahl">
+  <a href="#" onclick="document.body.className='de';return false">Deutsch</a>
+  <a href="#" onclick="document.body.className='en';return false">English</a>
+</div>
+
+<div class="fassung de" lang="de">
+<h1>Datenschutzerklärung — AbleseBar</h1>
+<p>Stand: 02.09.2026</p>
+
+<h2>1. Verantwortlicher</h2>
+<p>Falk Carstensen · E-Mail: fanicafuntipp@gmail.com · oder über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a> auf der FaNiCa-Webseite</p>
+
+<div class="kasten">
+<b>Kurz gesagt:</b> AbleseBar erhebt keine personenbezogenen Daten. Ihre
+Zählerstände, Kostensätze und Auswertungen bleiben auf Ihrem Gerät. Es gibt
+keinen Server von uns, kein Konto im Internet, keine Werbung und keine
+Analyse-Dienste. Auch die Ziffern-Erkennung vom Zählerfoto läuft
+ausschließlich auf Ihrem Gerät. Ins Netz geht die App an genau einer Stelle:
+wenn Sie im Profil auf „Nach Update suchen" tippen — Einzelheiten unter
+Punkt 5.
+</div>
+
+<h2>2. Welche Daten verarbeitet werden</h2>
+<p>Sämtliche Daten, die Sie in AbleseBar eingeben, werden
+<b>ausschließlich lokal auf Ihrem Gerät</b> gespeichert:</p>
+<ul>
+<li><b>Zähler</b> — Name, Bereich (Gas, Wasser, Strom), Einheit, ob aktiv</li>
+<li><b>Ablesungen</b> — Zählerstand je Zähler und Datum, bei Zählerwechsel
+    der Anfangsstand des neuen Zählers</li>
+<li><b>Kostensätze</b> — Fixkosten, Preise je Einheit und Abschläge je
+    Abrechnungsperiode, dazu selbst angelegte Kostenposten</li>
+<li><b>Stammdaten</b> — Stichtag der Abrechnungsperiode, Wohnfläche und
+    ähnliche Rechengrundlagen, die Sie eintragen</li>
+<li><b>Farben</b> — Ihre Wahl der Bereichsfarben</li>
+<li><b>Profil</b> — E-Mail-Adresse und Prüfwert des Passworts, falls Sie ein
+    Profil anlegen; als Gast entfällt beides</li>
+<li><b>Merkposten</b> — ob Sie angemeldet bleiben möchten, ob die Einführung
+    schon gezeigt wurde, Sprache und Hell-/Dunkel-Anzeige</li>
+</ul>
+<p>Diese Daten werden <b>zu keinem Zeitpunkt an uns oder an Dritte
+übertragen</b>. Verbrauch, Kosten und die Differenz zu den Abschlägen werden
+nicht gespeichert, sondern aus Ablesungen und Kostensätzen berechnet.</p>
+<p>Jedes Profil und der Gast-Zugang haben einen eigenen Datenraum: Was Sie
+als Gast eintragen, sieht ein Profil nicht — und umgekehrt.</p>
+
+<h2>3. Zähler fotografieren (Texterkennung)</h2>
+<p>Wenn Sie einen Zähler fotografieren oder ein Bild aus der Galerie wählen,
+wird die Ziffernfolge <b>ausschließlich auf Ihrem Gerät</b> erkannt (Google
+ML Kit, On-Device-Texterkennung — ohne Internetverbindung). Gespeichert wird
+allein der Wert, den Sie in der Korrektur-Ansicht bestätigen. Das Foto legt
+die App nicht in ihren Daten ab und überträgt es nirgendwohin; die
+Bilddatei liegt vorübergehend im Zwischenspeicher der App auf Ihrem Gerät.
+Die Eingabe von Hand ist ein gleichwertiger Weg — die App ist ohne Kamera
+vollständig nutzbar.</p>
+
+<h2>4. CSV-Einfuhr, CSV-Ausfuhr und Sicherung</h2>
+<p>Die Einfuhr von Zählerständen, Kostensätzen und Stammdaten aus einer
+CSV-Datei arbeitet rein lokal: Die von Ihnen gewählte Datei wird auf dem
+Gerät gelesen und dort gespeichert — nichts davon wird übertragen.</p>
+<p>Wenn Sie Ihre Daten als CSV ausführen oder eine Sicherung anlegen, erzeugt
+die App eine Datei und übergibt sie an die Teilen-Funktion Ihres Geräts.
+Wohin diese Datei geht — und ob Sie sie etwa in einen Cloud-Speicher legen —
+entscheiden allein Sie; die App überträgt sie nirgendwohin, und wir sehen sie
+nicht. Beim Wiederherstellen einer Sicherung wird die Datei auf dem Gerät
+gelesen.</p>
+
+<h2>5. Verbindungen ins Internet</h2>
+<p>Erfassen, Auswerten, Texterkennung und Ein-/Ausfuhr laufen vollständig
+ohne Internet. Eine Verbindung entsteht nur in einem Fall:</p>
+<ul>
+<li><b>Update-Prüfung (Testphase)</b>: Wenn Sie im Profil auf „Nach Update
+suchen" tippen, fragt die App bei GitHub
+(<a href="https://github.com/Alonepard10501/bk-abrechnung-releases" target="_blank" rel="noopener">bk-abrechnung-releases</a>)
+ab, ob eine neuere Fassung vorliegt, und lädt diese auf Wunsch herunter.
+Dabei erhält GitHub technisch bedingt Ihre IP-Adresse. Es werden nur Daten
+geladen, nie welche gesendet. Von sich aus prüft die App nicht.</li>
+</ul>
+<p>Es gibt in dieser Fassung keinen Kauf und kein Abo. Wir binden
+<b>keine Werbe-, Analyse- oder Absturzmelde-Dienste</b> ein und haben keine
+Schnittstellen zu sozialen Netzwerken. Mit der Texterkennung (ML Kit) kommt
+jedoch ein Baustein von Google mit; über diesen kann Google technische Daten
+über die Nutzung seines eigenen Bausteins erhalten. Darauf haben wir keinen
+Einfluss, und wir erhalten davon nichts.</p>
+
+<h2>6. Ihr Passwort</h2>
+<p>Legen Sie ein Profil an, wird Ihr Passwort <b>niemals im Klartext
+gespeichert</b>, sondern ausschließlich als nicht umkehrbarer
+SHA-256-Prüfwert mit Salz. Die Anmeldung trennt die Daten verschiedener
+Profile auf demselben Gerät. Sie ist <b>kein</b> Schutz gegen jemanden, der
+Ihr entsperrtes Gerät in der Hand hält, und kein Ersatz für die
+Verschlüsselung Ihres Geräts — dafür ist die Bildschirmsperre zuständig.</p>
+
+<h2>7. Berechtigungen</h2>
+<p>AbleseBar fordert <b>keine</b> Standort-, Kontakt-, Mikrofon- oder eigene
+Kamera-Berechtigung an: Fotos macht die Kamera-App Ihres Geräts, Bilder
+wählen Sie über die Fotoauswahl des Systems; die App sieht nur das eine
+gewählte Bild.</p>
+<p>Die App verlangt genau zwei Berechtigungen: <b>Internetzugriff</b> für die
+Update-Prüfung aus Punkt 5 und — nur in der Testphase außerhalb der Stores —
+das <b>Installieren einer heruntergeladenen Fassung</b>. Die Abfrage des
+Netzwerkstatus, die ein mitgelieferter Baustein anfordern würde, ist
+ausdrücklich abgeschaltet.</p>
+
+<h2>8. Daten löschen</h2>
+<p>Einzelne Zähler, Ablesungen und Kostenposten löschen Sie in der App.
+<b>Restlos</b> entfernt wird alles, wenn Sie die App deinstallieren oder in
+den Geräte-Einstellungen unter „Apps" ihren Speicher leeren. Da wir keine
+Daten erhalten, gibt es bei uns nichts zu löschen.</p>
+
+<h2>9. Kinder</h2>
+<p>Die App richtet sich nicht an Kinder und erhebt wissentlich keine Daten
+von Kindern.</p>
+
+<h2>10. Ihre Rechte</h2>
+<p>Da keine personenbezogenen Daten an uns übertragen werden, laufen die
+Rechte auf Auskunft, Berichtigung, Löschung und Datenübertragbarkeit (Art.
+15–20 DSGVO) bei uns ins Leere — wir haben schlicht keine Daten über Sie.
+Ihre Daten liegen allein in Ihrer Hand, auf Ihrem Gerät.</p>
+
+<h2>11. Verwendete Software</h2>
+<p>Die App nutzt freie Softwarebausteine, unter anderem Flutter und ML Kit
+von Google. Die Material-Symbole stammen von Google und stehen unter der
+Lizenz CC BY 4.0.</p>
+
+<h2>12. Änderungen</h2>
+<p>Ändert sich der Funktionsumfang der App, wird diese Erklärung
+angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
+</div>
+
+<div class="fassung en" lang="en">
+<h1>Privacy Policy — AbleseBar</h1>
+<p>Last updated: 2 September 2026</p>
+
+<h2>1. Controller</h2>
+<p>Falk Carstensen · Email: fanicafuntipp@gmail.com · or via the <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">contact form</a> on the FaNiCa website</p>
+
+<div class="kasten">
+<b>In short:</b> AbleseBar collects no personal data. Your meter readings,
+cost rates and statistics stay on your device. There is no server of ours,
+no online account, no advertising and no analytics. Digit recognition from a
+meter photo also runs exclusively on your device. The app goes online at
+exactly one point: when you tap "Check for update" in your profile — details
+under point 5.
+</div>
+
+<h2>2. What data is processed</h2>
+<p>Everything you enter in AbleseBar is stored <b>exclusively on your
+device</b>:</p>
+<ul>
+<li><b>Meters</b> — name, area (gas, water, electricity), unit, whether active</li>
+<li><b>Readings</b> — meter reading per meter and date, plus the starting value
+    of a new meter after a replacement</li>
+<li><b>Cost rates</b> — fixed costs, unit prices and instalments per billing
+    period, plus cost items you add yourself</li>
+<li><b>Base data</b> — the billing period's cut-off date, living space and
+    similar figures you enter for the calculation</li>
+<li><b>Colours</b> — your choice of area colours</li>
+<li><b>Profile</b> — email address and a check value of the password, if you
+    create a profile; as a guest there is neither</li>
+<li><b>Reminders</b> — whether you want to stay signed in, whether the intro
+    has been shown, language and light/dark display</li>
+</ul>
+<p>This data is <b>never transmitted to us or to third parties</b>.
+Consumption, costs and the difference to your instalments are not stored;
+they are calculated from readings and cost rates.</p>
+<p>Every profile and the guest access have their own data space: what you
+enter as a guest is invisible to a profile — and vice versa.</p>
+
+<h2>3. Photographing a meter (text recognition)</h2>
+<p>If you photograph a meter or pick an image from your gallery, the digits
+are recognised <b>exclusively on your device</b> (Google ML Kit, on-device
+text recognition — without an internet connection). Only the value you
+confirm in the correction view is saved. The app does not store the photo
+among its data and never transmits it; the image file sits temporarily in
+the app's cache on your device. Manual entry is an equally valid path — the
+app is fully usable without a camera.</p>
+
+<h2>4. CSV import, CSV export and backup</h2>
+<p>Importing meter readings, cost rates and base data from a CSV file works
+entirely locally: the file you choose is read and stored on the device —
+nothing is transmitted.</p>
+<p>If you export your data as CSV or create a backup, the app creates a file
+and hands it to your device's share function. Where that file goes — and
+whether you put it into cloud storage — is entirely your decision; the app
+transmits it nowhere and we never see it. Restoring a backup reads the file
+on the device.</p>
+
+<h2>5. Internet connections</h2>
+<p>Recording, statistics, text recognition and import/export work entirely
+without internet. A connection is made in one case only:</p>
+<ul>
+<li><b>Update check (testing phase)</b>: when you tap "Check for update" in
+your profile, the app asks GitHub
+(<a href="https://github.com/Alonepard10501/bk-abrechnung-releases" target="_blank" rel="noopener">bk-abrechnung-releases</a>)
+whether a newer version exists and downloads it on request. GitHub
+technically receives your IP address in the process. Data is only
+downloaded, never sent. The app never checks on its own.</li>
+</ul>
+<p>This version has no purchase and no subscription. We include <b>no
+advertising, analytics or crash-reporting services</b> and have no social
+network interfaces. Text recognition (ML Kit), however, brings a component by
+Google with it; through it, Google may receive technical data about the use
+of its own component. We have no influence over that and receive nothing
+from it.</p>
+
+<h2>6. Your password</h2>
+<p>If you create a profile, your password is <b>never stored in plain
+text</b>, only as a non-reversible, salted SHA-256 check value. Signing in
+separates the data of different profiles on the same device. It is <b>not</b>
+protection against someone holding your unlocked device, nor a substitute
+for device encryption — that is what your screen lock is for.</p>
+
+<h2>7. Permissions</h2>
+<p>AbleseBar requests <b>no</b> location, contacts, microphone or camera
+permission of its own: photos are taken by your device's camera app, and
+images are chosen via the system photo picker; the app only ever sees the
+single image you select.</p>
+<p>The app declares exactly two permissions: <b>internet access</b> for the
+update check in point 5 and — only during the testing phase outside the
+stores — <b>installing a downloaded version</b>. The network-state query
+that a bundled component would request is explicitly switched off.</p>
+
+<h2>8. Deleting data</h2>
+<p>You delete individual meters, readings and cost items in the app.
+<b>Everything</b> is removed when you uninstall the app or clear its storage
+in your device's settings under "Apps". As we never receive any data, there
+is nothing for us to delete.</p>
+
+<h2>9. Children</h2>
+<p>The app is not directed at children and does not knowingly collect data
+from children.</p>
+
+<h2>10. Your rights</h2>
+<p>As no personal data is transmitted to us, the rights to access,
+rectification, erasure and data portability (Art. 15–20 GDPR) have no
+subject matter on our side — we simply hold no data about you. Your data is
+yours alone, on your device.</p>
+
+<h2>11. Software used</h2>
+<p>The app uses free software components, among others Flutter and ML Kit by
+Google. The Material symbols come from Google and are licensed under CC BY
+4.0.</p>
+
+<h2>12. Changes</h2>
+<p>If the scope of the app changes, this policy will be updated. The date
+above states the currently valid version.</p>
+</div>
+
+<script>
+if ((navigator.language || 'de').slice(0, 2) === 'en') {
+  document.body.className = 'en';
+}
+</script>
+</body></html>
