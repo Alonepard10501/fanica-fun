@@ -4,51 +4,96 @@
 <style>body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}h1,h2{color:#5B4DD6}code{background:#f2f0fb;padding:.1em .35em;border-radius:3px}</style></head>
 <body>
 <h1>Datenschutzerklärung — YourFilm</h1>
-<p>Stand: 22.08.2026</p>
+<p>Stand: 05.09.2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Falk Carstensen · Kontakt: über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a></p>
 
 <h2>2. Kurzüberblick</h2>
-<p>YourFilm verwaltet deine Sammlung physischer Filme (DVD, Blu-ray, 4K). Die App hat <b>kein Nutzerkonto, keine Anmeldung, keine Werbung und kein eigenes Server-Backend</b>. Alle Daten liegen auf deinem Gerät.</p>
+<p>YourFilm verwaltet deine Sammlung physischer Filme (DVD, Blu-ray, 4K). Die App hat <b>kein Nutzerkonto, keine Anmeldung, keine Werbung, keinen Analyse- oder Absturzmelde-Dienst und kein eigenes Server-Backend</b>. Alle Daten liegen auf deinem Gerät.</p>
 
 <h2>3. Welche Daten die App speichert</h2>
 <p>Ausschließlich auf deinem Gerät, ohne Übertragung an uns:</p>
 <ul>
 <li><b>Deine Sammlung</b>: Filme, Ausgaben, Exemplare, Titel, Jahr, Format, Genres, Altersfreigaben</li>
 <li><b>Deine persönlichen Angaben</b>: Kaufpreis, Kaufdatum, Zustand, Bewertung, Notizen, Standort (Regal, Fach), Ausleihen</li>
+<li><b>Einstellungen</b>: Ansicht, Sortierung, Sprache und — falls du einen anlegst — dein persönlicher TMDb-Zugangsschlüssel</li>
 </ul>
 <p><b>Wir haben auf diese Daten keinen Zugriff.</b> Sie werden zu keinem Zeitpunkt an uns oder an Dritte übermittelt.</p>
+<p>Die automatische Gerätesicherung von Android (Google-Backup) ist für YourFilm <b>abgeschaltet</b> (<code>android:allowBackup="false"</code>). Deine Sammlung wandert also nicht von selbst in ein Cloud-Konto. Für den Gerätewechsel hat YourFilm eine <b>eigene Sicherung</b>, die du selbst auslöst und selbst ablegst.</p>
 
 <h2>4. Es gibt kein Nutzerkonto</h2>
 <p>YourFilm verlangt keine Registrierung und keine E-Mail-Adresse. Wir erheben keine Gerätekennungen, keine Standortdaten, keine Werbe-ID und keine Nutzungsstatistiken.</p>
 
 <h2>5. Verbindungen nach außen</h2>
-<p>Nur wenn du selbst scannst oder suchst, werden Anfragen gestellt:</p>
+<p>Die App ruft <b>von sich aus nichts ab</b>. Eine Verbindung entsteht nur, wenn du selbst scannst, suchst, ein Bild anzeigen lässt oder auf Aktualisierung prüfst. Dies sind <b>alle</b> Gegenstellen, die der Programmcode aufruft:</p>
 <ul>
-<li><b><a href="https://www.upcitemdb.com">UPCitemdb</a></b> — übermittelt wird der gescannte <b>Barcode</b>. <a href="https://www.upcitemdb.com/wp/docs/main/privacy-policy/">Datenschutz</a></li>
-<li><b><a href="https://www.themoviedb.org">TMDb</a></b> — übermittelt werden <b>Suchbegriff bzw. Filmkennung</b> und dein gewählter <b>Sprachcode</b>. <a href="https://www.themoviedb.org/privacy-policy">Datenschutz</a></li>
+
+<li><b><a href="https://www.upcitemdb.com">UPCitemdb</a></b> (<code>api.upcitemdb.com</code>) — schlägt zu einem Barcode die Produktangaben nach.<br>
+Übermittelt: der <b>gescannte Barcode</b> (EAN/UPC) und eine Kennzeichnung der App (Name, Version, Projektadresse).<br>
+Kein Schlüssel, kein Konto. <a href="https://www.upcitemdb.com/wp/docs/main/privacy-policy/">Datenschutz</a></li>
+
+<li><b><a href="https://www.themoviedb.org">TMDb</a></b> (<code>api.themoviedb.org</code>) — liefert Filmdaten, Besetzung und Plakate.<br>
+Übermittelt: <b>Suchbegriff bzw. Filmkennung</b>, dein gewählter <b>Sprachcode</b> und <b>dein persönlicher TMDb-Zugangsschlüssel</b>.<br>
+Nur mit Schlüssel: Du legst ihn bei TMDb selbst an (dafür brauchst du dort ein Konto) und trägst ihn in den Einstellungen ein; er wird nur auf deinem Gerät gespeichert. Ohne Schlüssel wird TMDb nie gerufen. <a href="https://www.themoviedb.org/privacy-policy">Datenschutz</a></li>
+
+<li><b>TMDb-Bildserver</b> (<code>image.tmdb.org</code>) — lädt Plakate und Personenfotos, die TMDb genannt hat.<br>
+Übermittelt: die <b>Bildadresse</b>. Kein Schlüssel, kein Konto.</li>
+
+<li><b><a href="https://www.wikidata.org">Wikidata</a></b> (<code>www.wikidata.org</code>) — die kostenlose Filmsuche ohne Schlüssel: Titelsuche, Volltextsuche, der Rückweg über eine IMDb-Kennung und der Datensatz zu einem gefundenen Eintrag.<br>
+Übermittelt: <b>Suchtitel bzw. Kennung</b> und die App-Kennzeichnung.<br>
+Kein Schlüssel, kein Konto. <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Datenschutz (Wikimedia)</a></li>
+
+<li><b>Wikipedia</b> (<code>de.wikipedia.org</code>, <code>en.wikipedia.org</code>) — holt Handlungstext und Titelbild zu einem Artikelnamen.<br>
+Übermittelt: <b>Artikelname</b>, gewählte Sprachausgabe und die App-Kennzeichnung.<br>
+Kein Schlüssel, kein Konto. <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">Datenschutz (Wikimedia)</a></li>
+
+<li><b>Wikimedia-Bildserver</b> (<code>commons.wikimedia.org</code>, weitergeleitet auf <code>upload.wikimedia.org</code>) — lädt die Cover und Fotos, auf die Wikidata und Wikipedia verweisen.<br>
+Übermittelt: <b>Bildname bzw. Bildadresse</b>. Kein Schlüssel, kein Konto.</li>
+
+<li><b>Cinemeta</b> (<code>v3-cinemeta.strem.io</code>) — <b>ein fremder Drittdienst</b>, betrieben vom Stremio-Projekt. Er dient als Auffanglinie: Findet Wikidata zu einem gesäuberten Händlertitel nichts, wird dort die IMDb-Kennung gesucht.<br>
+Übermittelt: der <b>Suchtitel</b> und die App-Kennzeichnung.<br>
+Kein Schlüssel, kein Konto. <a href="https://www.stremio.com/privacy">Datenschutz (Stremio)</a></li>
+
+<li><b>GitHub</b> (<code>github.com</code>, Dateiauslieferung über <code>objects.githubusercontent.com</code>) — <b>zwei Zwecke</b>, beide nur auf deinen Tipp in den Einstellungen:
+  <ul>
+  <li><b>Update-Prüfung</b>: lädt eine kleine Textdatei mit der neuesten Versionsnummer.</li>
+  <li><b>Update-Download</b>: lädt die neue Programmdatei (APK) herunter und übergibt sie dem System-Installer.</li>
+  </ul>
+  Übermittelt wird nichts über dich und nichts aus deiner Sammlung — GitHub sieht wie jeder Webserver deine IP-Adresse und die angefragte Datei. Kein Schlüssel, kein Konto. Das betrifft nur die <b>direkt geladene Fassung</b>; die Store-Fassung wird über Google Play aktualisiert. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">Datenschutz</a></li>
+
+<li><b>Bildserver Dritter aus der Barcode-Antwort</b> — nennt UPCitemdb zu einem Produkt ein Produktbild, liegt dieses Bild bei einem <b>fremden Händler- oder Bildserver</b>, dessen Adresse aus der Antwort stammt. Wird das Bild angezeigt, wird dieser Server angefragt.<br>
+Übermittelt: die <b>Bildadresse</b>. Welcher Anbieter das ist, hängt vom jeweiligen Produkt ab.</li>
+
+<li><b>Browser-Aufruf</b> (<code>www.themoviedb.org</code>) — der Knopf „Schlüssel holen" in den Einstellungen öffnet die TMDb-Seite in <b>deinem Browser</b>. Ab da gilt der Datenschutz von TMDb und deines Browsers.</li>
+
 </ul>
-<p><b>Keine persönlichen Angaben werden mitgesendet</b> — weder Kaufpreis noch Standort, Notizen, Bewertung oder eine Gerätekennung. Wie bei jedem Internetabruf wird technisch die IP-Adresse übermittelt.</p>
-<p>Ohne diese Dienste funktioniert die App vollständig; du erfasst Filme dann von Hand. Der Zugangsschlüssel zur Filmdatenbank wird nur auf deinem Gerät gespeichert.</p>
 
-<h2>6. Kamera</h2>
-<p>Die Kameraberechtigung dient allein dem Lesen des Barcodes auf der Filmhülle. Es werden <b>keine Bilder gespeichert und keine übertragen</b>.</p>
+<h2>6. Was dabei nie mitgeht</h2>
+<p><b>Keine persönlichen Angaben werden mitgesendet</b> — weder Kaufpreis noch Kaufdatum, Standort, Notizen, Bewertung, Ausleihen noch eine Geräte- oder Werbekennung. Die Anfragen tragen lediglich eine Kennzeichnung der App (Name, Version und die öffentliche Projektadresse); das verlangen die Wikimedia-Dienste ausdrücklich, und es ist an keine Person gebunden. Wie bei jedem Internetabruf wird technisch die IP-Adresse übermittelt.</p>
+<p>Ohne diese Dienste funktioniert die App vollständig; du erfasst Filme dann von Hand. Alle Verbindungen laufen verschlüsselt über HTTPS.</p>
 
-<h2>7. Käufe (YourFilm Voll)</h2>
-<p>Bis 40 Exemplare ist YourFilm kostenlos. Darüber hinaus gibt es ein Abonnement (0,99 € alle 4 Wochen oder 9,99 € jährlich). Abrechnung und Verwaltung laufen vollständig über Google Play bzw. den App Store — <b>wir erhalten keine Zahlungsdaten</b>. In der App wird nur gespeichert, bis wann der Zugang gilt.</p>
+<h2>7. Kamera</h2>
+<p>Die Kameraberechtigung dient allein dem Lesen des Barcodes auf der Filmhülle. Es werden <b>keine Bilder gespeichert und keine übertragen</b>. Wählst du ein eigenes Coverfoto aus Kamera oder Galerie, bleibt es auf deinem Gerät.</p>
 
-<h2>8. Deine Rechte</h2>
+<h2>8. Aktualisierung außerhalb des Stores</h2>
+<p>Die direkt geladene Android-Fassung hat einen Update-Knopf. Dafür fordert sie die Berechtigung <code>REQUEST_INSTALL_PACKAGES</code> an — sie erlaubt allein, die von GitHub geladene Programmdatei an den System-Installer zu übergeben. Prüfung und Download starten <b>nur auf deinen Tipp</b>, nie von selbst, und die geladene Datei liegt im temporären Ordner deines Geräts. Die Store-Fassung nutzt diesen Weg nicht.</p>
+
+<h2>9. Käufe (YourFilm Voll)</h2>
+<p>Bis 40 Exemplare ist YourFilm kostenlos. Darüber hinaus gibt es ein Abonnement (0,99 € alle 4 Wochen oder 9,99 € jährlich). Abrechnung und Verwaltung laufen vollständig über Google Play bzw. den App Store — <b>wir erhalten keine Zahlungsdaten</b>. In der App wird nur gespeichert, bis wann der Zugang gilt. Es gelten die Datenschutzbestimmungen des jeweiligen Stores:
+<a href="https://policies.google.com/privacy">Google</a> bzw. <a href="https://www.apple.com/legal/privacy/">Apple</a>.</p>
+
+<h2>10. Deine Rechte</h2>
 <p>Da wir keine personenbezogenen Daten von dir erheben, gibt es bei uns nichts zu berichtigen, zu sperren oder zu löschen. Deine Sammlung liegt auf deinem Gerät:</p>
 <ul>
 <li><b>Ausführen</b>: als Sicherung oder als Tabelle (CSV) — jederzeit, auch ohne aktives Abonnement</li>
 <li><b>Löschen</b>: durch Deinstallation der App</li>
 </ul>
 
-<h2>9. Hinweis zu den Datenquellen</h2>
-<p>Diese App verwendet die TMDb-API, ist aber weder von TMDb unterstützt noch zertifiziert.</p>
+<h2>11. Hinweis zu den Datenquellen</h2>
+<p>Diese App verwendet die TMDb-API, ist aber weder von TMDb unterstützt noch zertifiziert. Wikidata, Wikipedia und Wikimedia Commons sind Angebote der Wikimedia Foundation; Cinemeta ist ein Angebot des Stremio-Projekts. Keiner dieser Anbieter steht mit uns in einer Verbindung, und keiner erhält Daten über dich.</p>
 
-<h2>10. Änderungen</h2>
+<h2>12. Änderungen</h2>
 <p>Bei Änderungen wird das Datum oben angepasst. Wesentliche Änderungen werden in den Versionshinweisen der App genannt.</p>
 
 </body></html>
