@@ -37,21 +37,23 @@ in einer Datenbank, die nur der App selbst zugänglich ist:</p>
   <li>Einstellungen der App</li>
 </ul>
 <p>Diese Daten verlassen das Gerät nicht über die App. Beim Deinstallieren der App
-werden sie vollständig gelöscht. Ausnahme: Hast du die Android-Gerätesicherung
-(Google-Backup) eingeschaltet, kann dein Gerät eine Kopie der App-Daten in deinem
-Google-Konto ablegen — das steuert Android, nicht die App; es gelten die
-Datenschutzbestimmungen von Google, und du kannst die Sicherung in den
-Android-Einstellungen abschalten oder löschen.</p>
+werden sie vollständig gelöscht. Ausnahme: Hast du die Gerätesicherung deines
+Systems eingeschaltet (Google-Backup unter Android, iCloud-Backup unter iOS), kann
+dein Gerät eine Kopie der App-Daten in deinem Konto bei Google bzw. Apple ablegen —
+das steuert das Betriebssystem, nicht die App; es gelten die Datenschutzbestimmungen
+des jeweiligen Anbieters, und du kannst die Sicherung in den Geräteeinstellungen
+abschalten oder löschen.</p>
 
 <h2>Berechtigungen</h2>
 <p>ZeitAnker fordert keine Berechtigung für Standort, Kontakte, Kamera, Mikrofon oder
 Telefonie an. Für die optionalen Erinnerungen fragt die App die Berechtigung für
 Benachrichtigungen an (<code>POST_NOTIFICATIONS</code>) — erst in dem Moment, in dem du
-eine Erinnerung einschaltest; zusätzlich nutzt sie <code>RECEIVE_BOOT_COMPLETED</code>,
-damit eingeschaltete Erinnerungen einen Neustart des Geräts überstehen. Für das
-optionale Abo wird die Berechtigung für Abrechnung über Google Play
-(<code>com.android.vending.BILLING</code>) benötigt; sie ermöglicht ausschließlich
-den Kauf und gibt dem Entwickler keinen Zugriff auf deine Daten.</p>
+eine Erinnerung einschaltest; unter Android nutzt sie zusätzlich
+<code>RECEIVE_BOOT_COMPLETED</code>, damit eingeschaltete Erinnerungen einen Neustart
+des Geräts überstehen. Für das optionale Abo wird unter Android die Berechtigung für
+Abrechnung über Google Play (<code>com.android.vending.BILLING</code>) benötigt; unter
+iOS läuft der Kauf über das App-Store-Konto. Beides ermöglicht ausschließlich den Kauf
+und gibt dem Entwickler keinen Zugriff auf deine Daten.</p>
 
 <h2>Export deiner Daten</h2>
 <p>Mit dem optionalen Abo kannst du deine Zeiten als PDF-, Excel- oder HTML-Datei
@@ -61,11 +63,14 @@ alle Einträge jederzeit direkt in der App einsehen, bearbeiten und löschen.</p
 
 <h2>Abo und Zahlung</h2>
 <p>ZeitAnker ist kostenlos nutzbar. Ein optionales Abo schaltet zusätzliche Funktionen
-frei. Der Kauf wird vollständig über Google Play abgewickelt; die App selbst erhält
-dabei keine Zahlungsdaten und keine personenbezogenen Daten. Zahlungsdaten werden
-weder in der App gespeichert noch an den Entwickler übermittelt. Es gelten die
-<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzbestimmungen
-von Google</a>.</p>
+frei. Der Kauf wird vollständig über den Store deines Geräts abgewickelt — Google Play
+unter Android, den App Store unter iOS. Die App selbst erhält dabei keine Zahlungsdaten
+und keine personenbezogenen Daten; Zahlungsdaten werden weder in der App gespeichert
+noch an den Entwickler übermittelt. Es gelten die Datenschutzbestimmungen des
+jeweiligen Stores:
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>
+bzw.
+<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>.</p>
 
 <h2>Deine Rechte</h2>
 <p>Da keine personenbezogenen Daten an den Entwickler übermittelt werden, liegen dort
@@ -75,6 +80,6 @@ einzeln oder vollständig löschen und durch Deinstallieren restlos entfernen.</
 
 <h2>Verantwortlich</h2>
 <p>FaNiCa, Falk Carstensen, 25813 Husum.<br>
-Kontakt: über den Kontakt-Knopf auf der Website oder über den Google-Play-Eintrag der App.</p>
+Kontakt: über den Kontakt-Knopf auf der Website oder über den Store-Eintrag der App.</p>
 </body>
 </html>
