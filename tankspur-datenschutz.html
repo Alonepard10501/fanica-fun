@@ -31,8 +31,9 @@ body.de .fassung.de,body.en .fassung.en{display:block}
 <div class="kasten">
 <b>Kurz gesagt:</b> Tankspur erhebt keine personenbezogenen Daten. Alle
 erfassten Betankungen bleiben auf Ihrem Gerät. Es gibt keinen Server, keine
-Konten im Internet, keine Werbung und keine Analyse-Dienste. Die App
-besitzt nicht einmal die Berechtigung, auf das Internet zuzugreifen.
+Konten im Internet, keine Werbung und keine Analyse-Dienste. Ins Netz geht
+die App nur, wenn Sie im Profil selbst auf &bdquo;Auf Update pr&uuml;fen&ldquo;
+tippen &mdash; dabei werden <b>keine</b> Daten von Ihnen gesendet.
 </div>
 
 <h2>2. Welche Daten verarbeitet werden</h2>
@@ -58,11 +59,19 @@ diesen einen Lesevorgang verwendet, nicht dauerhaft gespeichert und
 nirgendwohin übertragen. Gespeichert werden allein die Werte, die Sie im
 Formular bestätigen.</p>
 
-<h2>3. Keine Datenübertragung, keine Internetverbindung</h2>
-<p>Die App stellt von sich aus keine Verbindung ins Internet her. Sie
+<h2>3. Keine Daten&uuml;bertragung</h2>
+<p>Die App stellt <b>von sich aus</b> keine Verbindung ins Internet her. Sie
 enthält keine Werbe-Bibliotheken, keine Analyse-Werkzeuge (kein Google
 Analytics, kein Firebase, kein Crash-Reporting) und keine Schnittstellen zu
 sozialen Netzwerken.</p>
+<p>Eine einzige Ausnahme gibt es, und sie geschieht nur auf Ihren Tastendruck:
+Tippen Sie im Profil auf &bdquo;Auf Update pr&uuml;fen&ldquo;, ruft die App
+eine Versionsdatei von GitHub ab und l&auml;dt auf Wunsch die neue Fassung
+herunter. Dabei wird <b>nichts &uuml;ber Sie gesendet</b> &mdash; keine Kennung,
+keine Betankungen, keine E-Mail-Adresse. Die Anfrage l&auml;uft &uuml;ber
+HTTPS; GitHub sieht dabei technisch bedingt Ihre IP-Adresse, wie bei jedem
+Aufruf einer Webseite. In der Apple-Fassung gibt es diesen Abruf nicht &mdash;
+dort meldet der App&nbsp;Store neue Fassungen.</p>
 
 <h2>4. Ihr Passwort</h2>
 <p>Ihr Passwort wird <b>niemals im Klartext gespeichert</b>, sondern
@@ -72,11 +81,16 @@ trennt die Daten verschiedener Profile auf demselben Gerät. Sie ist
 hält — dafür ist die Bildschirmsperre Ihres Geräts zuständig.</p>
 
 <h2>5. Berechtigungen</h2>
-<p>Tankspur fordert <b>keine</b> besonderen Android-Berechtigungen an:
-keinen Standort, keine Kontakte, kein Mikrofon — und auch keine eigene
-Kamera-Berechtigung: Beleg-Fotos macht die Kamera-App Ihres Geräts, und
-Bilder wählen Sie über die Fotoauswahl von Android aus; die App sieht
-nur das eine gewählte Bild.</p>
+<p>Tankspur fordert <b>keinen</b> Standort, <b>keine</b> Kontakte, <b>kein</b>
+Mikrofon und auch <b>keine eigene Kamera-Berechtigung</b> an: Beleg-Fotos macht
+die Kamera-App Ihres Ger&auml;ts, und Bilder w&auml;hlen Sie &uuml;ber die
+Fotoauswahl von Android aus; die App sieht nur das eine gew&auml;hlte Bild.</p>
+<p>Im Android-Paket stehen genau zwei Berechtigungen, beide allein f&uuml;r den
+Update-Knopf: <code>INTERNET</code>, um die Versionsdatei abzurufen, und
+<code>REQUEST_INSTALL_PACKAGES</code>, damit das System Sie nach dem
+Herunterladen fragen darf, ob es die neue Fassung einspielen soll. Ohne Ihren
+Tastendruck wird keine davon benutzt. Die Apple-Fassung hat weder das eine noch
+das andere.</p>
 
 <h2>6. Daten löschen</h2>
 <p>Einzelne Einträge löschen Sie in der App durch Wischen. Sämtliche Daten
@@ -115,8 +129,9 @@ angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
 <div class="kasten">
 <b>In short:</b> Tankspur collects no personal data. All recorded fill-ups
 stay on your device. There is no server, no online account, no advertising
-and no analytics. The app does not even hold the permission to access the
-internet.
+and no analytics. The app only goes online when you tap &bdquo;Check for
+update&ldquo; in the profile yourself &mdash; and <b>no</b> data about you is
+sent in the process.
 </div>
 
 <h2>2. What data is processed</h2>
@@ -139,10 +154,17 @@ recognition runs without internet). The app uses the photo for that
 single reading only, does not store it permanently and never transmits
 it anywhere. Only the values you confirm in the form are saved.</p>
 
-<h2>3. No data transfer, no internet connection</h2>
-<p>The app does not connect to the internet on its own. It contains no
+<h2>3. No data transfer</h2>
+<p>The app does not connect to the internet <b>on its own</b>. It contains no
 advertising libraries, no analytics tools (no Google Analytics, no
 Firebase, no crash reporting) and no social network interfaces.</p>
+<p>There is exactly one exception, and it only happens when you press the
+button: tapping &bdquo;Check for update&ldquo; in the profile makes the app
+fetch a version file from GitHub and, if you wish, download the new release.
+<b>Nothing about you is sent</b> &mdash; no identifier, no fill-ups, no email
+address. The request uses HTTPS; as with any web page, GitHub technically sees
+your IP address. The Apple edition has no such check &mdash; there the App
+Store announces new releases.</p>
 
 <h2>4. Your password</h2>
 <p>Your password is <b>never stored in plain text</b>, only as a
@@ -152,11 +174,15 @@ someone holding your unlocked device — that is what your device's screen
 lock is for.</p>
 
 <h2>5. Permissions</h2>
-<p>Tankspur requests <b>no</b> special Android permissions: no location,
-no contacts, no microphone — and no camera permission of its own:
-receipt photos are taken by your device's camera app, and images are
-chosen via Android's photo picker; the app only ever sees the single
-image you select.</p>
+<p>Tankspur requests <b>no</b> location, <b>no</b> contacts, <b>no</b>
+microphone and <b>no camera permission of its own</b>: receipt photos are taken
+by your device's camera app, and images are chosen via Android's photo picker;
+the app only ever sees the single image you select.</p>
+<p>The Android package holds exactly two permissions, both solely for the
+update button: <code>INTERNET</code> to fetch the version file, and
+<code>REQUEST_INSTALL_PACKAGES</code> so the system may ask you, after the
+download, whether to install the new release. Neither is used without your tap.
+The Apple edition has neither.</p>
 
 <h2>6. Deleting data</h2>
 <p>You delete individual entries in the app by swiping. All data is removed
