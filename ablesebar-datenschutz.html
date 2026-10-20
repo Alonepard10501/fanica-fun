@@ -110,9 +110,12 @@ geladen, nie welche gesendet. Von sich aus prüft die App nicht.</li>
 <p>Es gibt in dieser Fassung keinen Kauf und kein Abo. Wir binden
 <b>keine Werbe-, Analyse- oder Absturzmelde-Dienste</b> ein und haben keine
 Schnittstellen zu sozialen Netzwerken. Mit der Texterkennung (ML Kit) kommt
-jedoch ein Baustein von Google mit; über diesen kann Google technische Daten
-über die Nutzung seines eigenen Bausteins erhalten. Darauf haben wir keinen
-Einfluss, und wir erhalten davon nichts.</p>
+jedoch eine Übertragungskomponente von Google in die App, die nach Googles
+eigenen Angaben verschlüsselt technische Nutzungsdaten an Google senden kann
+(etwa Gerätemodell, Systemversion, App-Paket und -Version, eine Kennung je
+Installation, Leistungswerte und Fehlercodes) — ohne Zutun der App und ohne
+Abschaltmöglichkeit. Foto, erkannte Ziffern und Ihre Daten gehören nicht dazu.
+Darauf haben wir keinen Einfluss, und wir erhalten davon nichts.</p>
 
 <h2>6. Ihr Passwort</h2>
 <p>Legen Sie ein Profil an, wird Ihr Passwort <b>niemals im Klartext
@@ -127,9 +130,11 @@ Verschlüsselung Ihres Geräts — dafür ist die Bildschirmsperre zuständig.</
 Kamera-Berechtigung an: Fotos macht die Kamera-App Ihres Geräts, Bilder
 wählen Sie über die Fotoauswahl des Systems; die App sieht nur das eine
 gewählte Bild.</p>
-<p>Die App verlangt genau zwei Berechtigungen: <b>Internetzugriff</b> für die
-Update-Prüfung aus Punkt 5 und — nur in der Testphase außerhalb der Stores —
-das <b>Installieren einer heruntergeladenen Fassung</b>. Die Abfrage des
+<p>Die App verlangt zwei System-Berechtigungen: <b>Internetzugriff</b>, den
+unser eigener Code nur für die Update-Prüfung aus Punkt 5 nutzt und den auch
+die ML-Kit-Komponente von Google nutzt, und — nur in der Testphase außerhalb
+der Stores — das <b>Installieren einer heruntergeladenen Fassung</b>. Dazu
+kommt eine app-interne Kennung von AndroidX, die nichts freischaltet. Die Abfrage des
 Netzwerkstatus, die ein mitgelieferter Baustein anfordern würde, ist
 ausdrücklich abgeschaltet.</p>
 
@@ -250,10 +255,13 @@ downloaded, never sent. The app never checks on its own.</li>
 </ul>
 <p>This version has no purchase and no subscription. We include <b>no
 advertising, analytics or crash-reporting services</b> and have no social
-network interfaces. Text recognition (ML Kit), however, brings a component by
-Google with it; through it, Google may receive technical data about the use
-of its own component. We have no influence over that and receive nothing
-from it.</p>
+network interfaces. Text recognition (ML Kit), however, brings a transport
+component by Google into the app which, according to Google, may send
+encrypted technical usage data to Google (such as device model, system
+version, app package and version, a per-installation identifier, performance
+figures and error codes) — without any action by the app and with no way to
+switch it off. The photo, the recognised digits and your data are not part of
+it. We have no influence over that and receive nothing from it.</p>
 
 <h2>6. Your password</h2>
 <p>If you create a profile, your password is <b>never stored in plain
@@ -267,9 +275,11 @@ for device encryption — that is what your screen lock is for.</p>
 permission of its own: photos are taken by your device's camera app, and
 images are chosen via the system photo picker; the app only ever sees the
 single image you select.</p>
-<p>The app declares exactly two permissions: <b>internet access</b> for the
-update check in point 5 and — only during the testing phase outside the
-stores — <b>installing a downloaded version</b>. The network-state query
+<p>The app declares two system permissions: <b>internet access</b>, which our
+own code uses only for the update check in point 5 and which Google's ML Kit
+component also uses, and — only during the testing phase outside the stores —
+<b>installing a downloaded version</b>. In addition there is an app-internal
+AndroidX identifier that unlocks nothing. The network-state query
 that a bundled component would request is explicitly switched off.</p>
 
 <h2>8. Deleting data</h2>

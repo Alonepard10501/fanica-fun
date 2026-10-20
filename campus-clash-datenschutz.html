@@ -41,11 +41,13 @@ ein Spielstand vorhanden und die App geöffnet ist — <strong>auch ohne Freunde
 oder Allianz</strong>.</p>
 <p>Übertragen werden deine Spielkennung, dein selbst gewählter Spielername,
 Klasse, Fach-Level, Stärke, Wochen- und Kampfpunkte sowie Geschlecht und Farbe
-deiner Spielfigur. Dazu kommen Freundschafts-Anfragen, Allianz-Einladungen,
-Duelle, Allianz-Chat und Direktnachrichten an Freunde. Den Allianz-Chat
-verschlüsselt die App zusätzlich mit einem gemeinsamen Allianz-Schlüssel, sofern
-die Allianz einen hat; Direktnachrichten, Einladungen und dein Spielerstand
-liegen beim Relay lesbar. Wer den Kanalnamen kennt, kann sie mitlesen — trag in
+deiner Spielfigur. In einer Allianz kommen deren Name und Kennung, die
+Mitgliederliste mit denselben Werten und der gemeinsame Allianz-Stand hinzu.
+Dazu kommen Freundschafts-Anfragen, Allianz-Einladungen, Duelle, Allianz-Chat
+und Direktnachrichten an Freunde. Mitgliederliste und Allianz-Chat verschlüsselt
+die App zusätzlich mit einem gemeinsamen Allianz-Schlüssel, sofern die Allianz
+einen hat, sonst liegen sie beim Relay lesbar; Direktnachrichten, Einladungen
+und dein Spielerstand liegen dort immer lesbar. Wer den Kanalnamen kennt, kann sie mitlesen — trag in
 Spielername und Nachrichten deshalb nichts ein, was dich erkennbar macht.</p>
 <p>Die Relay-Betreiber sehen technisch deine IP-Adresse. Wie lange sie
 Nachrichten vorhalten, bestimmen sie selbst; die App fragt beim Abholen nur die
@@ -57,15 +59,18 @@ Allianz scannst; gefragt wird erst beim ersten Scan. Das Bild wird auf dem Gerä
 ausgewertet, nicht gespeichert und nicht gesendet. Für die Erkennung ist Googles
 Bibliothek ML&nbsp;Kit eingebaut. Sie sendet nach Googles eigenen Angaben
 technische Diagnose- und Nutzungsdaten an Google (etwa Gerätemodell,
-Android-Version, App-Paket und -Version, Leistungswerte und Fehlercodes) —
+Android-Version, App-Paket und -Version, eine Kennung je Installation,
+Leistungswerte und Fehlercodes) —
 verschlüsselt, ohne Zutun der App und ohne Abschaltmöglichkeit. Spielstand,
 Nachrichten und Kamerabilder gehören nicht dazu. Es gelten die
 <a href="https://policies.google.com/privacy">Datenschutzbestimmungen von Google</a>.</p>
 
 <h2>Hinweise</h2>
-<p>Hinweise auf fertige Trainings und Jobs plant die App lokal auf dem Gerät
-(Berechtigung „Benachrichtigungen“, gefragt erst beim Einschalten; nach einem
-Neustart des Geräts werden sie neu geplant). Es gibt keinen Push-Dienst.</p>
+<p>Hinweise auf fertige Trainings und Jobs plant die App lokal auf dem Gerät.
+Sie sind ab Werk eingeschaltet; die Erlaubnis „Benachrichtigungen“ fragt die App
+beim ersten geplanten Hinweis, abschalten lassen sie sich in den Einstellungen.
+Nach einem Neustart des Geräts werden sie neu geplant. Es gibt keinen
+Push-Dienst.</p>
 
 <h2>Update-Prüfung</h2>
 <p>Erst wenn du in den Einstellungen nach einem Update suchst, fragt die App eine

@@ -69,13 +69,14 @@ Ziehungen selbst als Datei ablegen und über <i>Sicherung einspielen</i> wieder
 einlesen — dabei wird nur ergänzt, was fehlt. Wohin diese Datei geht — und ob
 Sie sie etwa in einen Cloud-Speicher legen — entscheiden allein Sie; die App
 überträgt sie nirgendwohin.</p>
-<p><b>Android-Sicherung:</b> ScheinBar schaltet die automatische Sicherung
+<p><b>Gerätesicherung:</b> ScheinBar schaltet die automatische Sicherung
 von Android nicht ab. Ist auf Ihrem Gerät die Sicherung in Ihr Google-Konto
 eingeschaltet, nimmt Android die Daten der App — Scheine, Ziehungen, Profil
 samt Passwort-Prüfwert und Merkposten — in diese Sicherung auf und spielt sie
-bei einer Neuinstallation oder einem Gerätewechsel wieder ein. Das steuert
-allein Android über Ihr Konto; die App sendet dabei selbst nichts, und wir
-sehen davon nichts.</p>
+bei einer Neuinstallation oder einem Gerätewechsel wieder ein. Unter iOS nimmt
+das System die App-Daten in Ihre iCloud- oder Rechner-Sicherung auf. Das steuert
+allein das Betriebssystem über Ihr Konto; die App sendet dabei selbst nichts,
+und wir sehen davon nichts.</p>
 
 <h2>3. Spielschein fotografieren (Texterkennung)</h2>
 <p>Wenn Sie einen Spielschein fotografieren, wird der Text
@@ -113,8 +114,9 @@ Beim ersten Start sind das die Ziehungen der letzten zwölf Monate, danach
 ergänzt jeder Abruf nur die Tage aus diesem Zeitraum, die auf dem Gerät
 fehlen; bereits vorhandene Ziehungen bleiben unberührt. Die geladenen
 Ziehungen werden auf Ihrem Gerät gespeichert. Das geschieht <b>beim Start der
-App automatisch</b> und erneut, wenn Sie die App nach mindestens sechs Stunden
-aus dem Hintergrund zurückholen; in den Einstellungen unter
+App automatisch</b> und erneut, wenn Sie die App aus dem Hintergrund zurückholen
+und der letzte solche Abruf mindestens sechs Stunden zurückliegt; in den
+Einstellungen unter
 <i>Ziehungsliste aktualisieren</i> lässt es sich jederzeit wiederholen. Dabei erhält GitHub technisch bedingt Ihre IP-Adresse. Es werden
 nur Daten geladen, nie welche gesendet.</li>
 <li><b>Update-Prüfung (Testphase)</b>: Außerhalb der Stores prüft die App
@@ -163,10 +165,11 @@ Ziehungen der Hauptspiele auf einmal; die Ergebnisse der Zusatzspiele
 (Spiel 77, SUPER 6, Superchance), die Merkposten und Ihr Profil samt
 Passwort-Prüfwert bleiben dabei bestehen. <b>Restlos</b> vom Gerät entfernt
 wird alles, wenn Sie die App deinstallieren oder in den Geräte-Einstellungen
-unter „Apps" ihren Speicher leeren. Ist die Android-Sicherung Ihres Geräts
-eingeschaltet, kann dort eine Kopie bleiben und bei einer Neuinstallation
+unter „Apps" ihren Speicher leeren. Ist die Gerätesicherung (Google-Konto bzw.
+iCloud) eingeschaltet, kann dort eine Kopie bleiben und bei einer
+Neuinstallation (Android) bzw. einer Wiederherstellung des Geräts (iOS)
 zurückkommen; diese Kopie verwalten Sie in den Sicherungs-Einstellungen Ihres
-Geräts bzw. Google-Kontos. Da wir keine Daten erhalten, gibt es bei uns
+Geräts bzw. Kontos. Da wir keine Daten erhalten, gibt es bei uns
 nichts zu löschen.</p>
 
 <h2>9. Kinder</h2>
@@ -236,12 +239,13 @@ and draws as a file yourself, and read them back in under <i>Restore
 backup</i> — which only adds what is missing. Where that file goes — and
 whether you put it into cloud storage — is entirely your decision; the app
 transmits it nowhere.</p>
-<p><b>Android backup:</b> ScheinBar does not switch off Android's automatic
+<p><b>Device backup:</b> ScheinBar does not switch off Android's automatic
 backup. If backup to your Google account is enabled on your device, Android
 includes the app's data — tickets, draws, profile with password check value
 and reminders — in that backup and restores it after a reinstall or when you
-switch devices. This is controlled by Android through your account alone; the
-app itself sends nothing, and we see none of it.</p>
+switch devices. On iOS the system includes the app data in your iCloud or
+computer backup. This is controlled by the operating system through your
+account alone; the app itself sends nothing, and we see none of it.</p>
 
 <h2>3. Photographing a ticket (text recognition)</h2>
 <p>If you photograph a ticket, the text is recognised <b>exclusively on
@@ -277,8 +281,8 @@ On first start these are the draws of the past twelve months; after that
 each download only adds the days within that period that are missing on the
 device, leaving existing draws untouched. The downloaded draws are stored on
 your device. This happens <b>automatically when the app starts</b> and again
-when you bring the app back from the background after at least six hours; it
-can be repeated at any time in the settings under <i>Refresh draw list</i>. GitHub technically receives your IP address in
+when you return to the app from the background and the last such download
+was at least six hours ago; it can be repeated at any time in the settings under <i>Refresh draw list</i>. GitHub technically receives your IP address in
 the process. Data is only downloaded, never sent.</li>
 <li><b>Update check (testing phase)</b>: outside the stores the app checks
 the same GitHub address, when you tap it in the profile area, for a newer
@@ -322,10 +326,10 @@ subscription and — only during the testing phase outside the stores —
 main games at once; the results of the add-on games (Spiel 77, SUPER 6,
 Superchance), the reminders and your profile with its password check value
 remain. <b>Everything</b> is removed from the device when you uninstall the
-app or clear its storage in your device's settings under "Apps". If Android
-backup is enabled on your device, a copy may remain there and return after a
-reinstall; you manage that copy in the backup settings of your device or
-Google account. As we never receive any data, there is nothing for us to
+app or clear its storage in your device's settings under "Apps". If device
+backup (Google account or iCloud) is enabled, a copy may remain there and
+return after a reinstall (Android) or a device restore (iOS); you manage that
+copy in the backup settings of your device or account. As we never receive any data, there is nothing for us to
 delete.</p>
 
 <h2>9. Children</h2>

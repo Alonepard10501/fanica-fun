@@ -81,7 +81,7 @@ nutzt Googles ML&nbsp;Kit mit einem in der App enthaltenen Modell. Foto und
 erkannter Text bleiben auf dem Ger&auml;t. Mit ML&nbsp;Kit kommt jedoch eine
 &Uuml;bertragungskomponente von Google in die App, die nach Googles eigenen
 Angaben technische Nutzungsdaten verschl&uuml;sselt an Google senden kann:
-Ger&auml;tehersteller und -modell, Android-Version, App-Name und -Version, eine
+Ger&auml;tehersteller und -modell, Systemversion, App-Name und -Version, eine
 zuf&auml;llige Kennung dieser Installation, Leistungs- und Fehlerwerte sowie die
 Art des Vorgangs. Google nutzt diese Daten zur Diagnose und Nutzungsauswertung
 von ML&nbsp;Kit; abschalten k&ouml;nnen wir das nicht, und wir erhalten davon
@@ -114,8 +114,9 @@ f&uuml;r den Update-Knopf und <code>REQUEST_INSTALL_PACKAGES</code> nur, damit d
 System Sie nach dem Herunterladen fragen darf, ob es die neue Fassung einspielen
 soll. Die Internet-Berechtigung gilt allerdings f&uuml;r die ganze App und damit
 auch f&uuml;r die Texterkennung von Google aus Abschnitt&nbsp;3. Dazu kommt eine
-app-interne Kennung von AndroidX, die nichts freischaltet. Die Apple-Fassung hat
-weder das eine noch das andere.</p>
+app-interne Kennung von AndroidX, die nichts freischaltet. Die Apple-Fassung kennt
+keine dieser Berechtigungen; die ML-Kit-Komponente aus Abschnitt&nbsp;3 ist dort aber
+ebenfalls enthalten.</p>
 <p>Auf einem iPhone oder iPad fragt Sie das System vor dem <b>ersten Kamera-Foto</b>
 einmal um Erlaubnis f&uuml;r die Kamera &mdash; das verlangt Apple so. Vorhandene
 Bilder w&auml;hlen Sie &uuml;ber die Fotoauswahl von iOS; daf&uuml;r braucht die App
@@ -211,7 +212,7 @@ recognition uses Google's ML&nbsp;Kit with a model that is part of the app. The
 photo and the recognised text stay on the device. ML&nbsp;Kit, however, brings
 a transport component by Google into the app which, according to Google, may
 send encrypted technical usage data to Google: device manufacturer and model,
-Android version, app name and version, a random identifier of this
+system version, app name and version, a random identifier of this
 installation, performance and error values and the type of operation. Google
 uses this data for diagnostics and usage analysis of ML&nbsp;Kit; we cannot
 switch it off, and we receive nothing from it.</p>
@@ -241,7 +242,9 @@ update button, and <code>REQUEST_INSTALL_PACKAGES</code> only so the system may 
 you, after the download, whether to install the new release. The internet
 permission, however, applies to the whole app and therefore also to Google's text
 recognition from section&nbsp;3. In addition there is an app-internal AndroidX
-identifier that unlocks nothing. The Apple edition has neither.</p>
+identifier that unlocks nothing. The Apple edition has none of these
+permissions; the ML&nbsp;Kit component from section&nbsp;3 is included there as
+well.</p>
 <p>On an iPhone or iPad the system asks you once, before your <b>first camera
 photo</b>, for permission to use the camera &mdash; Apple requires this. You pick
 existing images via the iOS photo picker; that needs no permission, and the app
