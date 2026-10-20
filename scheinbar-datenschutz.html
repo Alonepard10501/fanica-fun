@@ -20,7 +20,7 @@ body.de .fassung.de,body.en .fassung.en{display:block}
 
 <div class="fassung de" lang="de">
 <h1>Datenschutzerklärung — ScheinBar</h1>
-<p>Stand: 31.08.2026</p>
+<p>Stand: 20.10.2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Falk Carstensen · E-Mail: fanicafuntipp@gmail.com · oder über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a> auf der FaNiCa-Webseite</p>
@@ -29,10 +29,11 @@ body.de .fassung.de,body.en .fassung.en{display:block}
 <b>Kurz gesagt:</b> ScheinBar erhebt keine personenbezogenen Daten. Ihre
 Spielscheine, Ziehungen und Auswertungen bleiben auf Ihrem Gerät. Es gibt
 keinen Server von uns, kein Konto im Internet, keine Werbung und keine
-Analyse-Dienste. Auch die Texterkennung des Spielscheins läuft
-ausschließlich auf Ihrem Gerät. Ins Netz geht die App nur für das Abo im
-Store, das Nachladen der Ziehungen und die Update-Prüfung — Einzelheiten
-unter Punkt 5.
+eigenen Analyse-Dienste. Auch die Texterkennung des Spielscheins läuft
+ausschließlich auf Ihrem Gerät. Unser eigener Code geht nur für das Abo im
+Store, das Nachladen der Ziehungen und die Update-Prüfung ins Netz; die
+mitgelieferten Google-Bausteine (ML Kit) senden zudem technische
+Nutzungsdaten an Google — Einzelheiten unter Punkt 5.
 </div>
 
 <div class="kasten">
@@ -46,30 +47,47 @@ Scheine zu verwalten und selbst erfasste Ziehungen nachzurechnen.
 <p>Sämtliche Daten, die Sie in ScheinBar eingeben, werden
 <b>ausschließlich lokal auf Ihrem Gerät</b> in einer Datenbank gespeichert:</p>
 <ul>
-<li><b>Spielscheine</b> — Spielart (BINGO!, Lotto 6aus49, Eurojackpot), Ihre Tippfelder, Superzahl und Teilnahmezeitraum</li>
+<li><b>Spielscheine</b> — Spielart (BINGO!, Lotto 6aus49, Eurojackpot), Ihre Tippfelder, Superzahl, Teilnahmezeitraum,
+    gewählte Zusatzlotterien (Spiel 77, SUPER 6, GlücksSpirale, Sieger-Chance), Losnummer, BINGO!-Serie und -Losnummer,
+    Einsatz, Quittungsnummer, die Scheinkennung aus dem Code der Quittung, eine eigene Bezeichnung und der Zeitpunkt
+    der Erfassung</li>
 <li><b>Ziehungen</b> — die von Ihnen erfassten und die geladenen Ziehungszahlen
-    je Spiel und Datum; geladene Ziehungen werden auf dem Gerät gespeichert und
+    je Spiel und Datum, dazu die geladenen Ergebnisse von Spiel 77, SUPER 6 und
+    Superchance; geladene Ziehungen werden auf dem Gerät gespeichert und
     bleiben dort</li>
 <li><b>Profil</b> — E-Mail-Adresse und Prüfwert des Passworts des lokalen Profils</li>
-<li><b>Merkposten</b> — das zuletzt gewählte Spiel, das Ende der einmaligen
-    7-Tage-Probe und ob Sie angemeldet bleiben möchten</li>
+<li><b>Merkposten</b> — das zuletzt gewählte Spiel, das angemeldete Profil
+    und ob Sie angemeldet bleiben möchten, das Ende der einmaligen
+    7-Tage-Probe, Ihre Darstellungswahl, ob das Intro gezeigt wurde und wann
+    die Ziehungen zuletzt geladen wurden</li>
 </ul>
-<p>Diese Daten werden <b>zu keinem Zeitpunkt an uns oder an Dritte
-übertragen</b>. Gewinne werden nicht gespeichert, sondern aus Schein und
+<p>Die App überträgt diese Daten <b>zu keinem Zeitpunkt an uns oder an
+Dritte</b>. Gewinne werden nicht gespeichert, sondern aus Schein und
 Ziehung berechnet.</p>
 <p>Über <i>Einstellungen → Daten sichern</i> können Sie Scheine, Tippfelder und
 Ziehungen selbst als Datei ablegen und über <i>Sicherung einspielen</i> wieder
 einlesen — dabei wird nur ergänzt, was fehlt. Wohin diese Datei geht — und ob
 Sie sie etwa in einen Cloud-Speicher legen — entscheiden allein Sie; die App
 überträgt sie nirgendwohin.</p>
+<p><b>Android-Sicherung:</b> ScheinBar schaltet die automatische Sicherung
+von Android nicht ab. Ist auf Ihrem Gerät die Sicherung in Ihr Google-Konto
+eingeschaltet, nimmt Android die Daten der App — Scheine, Ziehungen, Profil
+samt Passwort-Prüfwert und Merkposten — in diese Sicherung auf und spielt sie
+bei einer Neuinstallation oder einem Gerätewechsel wieder ein. Das steuert
+allein Android über Ihr Konto; die App sendet dabei selbst nichts, und wir
+sehen davon nichts.</p>
 
 <h2>3. Spielschein fotografieren (Texterkennung)</h2>
 <p>Wenn Sie einen Spielschein fotografieren, wird der Text
 <b>ausschließlich auf Ihrem Gerät</b> erkannt (Google ML Kit,
-On-Device-Texterkennung — ohne Internetverbindung). Das Foto wird von der
-App nur für diesen einen Lesevorgang verwendet, nicht dauerhaft
-gespeichert und nirgendwohin übertragen. Gespeichert werden allein die
-Zahlen, die Sie in der Korrektur-Ansicht bestätigen. Die manuelle Eingabe
+On-Device-Texterkennung — ohne Internetverbindung). Aus demselben Foto
+liest ML Kit außerdem den aufgedruckten Code der Quittung, ebenfalls nur auf
+dem Gerät. Das Foto wird von der App nur für diesen einen Lesevorgang
+verwendet, nicht dauerhaft gespeichert und nirgendwohin übertragen.
+Gespeichert wird, was Sie in der Korrektur-Ansicht bestätigen — Zahlen,
+Superzahl, Losnummer, Zusatzlotterien und Teilnahmezeitraum —, dazu die vom
+Schein gelesene Quittungsnummer, der Einsatz und als <i>Scheinkennung</i> der
+Inhalt des aufgedruckten Codes. Die manuelle Eingabe
 ist ein gleichwertiger Weg — die App ist ohne Kamera vollständig nutzbar.</p>
 
 <h2>4. Excel-Einfuhr</h2>
@@ -80,22 +98,24 @@ Die von Ihnen gewählte Datei wird auf dem Gerät gelesen und dort gespeichert
 
 <h2>5. Verbindungen ins Internet</h2>
 <p>Der Kern der App — Erfassen, Gewinnprüfung, Statistik, Einfuhr — läuft
-vollständig ohne Internet. Eine Verbindung entsteht nur in diesen drei
-Fällen:</p>
+vollständig ohne Internet. Unser eigener Code stellt nur in diesen drei
+Fällen eine Verbindung her:</p>
 <ul>
 <li><b>Abo-Kauf und Wiederherstellen</b>: Der Kaufvorgang läuft
 vollständig über Google Play bzw. den App Store. Wir erhalten weder Ihre
 Zahlungsdaten noch Ihren Namen — die App fragt beim Store nur ab, ob ein
-gültiges Abo vorliegt.</li>
+gültiges Abo vorliegt; das geschieht automatisch, sobald eine Ansicht den
+Premium-Stand braucht.</li>
 <li><b>Ziehungen laden</b>: Die App lädt eine gepflegte Ziehungsliste von
 GitHub
 (<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>).
-Beim ersten Start sind das die Ziehungen der letzten sechs Monate, danach
-ergänzt jeder Start nur noch die neu hinzugekommenen Tage; bereits
-vorhandene Ziehungen bleiben unberührt. Die geladenen Ziehungen werden auf
-Ihrem Gerät gespeichert. Das geschieht <b>beim Start der App automatisch</b>
-und lässt sich in den Einstellungen unter <i>Ziehungsliste aktualisieren</i>
-wiederholen. Dabei erhält GitHub technisch bedingt Ihre IP-Adresse. Es werden
+Beim ersten Start sind das die Ziehungen der letzten zwölf Monate, danach
+ergänzt jeder Abruf nur die Tage aus diesem Zeitraum, die auf dem Gerät
+fehlen; bereits vorhandene Ziehungen bleiben unberührt. Die geladenen
+Ziehungen werden auf Ihrem Gerät gespeichert. Das geschieht <b>beim Start der
+App automatisch</b> und erneut, wenn Sie die App nach mindestens sechs Stunden
+aus dem Hintergrund zurückholen; in den Einstellungen unter
+<i>Ziehungsliste aktualisieren</i> lässt es sich jederzeit wiederholen. Dabei erhält GitHub technisch bedingt Ihre IP-Adresse. Es werden
 nur Daten geladen, nie welche gesendet.</li>
 <li><b>Update-Prüfung (Testphase)</b>: Außerhalb der Stores prüft die App
 auf Ihren Tipp hin im Profilbereich bei derselben GitHub-Adresse, ob eine
@@ -104,24 +124,31 @@ neuere Fassung vorliegt, und lädt diese auf Wunsch herunter.</li>
 <p>Schlägt eine dieser Verbindungen fehl, arbeitet die App unverändert
 weiter. Wir binden <b>keine Werbe-, Analyse- oder Absturzmelde-Dienste</b> ein
 und haben keine Schnittstellen zu sozialen Netzwerken. Mit der Texterkennung
-(ML Kit) und der Abrechnung kommen jedoch Bausteine von Google mit; über diese
-kann Google technische Daten über die Nutzung seiner eigenen Bausteine
-erhalten. Darauf haben wir keinen Einfluss und wir erhalten davon nichts.</p>
+(ML Kit) und der Abrechnung kommen jedoch Bausteine von Google mit. ML Kit
+enthält eine Übertragungskomponente von Google, die nach Googles eigenen
+Angaben verschlüsselt technische Nutzungsdaten an Google sendet (etwa
+Gerätemodell, Systemversion, App-Paket und -Version, eine Kennung je
+Installation, Leistungswerte und Fehlercodes) — ohne Zutun der App und ohne
+Abschaltmöglichkeit. Foto, erkannte Zahlen und Ihre Scheine gehören nicht
+dazu. Darauf haben wir keinen Einfluss und wir erhalten davon nichts.</p>
 
 <h2>6. Ihr Passwort</h2>
 <p>Ihr Passwort wird <b>niemals im Klartext gespeichert</b>, sondern
 ausschließlich als nicht umkehrbarer SHA-256-Prüfwert, in den zusätzlich Ihre
-E-Mail-Adresse eingeht. Die Anmeldung trennt die Daten verschiedener Profile
-auf demselben Gerät. Sie ist <b>kein</b> Schutz gegen jemanden, der Ihr
+E-Mail-Adresse eingeht. Das Profil dient der Anmeldung und dem Freischalten;
+es trennt <b>keine</b> Daten — alle Profile auf demselben Gerät sehen dieselben
+Scheine und Ziehungen. Die Anmeldung ist <b>kein</b> Schutz gegen jemanden, der Ihr
 entsperrtes Gerät in der Hand hält, und auch kein Ersatz für die
 Verschlüsselung Ihres Geräts — dafür ist die Bildschirmsperre Ihres Geräts
 zuständig.</p>
 
 <h2>7. Berechtigungen</h2>
 <p>ScheinBar fordert <b>keine</b> Standort-, Kontakt- oder
-Mikrofon-Berechtigung an und auch keine eigene Kamera-Berechtigung: Fotos
-macht die Kamera-App Ihres Geräts, Bilder wählen Sie über die Fotoauswahl
-des Systems; die App sieht nur das eine gewählte Bild.</p>
+Mikrofon-Berechtigung an. Unter Android gibt es auch keine eigene
+Kamera-Berechtigung: Fotos macht die Kamera-App Ihres Geräts, Bilder wählen
+Sie über die Fotoauswahl des Systems; die App sieht nur das eine gewählte
+Bild. Unter iOS fragt die App beim ersten Foto nach dem Zugriff auf die
+Kamera.</p>
 <p>Die App verlangt folgende Berechtigungen: <b>Internetzugriff</b> und
 <b>Netzwerkstatus</b> (für die oben genannten drei Verbindungen; sie werden
 zusätzlich von den Google-Bausteinen mitgebracht), die
@@ -131,11 +158,16 @@ einer heruntergeladenen Fassung</b>.</p>
 
 <h2>8. Daten löschen</h2>
 <p>Einzelne Scheine und Ziehungen löschen Sie in der App;
-<i>Einstellungen → Alle Daten löschen</i> entfernt alle Scheine und Ziehungen
-auf einmal. Ihr Profil samt Passwort-Prüfwert bleibt dabei bestehen.
-<b>Restlos</b> entfernt wird alles, wenn Sie die App deinstallieren oder in
-den Geräte-Einstellungen unter „Apps" ihren Speicher leeren. Da wir keine
-Daten erhalten, gibt es bei uns nichts zu löschen.</p>
+<i>Einstellungen → Alle Daten löschen</i> entfernt alle Scheine und die
+Ziehungen der Hauptspiele auf einmal; die Ergebnisse der Zusatzspiele
+(Spiel 77, SUPER 6, Superchance), die Merkposten und Ihr Profil samt
+Passwort-Prüfwert bleiben dabei bestehen. <b>Restlos</b> vom Gerät entfernt
+wird alles, wenn Sie die App deinstallieren oder in den Geräte-Einstellungen
+unter „Apps" ihren Speicher leeren. Ist die Android-Sicherung Ihres Geräts
+eingeschaltet, kann dort eine Kopie bleiben und bei einer Neuinstallation
+zurückkommen; diese Kopie verwalten Sie in den Sicherungs-Einstellungen Ihres
+Geräts bzw. Google-Kontos. Da wir keine Daten erhalten, gibt es bei uns
+nichts zu löschen.</p>
 
 <h2>9. Kinder</h2>
 <p>Die App richtet sich nicht an Kinder und erhebt wissentlich keine Daten
@@ -159,7 +191,7 @@ angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
 
 <div class="fassung en" lang="en">
 <h1>Privacy Policy — ScheinBar</h1>
-<p>Last updated: 31 August 2026</p>
+<p>Last updated: 20 October 2026</p>
 
 <h2>1. Controller</h2>
 <p>Falk Carstensen · Email: fanicafuntipp@gmail.com · or via the <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">contact form</a> on the FaNiCa website</p>
@@ -167,10 +199,11 @@ angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
 <div class="kasten">
 <b>In short:</b> ScheinBar collects no personal data. Your tickets, draws
 and statistics stay on your device. There is no server of ours, no online
-account, no advertising and no analytics. Text recognition of your ticket
-also runs exclusively on your device. The app only goes online for the store
-subscription, downloading draws and the update check — details under
-point 5.
+account, no advertising and no analytics of our own. Text recognition of
+your ticket also runs exclusively on your device. Our own code only goes
+online for the store subscription, downloading draws and the update check;
+the bundled Google components (ML Kit) also send technical usage data to
+Google — details under point 5.
 </div>
 
 <div class="kasten">
@@ -184,27 +217,42 @@ you record yourself.
 <p>Everything you enter in ScheinBar is stored <b>exclusively on your
 device</b> in a local database:</p>
 <ul>
-<li><b>Tickets</b> — game type (BINGO!, Lotto 6aus49, Eurojackpot), your number fields, bonus number and participation period</li>
+<li><b>Tickets</b> — game type (BINGO!, Lotto 6aus49, Eurojackpot), your number fields, bonus number, participation period,
+    chosen add-on lotteries (Spiel 77, SUPER 6, GlücksSpirale, Sieger-Chance), ticket number, BINGO! series and ticket
+    number, stake, receipt number, the ticket ID read from the receipt code, your own label and the time of entry</li>
 <li><b>Draws</b> — the draw numbers you record and the ones that are downloaded,
-    per game and date; downloaded draws are stored on your device and stay there</li>
+    per game and date, plus the downloaded results of Spiel 77, SUPER 6 and
+    Superchance; downloaded draws are stored on your device and stay there</li>
 <li><b>Profile</b> — email address and a check value of the password of the local profile</li>
-<li><b>Reminders</b> — the game you last selected, the end of the one-time
-    7-day trial and whether you want to stay signed in</li>
+<li><b>Reminders</b> — the game you last selected, the signed-in profile and
+    whether you want to stay signed in, the end of the one-time 7-day trial,
+    your display choice, whether the intro has been shown and when the draws
+    were last downloaded</li>
 </ul>
-<p>This data is <b>never transmitted to us or to third parties</b>. Wins
+<p>The app <b>never transmits this data to us or to third parties</b>. Wins
 are not stored; they are calculated from ticket and draw.</p>
 <p>Under <i>Settings → Back up data</i> you can save tickets, number fields
 and draws as a file yourself, and read them back in under <i>Restore
 backup</i> — which only adds what is missing. Where that file goes — and
 whether you put it into cloud storage — is entirely your decision; the app
 transmits it nowhere.</p>
+<p><b>Android backup:</b> ScheinBar does not switch off Android's automatic
+backup. If backup to your Google account is enabled on your device, Android
+includes the app's data — tickets, draws, profile with password check value
+and reminders — in that backup and restores it after a reinstall or when you
+switch devices. This is controlled by Android through your account alone; the
+app itself sends nothing, and we see none of it.</p>
 
 <h2>3. Photographing a ticket (text recognition)</h2>
 <p>If you photograph a ticket, the text is recognised <b>exclusively on
 your device</b> (Google ML Kit, on-device text recognition — without an
-internet connection). The app uses the photo for that single reading only,
-does not store it permanently and never transmits it anywhere. Only the
-numbers you confirm in the correction view are saved. Manual entry is an
+internet connection). From the same photo ML Kit also reads the code
+printed on the receipt, likewise only on your device. The app uses the photo
+for that single reading only, does not store it permanently and never
+transmits it anywhere. What you confirm in the correction view is saved —
+numbers, bonus number, ticket number, add-on lotteries and participation
+period — plus the receipt number and stake read from the ticket and, as the
+<i>ticket ID</i>, the content of the printed code. Manual entry is an
 equally valid path — the app is fully usable without a camera.</p>
 
 <h2>4. Excel import</h2>
@@ -214,21 +262,23 @@ choose is read and stored on the device — nothing is transmitted.</p>
 
 <h2>5. Internet connections</h2>
 <p>The core of the app — recording, win checking, statistics, import —
-works entirely without internet. A connection is only made in these three
-cases:</p>
+works entirely without internet. Our own code only makes a connection in
+these three cases:</p>
 <ul>
 <li><b>Subscription purchase and restore</b>: the purchase runs entirely
 through Google Play or the App Store. We receive neither your payment
 details nor your name — the app only asks the store whether a valid
-subscription exists.</li>
+subscription exists; this happens automatically as soon as a screen needs the
+premium status.</li>
 <li><b>Downloading draws</b>: the app loads a maintained list of draws from
 GitHub
 (<a href="https://github.com/Alonepard10501/scheinbar-releases" target="_blank" rel="noopener">scheinbar-releases</a>).
-On first start these are the draws of the past six months; after that each
-start only adds the newly published days, leaving existing draws untouched.
-The downloaded draws are stored on your device. This happens
-<b>automatically when the app starts</b> and can be repeated in the settings
-under <i>Refresh draw list</i>. GitHub technically receives your IP address in
+On first start these are the draws of the past twelve months; after that
+each download only adds the days within that period that are missing on the
+device, leaving existing draws untouched. The downloaded draws are stored on
+your device. This happens <b>automatically when the app starts</b> and again
+when you bring the app back from the background after at least six hours; it
+can be repeated at any time in the settings under <i>Refresh draw list</i>. GitHub technically receives your IP address in
 the process. Data is only downloaded, never sent.</li>
 <li><b>Update check (testing phase)</b>: outside the stores the app checks
 the same GitHub address, when you tap it in the profile area, for a newer
@@ -237,23 +287,29 @@ version and downloads it on request.</li>
 <p>If one of these connections fails, the app continues to work unchanged.
 We include <b>no advertising, analytics or crash-reporting services</b> and
 have no social network interfaces. However, text recognition (ML Kit) and
-billing bring components by Google with them; through those, Google may
-receive technical data about the use of its own components. We have no
+billing bring components by Google with them. ML Kit contains a transport
+component by Google which, according to Google, sends encrypted technical
+usage data to Google (such as device model, system version, app package and
+version, a per-installation identifier, performance figures and error codes)
+— without any action by the app and with no way to switch it off. The photo,
+the recognised numbers and your tickets are not part of it. We have no
 influence over that and receive nothing from it.</p>
 
 <h2>6. Your password</h2>
 <p>Your password is <b>never stored in plain text</b>, only as a
 non-reversible SHA-256 check value that also incorporates your email address.
-Signing in separates the data of different profiles on the same device. It is
-<b>not</b> protection against someone holding your unlocked device, nor a
+The profile is used for signing in and unlocking; it does <b>not</b> separate
+any data — all profiles on the same device see the same tickets and draws.
+Signing in is <b>not</b> protection against someone holding your unlocked device, nor a
 substitute for device encryption — that is what your device's screen lock is
 for.</p>
 
 <h2>7. Permissions</h2>
 <p>ScheinBar requests <b>no</b> location, contacts or microphone
-permission, and no camera permission of its own: photos are taken by your
-device's camera app, and images are chosen via the system photo picker;
-the app only ever sees the single image you select.</p>
+permission. On Android there is also no camera permission of its own: photos
+are taken by your device's camera app, and images are chosen via the system
+photo picker; the app only ever sees the single image you select. On iOS the
+app asks for camera access when you take the first photo.</p>
 <p>The app declares these permissions: <b>internet access</b> and
 <b>network state</b> (for the three connections named above; they are also
 brought in by the Google components), <b>billing through the store</b> for the
@@ -262,10 +318,14 @@ subscription and — only during the testing phase outside the stores —
 
 <h2>8. Deleting data</h2>
 <p>You delete individual tickets and draws in the app;
-<i>Settings → Delete all data</i> removes all tickets and draws at once. Your
-profile and its password check value remain. <b>Everything</b> is removed
-when you uninstall the app or clear its storage in your device's settings
-under "Apps". As we never receive any data, there is nothing for us to
+<i>Settings → Delete all data</i> removes all tickets and the draws of the
+main games at once; the results of the add-on games (Spiel 77, SUPER 6,
+Superchance), the reminders and your profile with its password check value
+remain. <b>Everything</b> is removed from the device when you uninstall the
+app or clear its storage in your device's settings under "Apps". If Android
+backup is enabled on your device, a copy may remain there and return after a
+reinstall; you manage that copy in the backup settings of your device or
+Google account. As we never receive any data, there is nothing for us to
 delete.</p>
 
 <h2>9. Children</h2>

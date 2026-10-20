@@ -20,7 +20,7 @@ body.de .fassung.de,body.en .fassung.en{display:block}
 
 <div class="fassung de" lang="de">
 <h1>Datenschutzerklärung — AbleseBar</h1>
-<p>Stand: 02.09.2026</p>
+<p>Stand: 20.10.2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Falk Carstensen · E-Mail: fanicafuntipp@gmail.com · oder über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a> auf der FaNiCa-Webseite</p>
@@ -29,31 +29,39 @@ body.de .fassung.de,body.en .fassung.en{display:block}
 <b>Kurz gesagt:</b> AbleseBar erhebt keine personenbezogenen Daten. Ihre
 Zählerstände, Kostensätze und Auswertungen bleiben auf Ihrem Gerät. Es gibt
 keinen Server von uns, kein Konto im Internet, keine Werbung und keine
-Analyse-Dienste. Auch die Ziffern-Erkennung vom Zählerfoto läuft
-ausschließlich auf Ihrem Gerät. Ins Netz geht die App an genau einer Stelle:
-wenn Sie im Profil auf „Nach Update suchen" tippen — Einzelheiten unter
-Punkt 5.
+eigenen Analyse-Dienste. Auch die Ziffern-Erkennung vom Zählerfoto läuft
+ausschließlich auf Ihrem Gerät. Unser eigener Code geht an genau einer Stelle
+ins Netz: wenn Sie im Profil auf „Nach Update suchen" tippen. Der
+mitgelieferte Texterkennungs-Baustein von Google kann zudem technische
+Nutzungsdaten an Google senden — Einzelheiten unter Punkt 5.
 </div>
 
 <h2>2. Welche Daten verarbeitet werden</h2>
 <p>Sämtliche Daten, die Sie in AbleseBar eingeben, werden
 <b>ausschließlich lokal auf Ihrem Gerät</b> gespeichert:</p>
 <ul>
-<li><b>Zähler</b> — Name, Bereich (Gas, Wasser, Strom), Einheit, ob aktiv</li>
+<li><b>Objekte</b> — Bezeichnung der Wohnung oder des Hauses, Anlagedatum
+    und, falls eingetragen, Einzugsdatum</li>
+<li><b>Zähler</b> — Name, Bereich (Gas, Wasser, Strom), Einheit, ob aktiv
+    und, falls eingetragen, die Zählernummer</li>
 <li><b>Ablesungen</b> — Zählerstand je Zähler und Datum, bei Zählerwechsel
-    der Anfangsstand des neuen Zählers</li>
+    der Anfangsstand des neuen Zählers, dazu eine Notiz, falls Ihre
+    eingelesene CSV-Datei eine enthält</li>
 <li><b>Kostensätze</b> — Fixkosten, Preise je Einheit und Abschläge je
     Abrechnungsperiode, dazu selbst angelegte Kostenposten</li>
-<li><b>Stammdaten</b> — Stichtag der Abrechnungsperiode, Wohnfläche und
-    ähnliche Rechengrundlagen, die Sie eintragen</li>
+<li><b>Stammdaten</b> — Stichtag der Abrechnungsperiode, Wohnfläche,
+    Wohnsituation und ähnliche Rechengrundlagen, die Sie eintragen;
+    freiwillig außerdem Anschrift (Straße, PLZ, Ort), Lage der Wohnung,
+    Bewohner, Vermieter und Ihre Kundennummern bei den Versorgern für Gas,
+    Strom und Wasser</li>
 <li><b>Farben</b> — Ihre Wahl der Bereichsfarben</li>
 <li><b>Profil</b> — E-Mail-Adresse und Prüfwert des Passworts, falls Sie ein
     Profil anlegen; als Gast entfällt beides</li>
 <li><b>Merkposten</b> — ob Sie angemeldet bleiben möchten, ob die Einführung
     schon gezeigt wurde, Sprache und Hell-/Dunkel-Anzeige</li>
 </ul>
-<p>Diese Daten werden <b>zu keinem Zeitpunkt an uns oder an Dritte
-übertragen</b>. Verbrauch, Kosten und die Differenz zu den Abschlägen werden
+<p>Die App überträgt diese Daten <b>zu keinem Zeitpunkt an uns oder an
+Dritte</b> (zur Gerätesicherung von Android siehe Punkt 4). Verbrauch, Kosten und die Differenz zu den Abschlägen werden
 nicht gespeichert, sondern aus Ablesungen und Kostensätzen berechnet.</p>
 <p>Jedes Profil und der Gast-Zugang haben einen eigenen Datenraum: Was Sie
 als Gast eintragen, sieht ein Profil nicht — und umgekehrt.</p>
@@ -64,7 +72,8 @@ wird die Ziffernfolge <b>ausschließlich auf Ihrem Gerät</b> erkannt (Google
 ML Kit, On-Device-Texterkennung — ohne Internetverbindung). Gespeichert wird
 allein der Wert, den Sie in der Korrektur-Ansicht bestätigen. Das Foto legt
 die App nicht in ihren Daten ab und überträgt es nirgendwohin; die
-Bilddatei liegt vorübergehend im Zwischenspeicher der App auf Ihrem Gerät.
+Bilddatei liegt im Zwischenspeicher der App auf Ihrem Gerät, bis Android ihn
+leert oder Sie die App deinstallieren.
 Die Eingabe von Hand ist ein gleichwertiger Weg — die App ist ohne Kamera
 vollständig nutzbar.</p>
 
@@ -78,10 +87,18 @@ Wohin diese Datei geht — und ob Sie sie etwa in einen Cloud-Speicher legen —
 entscheiden allein Sie; die App überträgt sie nirgendwohin, und wir sehen sie
 nicht. Beim Wiederherstellen einer Sicherung wird die Datei auf dem Gerät
 gelesen.</p>
+<p><b>Android-Sicherung:</b> AbleseBar schaltet die automatische Sicherung
+von Android nicht ab. Ist auf Ihrem Gerät die Sicherung in Ihr Google-Konto
+eingeschaltet, nimmt Android die App-Daten — einschließlich Profil-E-Mail und
+Passwort-Prüfwert — in diese Sicherung auf, spielt sie bei einer
+Neuinstallation zurück und kann sie beim Gerätewechsel übertragen. Das steuert
+allein Android über Ihr Konto; die App sendet dabei selbst nichts, und wir
+sehen davon nichts.</p>
 
 <h2>5. Verbindungen ins Internet</h2>
 <p>Erfassen, Auswerten, Texterkennung und Ein-/Ausfuhr laufen vollständig
-ohne Internet. Eine Verbindung entsteht nur in einem Fall:</p>
+ohne Internet. Unser eigener Code stellt nur in einem Fall eine Verbindung
+her:</p>
 <ul>
 <li><b>Update-Prüfung (Testphase)</b>: Wenn Sie im Profil auf „Nach Update
 suchen" tippen, fragt die App bei GitHub
@@ -117,10 +134,15 @@ Netzwerkstatus, die ein mitgelieferter Baustein anfordern würde, ist
 ausdrücklich abgeschaltet.</p>
 
 <h2>8. Daten löschen</h2>
-<p>Einzelne Zähler, Ablesungen und Kostenposten löschen Sie in der App.
-<b>Restlos</b> entfernt wird alles, wenn Sie die App deinstallieren oder in
-den Geräte-Einstellungen unter „Apps" ihren Speicher leeren. Da wir keine
-Daten erhalten, gibt es bei uns nichts zu löschen.</p>
+<p>Einzelne Zähler, Ablesungen und Kostenposten löschen Sie in der App. Ein
+Profil entfernen Sie samt allen seinen Daten im Profil über „Konto und Daten
+löschen". Alles auf dem Gerät wird entfernt, wenn Sie die App deinstallieren
+oder in den Geräte-Einstellungen unter „Apps" ihren Speicher leeren. Ist die
+Android-Sicherung Ihres Geräts eingeschaltet, kann dort eine Kopie der
+App-Daten liegen, die Android bei einer Neuinstallation zurückspielt; diese
+Kopie verwalten Sie in den Sicherungs-Einstellungen Ihres Geräts bzw.
+Google-Kontos. Da wir keine Daten erhalten, gibt es bei uns nichts zu
+löschen.</p>
 
 <h2>9. Kinder</h2>
 <p>Die App richtet sich nicht an Kinder und erhebt wissentlich keine Daten
@@ -144,7 +166,7 @@ angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
 
 <div class="fassung en" lang="en">
 <h1>Privacy Policy — AbleseBar</h1>
-<p>Last updated: 2 September 2026</p>
+<p>Last updated: 20 October 2026</p>
 
 <h2>1. Controller</h2>
 <p>Falk Carstensen · Email: fanicafuntipp@gmail.com · or via the <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">contact form</a> on the FaNiCa website</p>
@@ -152,30 +174,39 @@ angepasst. Der Stand oben nennt die jeweils gültige Fassung.</p>
 <div class="kasten">
 <b>In short:</b> AbleseBar collects no personal data. Your meter readings,
 cost rates and statistics stay on your device. There is no server of ours,
-no online account, no advertising and no analytics. Digit recognition from a
-meter photo also runs exclusively on your device. The app goes online at
-exactly one point: when you tap "Check for update" in your profile — details
-under point 5.
+no online account, no advertising and no analytics of our own. Digit
+recognition from a meter photo also runs exclusively on your device. Our own
+code goes online at exactly one point: when you tap "Check for update" in your
+profile. The bundled text-recognition component by Google may also send
+technical usage data to Google — details under point 5.
 </div>
 
 <h2>2. What data is processed</h2>
 <p>Everything you enter in AbleseBar is stored <b>exclusively on your
 device</b>:</p>
 <ul>
-<li><b>Meters</b> — name, area (gas, water, electricity), unit, whether active</li>
+<li><b>Properties</b> — name of the flat or house, date created and, if
+    entered, move-in date</li>
+<li><b>Meters</b> — name, area (gas, water, electricity), unit, whether active
+    and, if entered, the meter number</li>
 <li><b>Readings</b> — meter reading per meter and date, plus the starting value
-    of a new meter after a replacement</li>
+    of a new meter after a replacement, and a note if your imported CSV file
+    contains one</li>
 <li><b>Cost rates</b> — fixed costs, unit prices and instalments per billing
     period, plus cost items you add yourself</li>
-<li><b>Base data</b> — the billing period's cut-off date, living space and
-    similar figures you enter for the calculation</li>
+<li><b>Base data</b> — the billing period's cut-off date, living space,
+    living situation and similar figures you enter for the calculation;
+    optionally also your address (street, postcode, town), the flat's
+    position, occupants, landlord and your customer numbers with the gas,
+    electricity and water suppliers</li>
 <li><b>Colours</b> — your choice of area colours</li>
 <li><b>Profile</b> — email address and a check value of the password, if you
     create a profile; as a guest there is neither</li>
 <li><b>Reminders</b> — whether you want to stay signed in, whether the intro
     has been shown, language and light/dark display</li>
 </ul>
-<p>This data is <b>never transmitted to us or to third parties</b>.
+<p>The app <b>never transmits this data to us or to third parties</b> (for
+Android's device backup see point 4).
 Consumption, costs and the difference to your instalments are not stored;
 they are calculated from readings and cost rates.</p>
 <p>Every profile and the guest access have their own data space: what you
@@ -186,8 +217,8 @@ enter as a guest is invisible to a profile — and vice versa.</p>
 are recognised <b>exclusively on your device</b> (Google ML Kit, on-device
 text recognition — without an internet connection). Only the value you
 confirm in the correction view is saved. The app does not store the photo
-among its data and never transmits it; the image file sits temporarily in
-the app's cache on your device. Manual entry is an equally valid path — the
+among its data and never transmits it; the image file stays in the app's
+cache on your device until Android clears it or you uninstall the app. Manual entry is an equally valid path — the
 app is fully usable without a camera.</p>
 
 <h2>4. CSV import, CSV export and backup</h2>
@@ -199,10 +230,16 @@ and hands it to your device's share function. Where that file goes — and
 whether you put it into cloud storage — is entirely your decision; the app
 transmits it nowhere and we never see it. Restoring a backup reads the file
 on the device.</p>
+<p><b>Android backup:</b> AbleseBar does not switch off Android's automatic
+backup. If backup to your Google account is enabled on your device, Android
+includes the app data — including the profile email and password check value —
+in that backup, restores it after a reinstall and may transfer it when you
+switch devices. This is controlled by Android through your account alone; the
+app itself sends nothing, and we see none of it.</p>
 
 <h2>5. Internet connections</h2>
 <p>Recording, statistics, text recognition and import/export work entirely
-without internet. A connection is made in one case only:</p>
+without internet. Our own code makes a connection in one case only:</p>
 <ul>
 <li><b>Update check (testing phase)</b>: when you tap "Check for update" in
 your profile, the app asks GitHub
@@ -236,10 +273,14 @@ stores — <b>installing a downloaded version</b>. The network-state query
 that a bundled component would request is explicitly switched off.</p>
 
 <h2>8. Deleting data</h2>
-<p>You delete individual meters, readings and cost items in the app.
-<b>Everything</b> is removed when you uninstall the app or clear its storage
-in your device's settings under "Apps". As we never receive any data, there
-is nothing for us to delete.</p>
+<p>You delete individual meters, readings and cost items in the app. You
+remove a profile together with all its data in your profile via "Delete
+account and data". Everything on the device is removed when you uninstall the
+app or clear its storage in your device's settings under "Apps". If Android
+backup is enabled on your device, a copy of the app data may remain there,
+which Android restores after a reinstall; you manage that copy in the backup
+settings of your device or Google account. As we never receive any data,
+there is nothing for us to delete.</p>
 
 <h2>9. Children</h2>
 <p>The app is not directed at children and does not knowingly collect data

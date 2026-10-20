@@ -14,43 +14,83 @@
 </head>
 <body>
 <h1>Datenschutzerklärung — Campus Clash</h1>
-<p><strong>Stand: 26.08.2026</strong></p>
+<p><strong>Stand: 20.10.2026</strong></p>
 
-<p>Campus Clash ist ein Schul-Aufbauspiel — ohne Werbung, ohne Analyse- und
-Tracking-Dienste, ohne Werbe-ID und ohne eigenes Server-Backend. Es gibt kein
-Benutzerkonto und keine Anmeldung.</p>
+<p>Campus Clash ist ein Schul-Aufbauspiel — ohne Werbung, ohne Werbe-ID, ohne
+eigene Analyse- oder Tracking-Dienste und ohne eigenes Server-Backend. Es gibt
+kein Benutzerkonto und keine Anmeldung. Eine Ausnahme legen wir offen: Der
+eingebaute QR-Scanner bringt Googles Bibliothek ML&nbsp;Kit mit, die technische
+Diagnosedaten an Google sendet (siehe „Kamera“).</p>
 
 <h2>Was die App speichert</h2>
-<p>Dein kompletter Spielstand (Skills, Jobs, Geld, Klassen, Einstellungen) liegt
-<strong>ausschließlich lokal auf deinem Gerät</strong> und verlässt es nicht.
-Beim Deinstallieren der App wird er gelöscht.</p>
+<p>Dein Spielstand (Spielername, Fächer, Jobs, Geld, Inventar, Klassen,
+Postfach, Freundesliste, Allianz, Einstellungen) liegt als Datei im app-eigenen
+Speicher deines Geräts. Die App ist vom automatischen Android-Backup
+ausgenommen. Die Datei selbst verlässt das Gerät nicht; für den Abgleich mit
+Freunden und Allianz werden aber einzelne Werte daraus übertragen (siehe unten).
+Beim Deinstallieren der App wird der Spielstand gelöscht.</p>
 
-<h2>Allianz und Freunde (optional)</h2>
-<p>Spielst du mit Freunden in einer Allianz, werden die dafür nötigen Spieldaten
-(dein selbst gewählter Spielername und Allianz-Spielstände) zwischen den Geräten
-der Mitglieder über die Relay-Dienste <a href="https://ntfy.sh">ntfy.sh</a> und
-ntfy.envs.net (Ausweich-Server; jeweils verschlüsselt per HTTPS) ausgetauscht.
-Der Kanal ist allianz-spezifisch; Relay-Nachrichten werden dort nach kurzer Zeit
-automatisch gelöscht. Ohne Allianz stellt das Spiel für den Spielbetrieb keine
-Verbindung her.</p>
+<h2>Freunde, Allianz und Nachrichten</h2>
+<p>Für Freunde, Allianzen, Duelle und Nachrichten gibt es keinen eigenen Server.
+Die Geräte legen ihre Nachrichten bei den öffentlichen Relay-Diensten
+<a href="https://ntfy.sh">ntfy.sh</a> und ntfy.envs.net (Ausweich-Server) ab und
+holen sie dort wieder ab; die Übertragung ist per HTTPS bzw. WebSocket über TLS
+verschlüsselt. Jedes Gerät hat dafür einen eigenen Kanal, dessen Name aus einer
+zufällig erzeugten Spielkennung errechnet wird. Diese Verbindung besteht, sobald
+ein Spielstand vorhanden und die App geöffnet ist — <strong>auch ohne Freunde
+oder Allianz</strong>.</p>
+<p>Übertragen werden deine Spielkennung, dein selbst gewählter Spielername,
+Klasse, Fach-Level, Stärke, Wochen- und Kampfpunkte sowie Geschlecht und Farbe
+deiner Spielfigur. Dazu kommen Freundschafts-Anfragen, Allianz-Einladungen,
+Duelle, Allianz-Chat und Direktnachrichten an Freunde. Den Allianz-Chat
+verschlüsselt die App zusätzlich mit einem gemeinsamen Allianz-Schlüssel, sofern
+die Allianz einen hat; Direktnachrichten, Einladungen und dein Spielerstand
+liegen beim Relay lesbar. Wer den Kanalnamen kennt, kann sie mitlesen — trag in
+Spielername und Nachrichten deshalb nichts ein, was dich erkennbar macht.</p>
+<p>Die Relay-Betreiber sehen technisch deine IP-Adresse. Wie lange sie
+Nachrichten vorhalten, bestimmen sie selbst; die App fragt beim Abholen nur die
+letzten 12 Stunden ab.</p>
+
+<h2>Kamera (QR-Code, optional)</h2>
+<p>Die Kamera wird nur genutzt, wenn du den QR-Code eines Freundes oder einer
+Allianz scannst; gefragt wird erst beim ersten Scan. Das Bild wird auf dem Gerät
+ausgewertet, nicht gespeichert und nicht gesendet. Für die Erkennung ist Googles
+Bibliothek ML&nbsp;Kit eingebaut. Sie sendet nach Googles eigenen Angaben
+technische Diagnose- und Nutzungsdaten an Google (etwa Gerätemodell,
+Android-Version, App-Paket und -Version, Leistungswerte und Fehlercodes) —
+verschlüsselt, ohne Zutun der App und ohne Abschaltmöglichkeit. Spielstand,
+Nachrichten und Kamerabilder gehören nicht dazu. Es gelten die
+<a href="https://policies.google.com/privacy">Datenschutzbestimmungen von Google</a>.</p>
+
+<h2>Hinweise</h2>
+<p>Hinweise auf fertige Trainings und Jobs plant die App lokal auf dem Gerät
+(Berechtigung „Benachrichtigungen“, gefragt erst beim Einschalten; nach einem
+Neustart des Geräts werden sie neu geplant). Es gibt keinen Push-Dienst.</p>
 
 <h2>Update-Prüfung</h2>
-<p>Die App fragt eine Versionsdatei auf GitHub ab
-(github.com/Alonepard10501/campus-clash-releases), um dich auf neue Fassungen
-hinzuweisen. Dabei wird — wie bei jedem Internetabruf — die IP-Adresse technisch
-übermittelt; weitere Daten gehen nicht mit. Die App selbst wird derzeit als
-direkte Installationsdatei (APK) über GitHub verteilt.</p>
+<p>Erst wenn du in den Einstellungen nach einem Update suchst, fragt die App eine
+Versionsdatei auf GitHub ab (github.com/Alonepard10501/campus-clash-releases).
+Dabei wird — wie bei jedem Internetabruf — die IP-Adresse technisch übermittelt;
+weitere Daten gehen nicht mit. Ist eine neue Fassung da, lädt die App auf deinen
+Tipp die Installationsdatei (APK) von GitHub und öffnet den Installations-Dialog
+von Android (Berechtigung „Unbekannte Apps installieren“); installiert wird nur,
+was du dort selbst bestätigst. Die App selbst wird derzeit als direkte
+Installationsdatei über GitHub verteilt.</p>
 
 <h2>Empfänger</h2>
-<p>ntfy.sh und ntfy.envs.net (Allianz-Abgleich, nur wenn du einer Allianz
-beitrittst) sowie GitHub (Update-Prüfung und Download). Es findet kein Verkauf
-und keine werbliche Nutzung von Daten statt.</p>
+<p>ntfy.sh und ntfy.envs.net (Abgleich mit Freunden und Allianz sowie
+Nachrichten — aktiv, sobald ein Spielstand vorhanden ist), GitHub
+(Update-Prüfung und Download) sowie Google (Diagnosedaten der QR-Erkennung
+ML&nbsp;Kit). Es findet kein Verkauf und keine werbliche Nutzung von Daten
+statt.</p>
 
 <h2>Deine Rechte</h2>
 <p>Da beim Entwickler keine personenbezogenen Daten über dich vorliegen, gibt es
 dort nichts auszukunften, zu berichtigen oder zu löschen. Deinen Spielstand
-löschst du selbst — in der App oder durch Deinstallieren. Das Beschwerderecht
-bei einer Datenschutz-Aufsichtsbehörde bleibt unberührt.</p>
+löschst du selbst — in der App oder durch Deinstallieren. Nachrichten, die schon
+bei den Relay-Diensten liegen, kann die App nicht zurückholen; sie verfallen nach
+deren Vorhaltezeit. Das Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde
+bleibt unberührt.</p>
 
 <h2>Verantwortlich</h2>
 <p>Falk Carstensen, 25813 Husum.<br>

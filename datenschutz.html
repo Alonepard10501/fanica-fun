@@ -4,7 +4,7 @@
 <style>body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}h1,h2{color:#b3132d}</style></head>
 <body>
 <h1>Datenschutzerklärung — FaNiCa Fun</h1>
-<p>Stand: 05.10.2026</p>
+<p>Stand: 20.10.2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Falk Carstensen · Kontakt: über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a> auf der FaNiCa-Fun-Webseite</p>
@@ -14,25 +14,26 @@
 
 <h2>3. Welche Daten verarbeitet werden</h2>
 <ul>
-<li><b>E-Mail-Adresse des Organisators</b>: dient als Kennung der Spielrunde und zur einmaligen Bestätigung per Zahlencode. Sie wird lokal auf dem Gerät gespeichert; für den Versand des Bestätigungscodes wird sie einmalig an unseren E-Mail-Versanddienst auf Basis von Google Apps Script (Google) übermittelt, der die Bestätigungs-E-Mail verschickt.</li>
-<li><b>Passwort des Organisators</b>: wird ausschließlich als Prüfsumme (Hash) lokal gespeichert — nie im Klartext, nie übertragen.</li>
-<li><b>Spieldaten</b> (Vor-/Spitznamen, Tipps, Punkte, Chat-Nachrichten, Spielerfarben, Online-Zeiten): werden lokal gespeichert und zum Abgleich zwischen den Geräten der Runde über die Relay-Dienste <a href="https://ntfy.sh">ntfy.sh</a> und ntfy.envs.net (Ausweich-Server; jeweils verschlüsselt per HTTPS) übertragen. Der Kanal ist rundenspezifisch aus der Organisator-E-Mail abgeleitet.</li>
-<li><b>E-Mail-Einladungen</b>: Lädst du einen Mitspieler per E-Mail ein, wird dessen Adresse einmalig für den Versand der Einladung an denselben Maildienst übermittelt und nicht gespeichert.</li>
-<li><b>Feedback und Diagnose</b>: Freiwillige Rückmeldungen aus der App werden mit deinem Spielernamen per E-Mail und zusätzlich über das Nachrichten-Relay ntfy.sh bzw. ntfy.envs.net (HTTPS) an den Verantwortlichen übermittelt. Tippst du auf „Stand an Falk senden“, gehen außerdem Spielername, Gruppenname, App-Fassung, Verbindungsstand und das lokale Fehlerprotokoll auf demselben Weg an den Verantwortlichen. Beides geschieht nur auf Knopfdruck.</li>
-<li><b>Rennergebnisse und Rennkalender</b> werden von der öffentlichen Datenquelle api.jolpi.ca abgerufen, die offizielle Startaufstellung von api.openf1.org; dabei wird — wie bei jedem Internetabruf — die IP-Adresse technisch übermittelt.</li>
+<li><b>E-Mail-Adresse, Name und Spielername</b>: Jedes Profil wird mit E-Mail-Adresse, Namen, Spielernamen und Passwort angelegt und lokal auf dem Gerät gespeichert. Für den Bestätigungscode (Registrierung, erneute Anforderung, Zurücksetzen des Passworts) wird die E-Mail-Adresse an unseren E-Mail-Versanddienst auf Basis von Google Apps Script (Google) übermittelt, der die E-Mail verschickt. Die E-Mail-Adresse des Organisators ist zugleich die Kennung seiner Runden: Aus ihr werden die Kanalnamen auf dem Nachrichten-Relay abgeleitet, sie wird mit jedem Beitrittscode verschlüsselt im Relay hinterlegt (lesbar für jeden, der den Code kennt) und steht im Klartext in Einladungs-E-Mails und Einladungslinks.</li>
+<li><b>Passwort</b>: wird ausschließlich als Prüfsumme (Hash) lokal gespeichert — nie im Klartext und von der App nie übertragen. Die Prüfsumme gehört zu den App-Daten, die Android bzw. iOS in die Gerätesicherung deines Google- bzw. Apple-Kontos aufnimmt, sofern du diese eingeschaltet hast.</li>
+<li><b>Spieldaten</b> (Spieler- und Spitznamen, Gruppenname, Tipps, Punkte, Saisonstatistiken, Chat- und private Nachrichten, Spielerfarben, Online-Zeiten, App-Fassung, Beitrittscodes, Gruppenregeln, Premium-Freischaltungen): werden lokal gespeichert und zum Abgleich zwischen den Geräten der Runde über die Relay-Dienste <a href="https://ntfy.sh">ntfy.sh</a> und ntfy.envs.net (Ausweich-Server; Übertragung per HTTPS) übertragen. Der Kanal ist rundenspezifisch aus Organisator-E-Mail und Gruppenkennung abgeleitet. Auf dem Relay liegen die Inhalte nicht Ende-zu-Ende-verschlüsselt; private Nachrichten sind nur verschleiert und für Mitglieder der Gruppe lesbar. Zusätzlich veröffentlicht die App des Organisators die Namen seiner suchbaren Gruppen in einem aus seiner E-Mail-Adresse abgeleiteten Verzeichniskanal, damit Mitspieler die Gruppe über diese Adresse finden.</li>
+<li><b>E-Mail-Einladungen</b>: Lädst du einen Mitspieler per E-Mail ein, wird dessen Adresse einmalig für den Versand der Einladung an denselben Maildienst übermittelt und nicht gespeichert. Die Einladung enthält deinen Spielernamen, den Gruppennamen, den Beitrittscode und die E-Mail-Adresse des Organisators.</li>
+<li><b>Rückmeldung und Diagnose</b>: Eine Rückmeldung aus dem Profil geht mit Spielername, Rundenkennung und App-Fassung per E-Mail über unseren Maildienst (Google Apps Script) und zusätzlich mit Spielername, Gruppenname und App-Fassung über das Nachrichten-Relay ntfy.sh bzw. ntfy.envs.net (HTTPS) an den Verantwortlichen; eine Antwort auf die Update-Nachricht geht nur über das Relay. Tippst du in der Diagnose auf „Stand an Falk senden“, gehen Spielername, Gruppenname, Zahl der Mitglieder, die Spielernamen der Mitspieler mit ihrer App-Fassung, die eigene App-Fassung, Verbindungs- und Benachrichtigungsstand, Stand des Ergebnisabrufs, Prüfcodes der letzten Rennen und bis zu acht Einträge des lokalen Fehlerprotokolls auf demselben Weg an den Verantwortlichen. Gesendet wird nur auf Knopfdruck; ist ein Bericht nicht bestätigt angekommen, sendet die App ihn bis zu sieben Tage lang automatisch erneut.</li>
+<li><b>Rennergebnisse und Rennkalender</b> werden von der öffentlichen Datenquelle api.jolpi.ca abgerufen, die offizielle Startaufstellung sowie Zeitnahme-Daten (Qualifying- und Rennergebnis, Zielflagge) von api.openf1.org; dabei wird — wie bei jedem Internetabruf — die IP-Adresse technisch übermittelt.</li>
+<li><b>Update-Suche</b>: Tippst du im Profil auf „Nach Update suchen“, ruft die App die Seite von FaNiCa Fun bei Google Play bzw. im App Store ab, um die neueste Fassung zu erkennen; dabei wird technisch die IP-Adresse übermittelt.</li>
 </ul>
 
 <h2>4. In-App-Käufe</h2>
 <p>Premium ist als Abo erhältlich (1,99&nbsp;€ je 4 Wochen bzw. 14,99&nbsp;€ je Jahr, automatische Verlängerung, jederzeit in der Abo-Verwaltung des Stores kündbar); daneben gibt es freiwillige Trinkgeld-Käufe. Die Zahlungsabwicklung übernimmt ausschließlich Google Play bzw. der Apple App Store — die App erhält keine Zahlungsdaten, nur die Kaufbestätigung.</p>
 
 <h2>5. Empfänger</h2>
-<p>Google (Apps-Script-Maildienst für Bestätigungscodes, Einladungen und Feedback), ntfy.sh und ntfy.envs.net (Nachrichten-Relay), api.jolpi.ca (öffentliche F1-Ergebnisdaten), api.openf1.org (offizielle Startaufstellung) sowie Google Play bzw. Apple App Store (Kaufabwicklung). Es findet kein Verkauf und keine werbliche Nutzung von Daten statt.</p>
+<p>Google (Apps-Script-Maildienst für Bestätigungscodes, Einladungen und Rückmeldungen), ntfy.sh und ntfy.envs.net (Nachrichten-Relay für Spieldaten, Gruppenverzeichnis, Beitrittscodes, Rückmeldung und Diagnose), api.jolpi.ca (öffentliche F1-Ergebnisdaten), api.openf1.org (Startaufstellung und Zeitnahme), GitHub (Einladungsseite auf alonepard10501.github.io; der Einladungslink enthält Beitrittscode und E-Mail-Adresse des Organisators) sowie Google Play bzw. Apple App Store (Kaufabwicklung und Update-Suche). Es findet kein Verkauf und keine werbliche Nutzung von Daten statt.</p>
 
 <h2>6. Rechtsgrundlage</h2>
 <p>Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der App-Funktionen) sowie Art. 6 Abs. 1 lit. a DSGVO (Chat-Teilnahme).</p>
 
 <h2>7. Speicherdauer &amp; Löschung</h2>
-<p>Chat-Nachrichten verfallen in der App nach 30 Tagen; Relay-Nachrichten werden bei ntfy.sh und ntfy.envs.net nach kurzer Zeit (ca. 12 Stunden) automatisch gelöscht. Alle lokalen Daten lassen sich durch Abmelden bzw. Deinstallation der App entfernen. Löschwünsche zur Runde richten Sie an den Organisator oder den Verantwortlichen.</p>
+<p>Chat-Nachrichten verfallen in der App nach 14 Tagen; angeheftete Nachrichten bleiben, bis sie gelöst werden. Relay-Nachrichten werden bei ntfy.sh und ntfy.envs.net nach kurzer Zeit (ca. 12 Stunden) automatisch gelöscht; unbestätigte Beitritte und Berichte sendet die App jedoch eine Zeit lang erneut. „Abmelden“ löscht keine Daten. „Konto auf diesem Gerät löschen“ entfernt Profil, Passwort-Prüfsumme, Erfolge und Fehlerprotokoll; die Spieldaten der Runden bleiben bis zur Deinstallation auf dem Gerät. Ist die Gerätesicherung eingeschaltet, kann eine Kopie in deinem Google- bzw. Apple-Konto liegen und bei einer Neuinstallation zurückkehren. Löschwünsche zur Runde richten Sie an den Organisator oder den Verantwortlichen.</p>
 
 <h2>8. Ihre Rechte</h2>
 <p>Sie haben nach DSGVO Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf erteilter Einwilligungen sowie Beschwerde bei einer Aufsichtsbehörde (z.&nbsp;B. ULD Schleswig-Holstein).</p>
@@ -41,5 +42,5 @@
 <p>Getippt wird ausschließlich um Ruhm und Pokale — es gibt keinen Geldeinsatz und keine Geldgewinne. Die App richtet sich an Personen ab 18 Jahren.</p>
 
 <h2>10. Berechtigungen der App</h2>
-<p>Internet/Netzwerkstatus (Sync und Ergebnisdaten), Benachrichtigungen (optional, in der App einzeln abschaltbar) und Abrechnung über den jeweiligen Store (für das Abo). Kein Standort, keine Kamera, kein Mikrofon, keine Kontakte.</p>
+<p>Internet/Netzwerkstatus (Sync und Ergebnisdaten), Benachrichtigungen (optional, in der App abschaltbar), Vibration und Start nach Geräteneustart (damit geplante Erinnerungen erhalten bleiben) sowie Abrechnung über den jeweiligen Store (Abo und Trinkgeld). Auf dem iPhone zusätzlich „Fotos – nur hinzufügen“, wenn du deinen Saison-Rückblick als Bild sicherst. Kein Standort, keine Kamera, kein Mikrofon, keine Kontakte.</p>
 </body></html>

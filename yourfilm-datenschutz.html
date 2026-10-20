@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung — YourFilm</title>
-<style>body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}h1,h2{color:#5B4DD6}code{background:#f2f0fb;padding:.1em .35em;border-radius:3px}</style></head>
+<style>body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222}h1,h2,h3{color:#5B4DD6}h3{font-size:1.05em;margin-bottom:.3em}code{background:#f2f0fb;padding:.1em .35em;border-radius:3px}</style></head>
 <body>
 <h1>Datenschutzerklärung — YourFilm</h1>
-<p>Stand: 05.09.2026</p>
+<p>Stand: 20.10.2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Falk Carstensen · Kontakt: über das <a href="https://alonepard10501.github.io/fanica-fun/#kontakt">Kontaktformular</a></p>
 
 <h2>2. Kurzüberblick</h2>
-<p>YourFilm verwaltet deine Sammlung physischer Filme (DVD, Blu-ray, 4K). Die App hat <b>kein Nutzerkonto, keine Anmeldung, keine Werbung, keinen Analyse- oder Absturzmelde-Dienst und kein eigenes Server-Backend</b>. Alle Daten liegen auf deinem Gerät.</p>
+<p>YourFilm verwaltet deine Sammlung physischer Filme (DVD, Blu-ray, 4K). Die App hat <b>kein Nutzerkonto, keine Anmeldung, keine Werbung, kein eigenes Server-Backend und keinen Absturzmelde-Dienst</b>. Deine Sammlung und alle persönlichen Angaben liegen auf deinem Gerät. <b>Nur wenn du Freunde verbindest</b>, geht ein Auszug deiner Sammlung über öffentliche Weiterleitungs-Server (ntfy) an sie — Einzelheiten in Abschnitt&nbsp;5.</p>
+<p><b>Eine Einschränkung, die wir offenlegen:</b> Für das Lesen von Barcodes und Hüllentext nutzt YourFilm Googles ML&nbsp;Kit. Mit dieser Bibliothek kommt eine Messkomponente von Google in die App, die <b>eigene Nutzungsdaten an Google sendet</b> — ohne unser Zutun und ohne dein Zutippen. Was sie genau überträgt, können wir von außen nicht auslesen; deine Sammlungsdaten sind es nicht. Einzelheiten in Abschnitt&nbsp;5.</p>
 
 <h2>3. Welche Daten die App speichert</h2>
 <p>Ausschließlich auf deinem Gerät, ohne Übertragung an uns:</p>
 <ul>
 <li><b>Deine Sammlung</b>: Filme, Ausgaben, Exemplare, Titel, Jahr, Format, Genres, Altersfreigaben</li>
 <li><b>Deine persönlichen Angaben</b>: Kaufpreis, Kaufdatum, Zustand, Bewertung, Notizen, Standort (Regal, Fach), Ausleihen</li>
+<li><b>Deine eigenen Coverbilder</b>: Fotos, die du aus der Kamera oder deiner Fotobibliothek auswählst — als verkleinerte Kopie im App-Ordner (Abschnitt&nbsp;7)</li>
 <li><b>Einstellungen</b>: Ansicht, Sortierung, Sprache und — falls du einen anlegst — dein persönlicher TMDb-Zugangsschlüssel</li>
+<li><b>Freunde und Postfach</b>: dein Anzeigename, verbundene Freunde, deren Sammlungsauszug sowie Ausleih-Anfragen, -Zusagen und -Absagen</li>
 </ul>
-<p><b>Wir haben auf diese Daten keinen Zugriff.</b> Sie werden zu keinem Zeitpunkt an uns oder an Dritte übermittelt.</p>
+<p><b>Wir haben auf diese Daten keinen Zugriff.</b> An uns werden sie zu keinem Zeitpunkt übermittelt. Hinaus geht nur, was du über den Freundesabgleich selbst mit Freunden teilst (Abschnitt&nbsp;5).</p>
 <p>Die automatische Gerätesicherung von Android (Google-Backup) ist für YourFilm <b>abgeschaltet</b> (<code>android:allowBackup="false"</code>). Deine Sammlung wandert also nicht von selbst in ein Cloud-Konto. Für den Gerätewechsel hat YourFilm eine <b>eigene Sicherung</b>, die du selbst auslöst und selbst ablegst.</p>
 
 <h2>4. Es gibt kein Nutzerkonto</h2>
-<p>YourFilm verlangt keine Registrierung und keine E-Mail-Adresse. Wir erheben keine Gerätekennungen, keine Standortdaten, keine Werbe-ID und keine Nutzungsstatistiken.</p>
+<p>YourFilm verlangt keine Registrierung und keine E-Mail-Adresse. <b>Wir</b> erheben keine Gerätekennungen, keine Standortdaten, keine Werbe-ID und keine Nutzungsstatistiken — wir bekommen von dir nichts und betreiben keinen Server. Davon zu trennen ist die Messkomponente aus Googles ML&nbsp;Kit, die ihre Daten an Google sendet, nicht an uns (Abschnitt&nbsp;5).</p>
 
 <h2>5. Verbindungen nach außen</h2>
-<p>Die App ruft <b>von sich aus nichts ab</b>. Eine Verbindung entsteht nur, wenn du selbst scannst, suchst, ein Bild anzeigen lässt oder auf Aktualisierung prüfst. Dies sind <b>alle</b> Gegenstellen, die der Programmcode aufruft:</p>
+<p><b>Der Programmcode von YourFilm</b> ruft von sich aus nichts ab: Jede Verbindung, die die App selbst aufbaut, entsteht erst, wenn du scannst, suchst, ein Bild anzeigen lässt, auf Aktualisierung prüfst, ein Abo abschließt oder einen Freund verbindest. <b>Zwei Ausnahmen gibt es</b>: Hast du Freunde verbunden, hält die App, solange sie läuft, die Verbindung zu den ntfy-Relais offen und schickt Änderungen deiner Sammlung von selbst an deine Freunde. Und die letzte Gegenstelle in dieser Liste gehört einer mitgelieferten Google-Bibliothek und sendet nach eigenem Zeitplan. Dies sind <b>alle</b> Gegenstellen:</p>
 <ul>
 
 <li><b><a href="https://www.upcitemdb.com">UPCitemdb</a></b> (<code>api.upcitemdb.com</code>) — schlägt zu einem Barcode die Produktangaben nach.<br>
@@ -60,27 +63,66 @@ Kein Schlüssel, kein Konto. <a href="https://www.stremio.com/privacy">Datenschu
   <li><b>Update-Prüfung</b>: lädt eine kleine Textdatei mit der neuesten Versionsnummer.</li>
   <li><b>Update-Download</b>: lädt die neue Programmdatei (APK) herunter und übergibt sie dem System-Installer.</li>
   </ul>
-  Übermittelt wird nichts über dich und nichts aus deiner Sammlung — GitHub sieht wie jeder Webserver deine IP-Adresse und die angefragte Datei. Kein Schlüssel, kein Konto. Das betrifft nur die <b>direkt geladene Fassung</b>; die Store-Fassung wird über Google Play aktualisiert. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">Datenschutz</a></li>
+  Übermittelt wird nichts über dich und nichts aus deiner Sammlung — GitHub sieht wie jeder Webserver deine IP-Adresse und die angefragte Datei. Kein Schlüssel, kein Konto. Das betrifft nur die <b>direkt geladene Fassung</b>; die Store-Fassung wird über Google Play aktualisiert. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">Datenschutz</a><br>
+  <b>Offen gesagt:</b> Nur die Adresse der Versionsdatei steht fest im Programm. <b>Von wo die Programmdatei geladen wird, steht in dieser Versionsdatei</b> — die App nimmt die dort genannte Adresse, ohne sie auf einen bestimmten Anbieter einzuschränken. Heute verweist sie auf GitHub; wer die Versionsdatei stellt, bestimmt das Ziel. Der Download startet trotzdem <b>nur auf deinen Tipp</b> — und nur, wenn die Adresse <b>verschlüsselt</b> ist: Eine unverschlüsselte Adresse lehnt die App ab, ohne sie überhaupt anzufragen (Abschnitt&nbsp;6).</li>
 
-<li><b>Bildserver Dritter aus der Barcode-Antwort</b> — nennt UPCitemdb zu einem Produkt ein Produktbild, liegt dieses Bild bei einem <b>fremden Händler- oder Bildserver</b>, dessen Adresse aus der Antwort stammt. Wird das Bild angezeigt, wird dieser Server angefragt.<br>
-Übermittelt: die <b>Bildadresse</b>. Welcher Anbieter das ist, hängt vom jeweiligen Produkt ab.</li>
+<li><b>Beliebiger Bildserver Dritter aus der Barcode-Antwort</b> — nennt UPCitemdb zu einem Produkt ein Produktbild, liegt dieses Bild bei einem <b>fremden Händler- oder Bildserver</b>. Die App übernimmt <b>jede</b> in der Antwort genannte Adresse, sofern sie mit <code>https://</code> beginnt; es gibt <b>keine Liste erlaubter Anbieter</b>. Wird das Bild angezeigt, wird dieser Server angefragt und sieht dabei — wie jeder Webserver — deine IP-Adresse.<br>
+Übermittelt: die <b>Bildadresse</b>. Welcher Anbieter das ist, entscheidet die fremde Antwort, nicht die App.</li>
 
 <li><b>Browser-Aufruf</b> (<code>www.themoviedb.org</code>) — der Knopf „Schlüssel holen" in den Einstellungen öffnet die TMDb-Seite in <b>deinem Browser</b>. Ab da gilt der Datenschutz von TMDb und deines Browsers.</li>
+
+<li><b>Freunde und Ausleihe über ntfy</b> (<code>ntfy.sh</code> und <code>ntfy.envs.net</code>) — öffentliche Weiterleitungs-Server, über die verbundene Freunde Nachrichten austauschen. Die App hört auf beiden und sendet über den gerade erreichbaren. <b>Freiwillig:</b> Ohne verbundenen Freund wird kein Relais angesprochen.<br>
+Übermittelt: dein <b>Anzeigename</b>, ein <b>Auszug deiner Sammlung</b> (je Exemplar Titel, Jahr, Format, Ausgabe, Cover-Adresse aus dem Netz, Altersfreigabe, Genres, Bewertung, gesehen, Favorit, ob verliehen, und eine technische Kennung) sowie <b>Ausleih-Anfragen, -Zusagen und -Absagen</b> mit dem Filmtitel. <b>Nicht</b> dabei: Kaufpreis, Kaufdatum, Standort, Notizen und eigene Coverfotos.<br>
+Die Verbindung läuft über HTTPS, die Inhalte sind aber <b>nicht Ende-zu-Ende-verschlüsselt</b>: Der Betreiber des Relais kann sie lesen. ntfy.sh hält Nachrichten bis zu 12&nbsp;Stunden vor, damit sie auch ankommen, wenn die App deines Freundes gerade geschlossen ist. Kein Schlüssel, kein Konto. Benachrichtigungen über neue Anfragen erzeugt die App selbst auf deinem Gerät, ohne Push-Dienst. <a href="https://docs.ntfy.sh/privacy/">Datenschutz (ntfy.sh)</a> · <a href="https://envs.net/privacy-policy/">Datenschutz (envs.net)</a></li>
+
+<li><b>Google Play</b> bzw. <b>App Store</b> — Preise und Angebote des Abonnements abfragen, den Kauf abwickeln und einen früheren Kauf wiederherstellen.<br>
+Übermittelt: die <b>Produktkennung</b>. Die Zahlung wickelt der Store mit deinem Store-Konto ab; wir sehen davon nichts. Siehe Abschnitt&nbsp;9.</li>
+
+<li><b>Googles Messkomponente aus ML&nbsp;Kit</b> (<code>firebaselogging.googleapis.com</code>, Ersatzadresse <code>firebaselogging-pa.googleapis.com</code>) — neben dem Freundesabgleich <b>die einzige Verbindung, die nicht an deinem Tipp hängt</b>.<br>
+YourFilm nutzt Googles ML&nbsp;Kit, um Barcodes und Hüllentext zu lesen. Mit dieser Bibliothek kommt eine Komponente von Google in die App (<code>transport-backend-cct</code> / <code>transport-runtime</code>), die <b>Nutzungsdaten über die Bibliothek an Google sendet</b>. Ausgelöst wird das Sammeln dadurch, dass du die Erkennung benutzt; <b>den Versand plant danach das Betriebssystem</b> (JobScheduler bzw. AlarmManager) — er kann also auch dann laufen, wenn du die App gerade nicht bedienst. Dafür ist auch die Berechtigung <code>ACCESS_NETWORK_STATE</code> im Paket: Die Komponente sieht damit nach, ob eine Verbindung besteht.<br>
+Übermittelt: <b>Daten über die Nutzung der Bibliothek</b>. Der Inhalt wird von Google zusammengestellt und binär kodiert; wir können ihn von außen nicht auslesen und behaupten deshalb weder mehr noch weniger, als wir belegen können. <b>Sicher ist:</b> Es geht nichts aus deiner Sammlung mit — keine Titel, keine Kaufpreise, keine Notizen, keine Standorte, keine Barcodes, keine Bilder. Wir erhalten von diesen Daten nichts. <b>Abschalten können wir sie nicht</b>, ohne den Barcode-Scanner und das Auslesen des Hüllentexts aufzugeben. <a href="https://policies.google.com/privacy">Datenschutz (Google)</a></li>
 
 </ul>
 
 <h2>6. Was dabei nie mitgeht</h2>
-<p><b>Keine persönlichen Angaben werden mitgesendet</b> — weder Kaufpreis noch Kaufdatum, Standort, Notizen, Bewertung, Ausleihen noch eine Geräte- oder Werbekennung. Die Anfragen tragen lediglich eine Kennzeichnung der App (Name, Version und die öffentliche Projektadresse); das verlangen die Wikimedia-Dienste ausdrücklich, und es ist an keine Person gebunden. Wie bei jedem Internetabruf wird technisch die IP-Adresse übermittelt.</p>
-<p>Ohne diese Dienste funktioniert die App vollständig; du erfasst Filme dann von Hand. Alle Verbindungen laufen verschlüsselt über HTTPS.</p>
+<p>Für alle Abrufe bei Filmquellen, Bildservern, Update und Store gilt: <b>Keine persönlichen Angaben werden mitgesendet</b> — weder Kaufpreis noch Kaufdatum, Standort, Notizen, Bewertung, Ausleihen noch eine Geräte- oder Werbekennung. Die Anfragen tragen lediglich eine Kennzeichnung der App (Name, Version und die öffentliche Projektadresse); das verlangen die Wikimedia-Dienste ausdrücklich, und es ist an keine Person gebunden. Wie bei jedem Internetabruf wird technisch die IP-Adresse übermittelt.</p>
+<p>Der Freundesabgleich ist die Ausnahme: Er schickt deinen Freunden den in Abschnitt&nbsp;5 genannten Auszug — dazu gehören auch Bewertung und ob ein Exemplar verliehen ist, nie aber Kaufpreis, Kaufdatum, Standort oder Notizen. Darüber hinaus geht aus deiner Sammlung <b>nichts hinaus</b> — auch nicht über Googles Messkomponente. Was diese Komponente an Google sendet, können wir aber nicht einsehen und deshalb auch nicht ausschließen, dass technische Angaben zu Gerät und App-Fassung dabei sind.</p>
+<p>Ohne diese Dienste funktioniert die App vollständig; du erfasst Filme dann von Hand.</p>
 
-<h2>7. Kamera</h2>
-<p>Die Kameraberechtigung dient allein dem Lesen des Barcodes auf der Filmhülle. Es werden <b>keine Bilder gespeichert und keine übertragen</b>. Wählst du ein eigenes Coverfoto aus Kamera oder Galerie, bleibt es auf deinem Gerät.</p>
+<h3>Verschlüsselung: erzwungen, nicht nur üblich</h3>
+<p>Alle Verbindungen laufen verschlüsselt über HTTPS — und die App lässt gar nichts anderes zu:</p>
+<ul>
+<li>Die Adressen der Filmquellen (UPCitemdb, TMDb, Wikidata, Wikipedia, Cinemeta) und der ntfy-Relais sind fest als <code>https</code> bzw. <code>wss</code> im Programm eingebaut. Eine fremde Antwort kann daran nichts ändern.</li>
+<li>Ein Produktbild aus der Barcode-Antwort wird nur übernommen, wenn seine Adresse mit <code>https://</code> beginnt; alles andere wird verworfen.</li>
+<li>Die beiden einzigen Adressen, die von außen kommen — Versionsdatei und Programmdatei für die Aktualisierung außerhalb des Stores — werden vor dem Zugriff geprüft. Ist die Adresse nicht verschlüsselt, wird die Aktualisierung <b>gar nicht erst angeboten</b>, und beim Download fließt <b>kein einziges Byte</b>. Das ist mit einem automatischen Test abgesichert, der die Zugriffe mitzählt.</li>
+</ul>
+<p><b>Eine Einschränkung, die uns nicht gehört:</b> Googles Messkomponente sendet ebenfalls über <code>https</code>, aber das entscheidet Googles Bibliothek — darauf haben wir keinen Griff.</p>
+
+<h3>Was im Play-Formular steht</h3>
+<p>Damit Formular und diese Erklärung dasselbe sagen: Im Datensicherheitsformular von Google Play ist die Frage <i>„Erfasst deine App Nutzerdaten oder gibt sie weiter?"</i> mit <b>Ja</b> beantwortet, und zwar mit diesen Datentypen:</p>
+<ul>
+<li><b>App-Info und Leistung → Diagnose</b> und <b>Geräte- oder andere IDs</b> (eine Kennung je Installation) — von Googles Messkomponente aus ML&nbsp;Kit erfasst, <b>nicht</b> weitergegeben, nicht mit deiner Identität verknüpft, Zweck Analyse.</li>
+<li><b>Persönliche Daten → Name</b> (dein Anzeigename), <b>Nachrichten → Sonstige In-App-Nachrichten</b> (Ausleih-Anfragen, -Zusagen und -Absagen) und <b>App-Aktivitäten → Sonstige nutzergenerierte Inhalte</b> (der Sammlungsauszug) — nur beim Freundesabgleich über die ntfy-Relais erfasst, freiwillig, Zweck App-Funktionen.</li>
+</ul>
+<p>Alle übrigen Datentypen — auch <b>Fotos und Videos</b> und auch <b>Käufe</b> — stehen dort auf <b>Nein</b>.</p>
+
+<h2>7. Kamera und Fotos</h2>
+<p><b>Kamera.</b> Die Kameraberechtigung dient dem Lesen des Barcodes auf der Filmhülle und dem Aufnehmen eines eigenen Coverfotos. Es werden <b>keine Bilder übertragen</b>.</p>
+<p><b>Fotobibliothek.</b> YourFilm kann Bilder aus deiner Fotobibliothek öffnen — an zwei Stellen, beide nur auf deinen Tipp:</p>
+<ul>
+<li><b>Eigenes Coverbild</b> für Vorder- oder Rückseite eines Films, wenn dir das Plakat aus dem Netz nicht gefällt oder keins gefunden wurde.</li>
+<li><b>Hüllentext auslesen</b>: Statt die Hülle zu fotografieren, kannst du ein vorhandenes Foto wählen; die Texterkennung liest daraus Titel und Angaben.</li>
+</ul>
+<p><b>Was mit dem Bild geschieht:</b> Es wird beim Auswählen verkleinert, von dir zugeschnitten und in den <b>App-eigenen Ordner auf deinem Gerät</b> kopiert. <b>Es verlässt dein Gerät nicht.</b> Es geht an keinen der oben genannten Dienste, an uns geht es ebenfalls nicht, und auch der Freundesabgleich schickt keine eigenen Fotos — die App lädt grundsätzlich keine Bilder hoch. Auch die Texterkennung läuft auf deinem Gerät; das dafür nötige Modell liegt mit in der App.</p>
+<p>YourFilm bekommt dabei <b>keinen Zugriff auf deine Fotobibliothek als Ganzes</b>: Die Auswahl übernimmt die Fotoauswahl deines Betriebssystems und übergibt der App nur das eine Bild, das du angetippt hast. Auf dem iPhone und iPad fragt iOS dich zusätzlich um Erlaubnis; der Grund dafür steht in der App-Beschreibung des Systems.</p>
+<p>Ein <b>Nebeneffekt</b>, den wir offenlegen: Wählst du ein Foto für das Auslesen des Hüllentexts, benutzt du damit Googles ML&nbsp;Kit — und stößt damit dessen Messkomponente an (Abschnitt&nbsp;5). Dein Bild geht dabei <b>nicht</b> mit.</p>
+<p><b>Löschen:</b> Ersetzt oder entfernst du ein Coverbild in der App, wird die Kopie im App-Ordner gelöscht; mit der Deinstallation verschwinden alle. Dein Original in der Fotobibliothek wird nie verändert und nie gelöscht.</p>
 
 <h2>8. Aktualisierung außerhalb des Stores</h2>
-<p>Die direkt geladene Android-Fassung hat einen Update-Knopf. Dafür fordert sie die Berechtigung <code>REQUEST_INSTALL_PACKAGES</code> an — sie erlaubt allein, die von GitHub geladene Programmdatei an den System-Installer zu übergeben. Prüfung und Download starten <b>nur auf deinen Tipp</b>, nie von selbst, und die geladene Datei liegt im temporären Ordner deines Geräts. Die Store-Fassung nutzt diesen Weg nicht.</p>
+<p>Die direkt geladene Android-Fassung hat einen Update-Knopf. Dafür fordert sie die Berechtigung <code>REQUEST_INSTALL_PACKAGES</code> an — sie erlaubt allein, die geladene Programmdatei an den System-Installer zu übergeben (woher sie geladen wird, steht in Abschnitt&nbsp;5). Prüfung und Download starten <b>nur auf deinen Tipp</b>, nie von selbst, und die geladene Datei liegt im temporären Ordner deines Geräts. Die Store-Fassung nutzt diesen Weg nicht. <b>Auf iPhone und iPad gibt es diesen Weg gar nicht</b> — der Knopf wird dort nicht angezeigt, es wird keine Versionsdatei geholt und nichts heruntergeladen; Aktualisierungen kommen ausschließlich über den App Store.</p>
 
 <h2>9. Käufe (YourFilm Voll)</h2>
-<p>Bis 40 Exemplare ist YourFilm kostenlos. Darüber hinaus gibt es ein Abonnement (0,99 € alle 4 Wochen oder 9,99 € jährlich). Abrechnung und Verwaltung laufen vollständig über Google Play bzw. den App Store — <b>wir erhalten keine Zahlungsdaten</b>. In der App wird nur gespeichert, bis wann der Zugang gilt. Es gelten die Datenschutzbestimmungen des jeweiligen Stores:
+<p>Bis 40 Exemplare ist YourFilm kostenlos. Darüber hinaus gibt es ein Abonnement (0,99 € alle 4 Wochen — auf iPhone und iPad monatlich — oder 9,99 € jährlich). <b>Beide Abonnements verlängern sich automatisch</b>, bis du sie in deinem Store-Konto kündigst. Abrechnung und Verwaltung laufen vollständig über Google Play bzw. den App Store — <b>wir erhalten keine Zahlungsdaten</b>. In der App werden nur zwei Werte gespeichert: bis wann der Zugang gilt und welches Abo gekauft wurde. Es gelten die Datenschutzbestimmungen des jeweiligen Stores:
 <a href="https://policies.google.com/privacy">Google</a> bzw. <a href="https://www.apple.com/legal/privacy/">Apple</a>.</p>
 
 <h2>10. Deine Rechte</h2>
@@ -91,7 +133,7 @@ Kein Schlüssel, kein Konto. <a href="https://www.stremio.com/privacy">Datenschu
 </ul>
 
 <h2>11. Hinweis zu den Datenquellen</h2>
-<p>Diese App verwendet die TMDb-API, ist aber weder von TMDb unterstützt noch zertifiziert. Wikidata, Wikipedia und Wikimedia Commons sind Angebote der Wikimedia Foundation; Cinemeta ist ein Angebot des Stremio-Projekts. Keiner dieser Anbieter steht mit uns in einer Verbindung, und keiner erhält Daten über dich.</p>
+<p>Diese App verwendet die TMDb-API, ist aber weder von TMDb unterstützt noch zertifiziert. Wikidata, Wikipedia und Wikimedia Commons sind Angebote der Wikimedia Foundation; Cinemeta ist ein Angebot des Stremio-Projekts. Die ntfy-Relais betreiben ntfy.sh und envs.net. Keiner dieser Anbieter steht mit uns in einer Verbindung, und keiner erhält von uns Daten über dich; die Relais leiten nur weiter, was deine App an deine Freunde schickt (Abschnitt&nbsp;5). Die Barcode- und Texterkennung stammt von Google (ML&nbsp;Kit) und läuft auf deinem Gerät; die mit ihr gelieferte Messkomponente sendet jedoch Nutzungsdaten an Google — siehe Abschnitt&nbsp;5.</p>
 
 <h2>12. Änderungen</h2>
 <p>Bei Änderungen wird das Datum oben angepasst. Wesentliche Änderungen werden in den Versionshinweisen der App genannt.</p>
